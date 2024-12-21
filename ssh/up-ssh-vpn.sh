@@ -1,56 +1,9 @@
 #!/bin/bash
-# =========================================
-# Quick Setup | Script Setup Manager
-# Edition : Stable Edition V1.0
-# (C) Copyright 2023
-# =========================================
+NC='\033[0;37m'
+green='\033[0;32m' 
 
 clear
-BIBlack='\033[1;90m'      # Black
-BIRed='\033[1;91m'        # Red
-BIGreen='\033[1;92m'      # Green
-BIYellow='\033[1;93m'     # Yellow
-BIBlue='\033[1;94m'       # Blue
-BIPurple='\033[1;95m'     # Purple
-BICyan='\033[1;96m'       # Cyan
-BIWhite='\033[1;97m'      # White
-UWhite='\033[4;37m'       # White
-On_IPurple='\033[0;105m'  #
-On_IRed='\033[0;101m'
-IBlack='\033[0;90m'       # Black
-IRed='\033[0;91m'         # Red
-IGreen='\033[0;92m'       # Green
-IYellow='\033[0;93m'      # Yellow
-IBlue='\033[0;94m'        # Blue
-IPurple='\033[0;95m'      # Purple
-ICyan='\033[0;96m'        # Cyan
-IWhite='\033[0;97m'       # White
-NC='\e[0m'
-
-# // Export Color & Information
-export RED='\033[0;31m'
-export GREEN='\033[0;32m'
-export YELLOW='\033[0;33m'
-export BLUE='\033[0;34m'
-export PURPLE='\033[0;35m'
-export CYAN='\033[0;36m'
-export LIGHT='\033[0;37m'
-export NC='\033[0m'
-
-# // Export Banner Status Information
-export EROR="[${RED} EROR ${NC}]"
-export INFO="[${YELLOW} INFO ${NC}]"
-export OKEY="[${GREEN} OKEY ${NC}]"
-export PENDING="[${YELLOW} PENDING ${NC}]"
-export SEND="[${YELLOW} SEND ${NC}]"
-export RECEIVE="[${YELLOW} RECEIVE ${NC}]"
-
-# // Export Align
-export BOLD="\e[1m"
-export WARNING="${RED}\e[5m"
-export UNDERLINE="\e[4m"
-
-
+clear
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(curl -sS ifconfig.me);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -67,41 +20,14 @@ organizationalunit=AryaStore
 commonname=AryaVpn
 email=setyaaries9@gmail.com
 
+echo -e "[ ${green}INFO${NC} ] Instal Ulang Manual Sc By Arya Blitar"
+sleep 3
 # simple password minimal
 wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
-
-# Getting websocket dropbear
-#wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/ws-dropbear"
-#chmod +x /usr/local/bin/ws-dropbear
-
-# Installing Service
-#cat > /etc/systemd/system/ws-dropbear.service << END
-#[Unit]
-#Description=Ssh Websocket By Arya
-#Documentation=https://aryavpn
-#After=network.target nss-lookup.target
-
-#[Service]
-#Type=simple
-#User=root
-#CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#NoNewPrivileges=true
-#ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-dropbear 8880
-#Restart=on-failure
-
-#[Install]
-#WantedBy=multi-user.target
-#END
-
-#systemctl daemon-reload >/dev/null 2>&1
-#systemctl enable ws-dropbear >/dev/null 2>&1
-#systemctl start ws-dropbear >/dev/null 2>&1
-#systemctl restart ws-dropbear >/dev/null 2>&1
 
 clear 
 
@@ -149,11 +75,8 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
 cat > /etc/rc.local <<-END
-#!/bin/sh -e
-# rc.local
-# By default this script does nothing.
+
 exit 0
 END
 
@@ -234,23 +157,6 @@ systemctl daemon-reload >/dev/null 2>&1
 systemctl start ssh >/dev/null 2>&1
 systemctl restart ssh >/dev/null 2>&1
 
-# install dropbear
-sleep 1
-echo -e "[ ${green}INFO$NC ] Settings Dropbear"
-sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear
-systemctl daemon-reload >/dev/null 2>&1
-systemctl start dropbear >/dev/null 2>&1
-systemctl restart dropbear >/dev/null 2>&1
-cekker=$(cat /etc/shells | grep -w "/bin/false")
-if [[ "$cekker" = "/bin/false" ]];then
-echo -ne
-else
-echo "/bin/false" >> /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
-fi
-
 # Install Stunnel5
 cd /root/
 wget -q "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/stunnel5.zip"
@@ -288,19 +194,6 @@ connect = 127.0.0.1:22
 accept = 442
 connect = 127.0.0.1:1194
 END
-
-# make a certificate
-#openssl genrsa -out key.pem 2048  >/dev/null 2>&1
-#openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
-#-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"  >/dev/null 2>&1
-#cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
-
-# konfigurasi stunnel
-#echo "ENABLED=1" >> /etc/default/stunnel4
-#sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-#systemctl daemon-reload >/dev/null 2>&1
-#/etc/init.d/stunnel4 start >/dev/null 2>&1
-#/etc/init.d/stunnel4 restart >/dev/null 2>&1
 
 # Service Stunnel5 systemctl restart stunnel5
 rm -fr /etc/systemd/system/stunnel5.service
@@ -412,7 +305,6 @@ Optimize_Parameters
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install successfully..."
 
-# install fail2ban
 # Instal DDOS Flate
 rm -fr /usr/local/ddos
 mkdir -p /usr/local/ddos >/dev/null 2>&1
@@ -434,16 +326,6 @@ sleep 1
 echo -e "[ ${green}INFO$NC ] Install successfully..."
 sleep 1
 echo -e "[ ${green}INFO$NC ] Config file at /usr/local/ddos/ddos.conf"
-
-# Banner /etc/issue.net
-rm -fr /etc/issue.net
-rm -fr /etc/issue.net.save
-sleep 1
-echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/issue.net"
-chmod +x /etc/issue.net
-echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
-sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Blokir Torrent
 echo -e "[ ${green}INFO$NC ] Set iptables"
@@ -473,11 +355,6 @@ if dpkg -s unscd >/dev/null 2>&1; then
 apt -y remove --purge unscd >/dev/null 2>&1
 fi
 
-# apt-get -y --purge remove samba* >/dev/null 2>&1
-# apt-get -y --purge remove apache2* >/dev/null 2>&1
-# apt-get -y --purge remove bind9* >/dev/null 2>&1
-# apt-get -y remove sendmail* >/dev/null 2>&1
-# apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 echo -e "[ ${green}ok${NC} ] Restarting openvpn"
@@ -511,6 +388,6 @@ sleep 1
 yellow "SSH & OVPN install successfully"
 sleep 5
 clear
-rm -fr /root/key.pem >/dev/null 2>&1
+#rm -fr /root/key.pem >/dev/null 2>&1
 rm -fr /root/cert.pem >/dev/null 2>&1
 rm -fr /root/ssh-vpn.sh >/dev/null 2>&1
