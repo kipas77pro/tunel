@@ -397,6 +397,7 @@ cat <<EOF> /etc/xray/config.json
           }
         }
      },
+     {
      "listen": "127.0.0.1",
      "port": "$vmess2",
      "protocol": "vmess",
