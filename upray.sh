@@ -190,7 +190,7 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              root /home/vps/public_html;
         }
 EOF
-sed -i '$ ilocation /ssh' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation /http' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:700'';' /etc/nginx/conf.d/xray.conf
