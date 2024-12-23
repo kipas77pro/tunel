@@ -21,3 +21,8 @@ wget -O user-ws "raw.githubusercontent.com/kipas77pro/tunel/main/user-ws.sh" && 
 ````
 wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/menu-vmess.sh" && chmod +x menu-vmess
 ````
+
+## update
+````
+wget -O update "raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh" && chmod +x update
+````
