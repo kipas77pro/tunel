@@ -167,11 +167,10 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 
 # Random Port Xray
-trojanws=$((RANDOM + 10000))
 vless=$((RANDOM + 10000))
-vlessgrpc=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
-vmess1=$((RANDOM + 10000))
+trojanws=$((RANDOM + 10000))
+vlessgrpc=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
@@ -187,6 +186,10 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2082;
              listen 8080;
              listen [::]:8080;
+             listen 2052;
+             listen [::]:2052;
+             listen 2095;
+             listen [::]:2095;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
              listen 8443 ssl http2 reuseport;
@@ -195,6 +198,10 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2096 http2 reuseport;	
              listen 2087 ssl http2 reuseport;
              listen [::]:2087 http2 reuseport;	
+             listen 2053 ssl http2 reuseport;
+             listen [::]:2053 http2 reuseport;	
+             listen 2083 ssl http2 reuseport;
+             listen [::]:2083 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
@@ -231,18 +238,6 @@ sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ i}' /etc/nginx/conf.d/xray.conf
-
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
-sed -i '$ i{' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess1"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -358,26 +353,6 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "$vmess1",
-     "protocol": "vmess",
-      "settings": {
-            "clients": [
-               {
-                 "id": "${uuid}",
-                 "alterId": 0
-#vmess-opok
-             }
-          ]
-       },
-       "streamSettings":{
-         "network": "ws",
-            "wsSettings": {
-                "path": "/servlets/mms"
-          }
-        }
-     },
-     {
-      "listen": "127.0.0.1",
       "port": "$trojanws",
       "protocol": "trojan",
       "settings": {
