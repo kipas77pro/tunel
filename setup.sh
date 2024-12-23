@@ -298,7 +298,7 @@ wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/kipas77pro/tun
 wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-ws.sh"
 wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvmess.sh"
 wget -q -O /usr/bin/user-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/user-ws.sh"
-
+#yes
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-ssh.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-set.sh"
@@ -322,7 +322,6 @@ chmod +x /usr/bin/speedtest
 chmod +x /usr/bin/cek-bandwidth
 chmod +x /usr/bin/menu-vless
 chmod +x /usr/bin/menu-vmess
-#chmod +x /usr/bin/menu-ss
 chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
 chmod +x /usr/bin/menu-set
