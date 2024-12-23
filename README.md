@@ -18,3 +18,6 @@ wget -O trialvmess "raw.githubusercontent.com/kipas77pro/tunel/main/trialvmess.s
 ````
 wget -O user-ws "raw.githubusercontent.com/kipas77pro/tunel/main/user-ws.sh" && chmod +x user-ws
 ````
+````
+wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/menu-vmess.sh" && chmod +x menu-vmess
+````
