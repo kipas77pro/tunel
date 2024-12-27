@@ -26,3 +26,9 @@ wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/menu-vmess.s
 ````
 wget -O update "raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh" && chmod +x update
 ````
+
+### Opok
+
+````
+wget -O up-ins-xray "raw.githubusercontent.com/kipas77pro/tunel/main/up-ins-xray.sh" && chmod +x up-ins-xray
+````
