@@ -214,7 +214,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -321,47 +321,13 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### genta13 2025-02-05
-},{"id": "2e2879f9-6e16-47e9-a0e7-982ad8b12444","alterId": 0,"email": "genta13"
-### nn 2025-02-03
-},{"id": "94fb0574-36e0-4c78-9619-e45d2fc477e6","alterId": 0,"email": "nn"
-### genta12 2025-02-02
-},{"id": "772a6374-01a9-4859-93f2-2b0b0c2037fc","alterId": 0,"email": "genta12"
-### dik 2025-02-02
-},{"id": "afef54af-92e7-4ea3-960c-7b86b8a2dddf","alterId": 0,"email": "dik"
-### hanif 2025-02-02
-},{"id": "afaeee09-617f-4c1d-8021-0fd766287a03","alterId": 0,"email": "hanif"
-### lontong 2025-01-30
-},{"id": "15941cd9-cff7-463b-a4a0-c37f46a2e457","alterId": 0,"email": "lontong"
-### arav 2025-01-27
-},{"id": "4fd820ff-41a8-4e2d-a5e3-81519a14f714","alterId": 0,"email": "arav"
-### prspindo30 2025-01-26
-},{"id": "5d61f9af-b951-4a8b-98ec-f5154a7fd4a1","alterId": 0,"email": "prspindo30"
-### genta6 2025-01-21
-},{"id": "3826ddf4-9fe0-4968-8c00-62c7ab6d52a4","alterId": 0,"email": "genta6"
-### genta5 2025-01-16
-},{"id": "59cfacdf-e8ab-4566-a136-2c5ae8f9080d","alterId": 0,"email": "genta5"
-### genta4 2025-01-16
-},{"id": "0b756813-229d-4ccb-8dcf-26577d7c2c1f","alterId": 0,"email": "genta4"
-### zyu 2025-01-11
-},{"id": "71423c4f-9094-41a2-bde5-06dff7a92226","alterId": 0,"email": "zyu"
-### genta2 2025-01-10
-},{"id": "daec64f8-f43b-4aea-bc5e-8e613f4b67de","alterId": 0,"email": "genta2"
-### genta1 2025-01-09
-},{"id": "bdde9ee2-8ce9-4dda-ab74-5446259097cc","alterId": 0,"email": "genta1"
-### roni12 2025-01-09
-},{"id": "5c8175df-35e1-41e4-a34c-e6557863089d","alterId": 0,"email": "roni12"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets/mms"
+                "path": "/vmess"
           }
         }
      },
@@ -416,40 +382,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### genta13 2025-02-05
-},{"id": "2e2879f9-6e16-47e9-a0e7-982ad8b12444","alterId": 0,"email": "genta13"
-### nn 2025-02-03
-},{"id": "94fb0574-36e0-4c78-9619-e45d2fc477e6","alterId": 0,"email": "nn"
-### genta12 2025-02-02
-},{"id": "772a6374-01a9-4859-93f2-2b0b0c2037fc","alterId": 0,"email": "genta12"
-### dik 2025-02-02
-},{"id": "afef54af-92e7-4ea3-960c-7b86b8a2dddf","alterId": 0,"email": "dik"
-### hanif 2025-02-02
-},{"id": "afaeee09-617f-4c1d-8021-0fd766287a03","alterId": 0,"email": "hanif"
-### lontong 2025-01-30
-},{"id": "15941cd9-cff7-463b-a4a0-c37f46a2e457","alterId": 0,"email": "lontong"
-### arav 2025-01-27
-},{"id": "4fd820ff-41a8-4e2d-a5e3-81519a14f714","alterId": 0,"email": "arav"
-### prspindo30 2025-01-26
-},{"id": "5d61f9af-b951-4a8b-98ec-f5154a7fd4a1","alterId": 0,"email": "prspindo30"
-### genta6 2025-01-21
-},{"id": "3826ddf4-9fe0-4968-8c00-62c7ab6d52a4","alterId": 0,"email": "genta6"
-### genta5 2025-01-16
-},{"id": "59cfacdf-e8ab-4566-a136-2c5ae8f9080d","alterId": 0,"email": "genta5"
-### genta4 2025-01-16
-},{"id": "0b756813-229d-4ccb-8dcf-26577d7c2c1f","alterId": 0,"email": "genta4"
-### zyu 2025-01-11
-},{"id": "71423c4f-9094-41a2-bde5-06dff7a92226","alterId": 0,"email": "zyu"
-### genta2 2025-01-10
-},{"id": "daec64f8-f43b-4aea-bc5e-8e613f4b67de","alterId": 0,"email": "genta2"
-### genta1 2025-01-09
-},{"id": "bdde9ee2-8ce9-4dda-ab74-5446259097cc","alterId": 0,"email": "genta1"
-### roni12 2025-01-09
-},{"id": "5c8175df-35e1-41e4-a34c-e6557863089d","alterId": 0,"email": "roni12"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
