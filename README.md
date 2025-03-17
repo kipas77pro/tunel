@@ -9,6 +9,10 @@ wget -O upray "raw.githubusercontent.com/kipas77pro/tunel/main/upray.sh" && chmo
 wget -O menu-ssh "raw.githubusercontent.com/kipas77pro/tunel/main/menu-ssh.sh" && chmod +x menu-ssh
 ````
 
+````
+wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/menu-vmess.sh" && chmod +x menu-vmess
+````
+
 ## opok
 
 ````
