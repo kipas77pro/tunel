@@ -18,6 +18,8 @@ else
 domain=$IP
 fi
 
+#tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
+#none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\033[0;34m│\E[42;1;37m           Create Xray/Vmess Account            \033[0;34m│"
@@ -56,7 +58,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -71,7 +73,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -108,14 +110,17 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
-echo -e "Port none TLS : 80"
-echo -e "Port TLS      : 443"
+echo -e "Port none TLS : 80, 8080, 8880, 2082, 2052, 2095"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "Port gRPC     : 443"
 echo -e "id            : ${uuid}" 
 echo -e "alterId       : 0" 
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
-echo -e "Path          : /servlets/mms" 
+echo -e "Path          : /vmess" 
+#echo -e "Path          : /worryfree" 
+#echo -e "Path          : http://bug/worryfree" 
+#echo -e "Path          : /kuota-habis" 
 echo -e "ServiceName   : vmess-grpc" 
 echo -e "\033[0;34m════════════════════════════════${NC}" 
 echo -e "Link TLS : "
@@ -156,7 +161,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -171,7 +176,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -205,16 +210,20 @@ service cron restart > /dev/null 2>&1
 clear
 echo -e "\033[0;34m═════════════\033[0;33mXRAY/VMESS\033[0;34m═════════════\033[0m"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
-echo -e "Remarks        : ${user}"
-echo -e "Domain         : ${domain}"
-echo -e "Port none TLS : 80"
-echo -e "Port TLS      : 443"
+echo -e "Remarks       : ${user}"
+echo -e "Expired On    : $exp" 
+echo -e "Domain        : ${domain}" 
+echo -e "Port none TLS : 80, 8080, 8880, 2082, 2052, 2095"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "Port gRPC     : 443"
-echo -e "id             : ${uuid}"
-echo -e "alterId        : 0"
-echo -e "Security       : auto"
-echo -e "Network        : ws"
-echo -e "Path           : /servlets/mms" 
+echo -e "id            : ${uuid}" 
+echo -e "alterId       : 0" 
+echo -e "Security      : auto" 
+echo -e "Network       : ws" 
+echo -e "Path          : /vmess" 
+#echo -e "Path          : /worryfree" 
+#echo -e "Path          : http://bug/worryfree" 
+#echo -e "Path          : /kuota-habis" 
 echo -e "ServiceName    : vmess-grpc"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Link TLS       : ${vmesslink1}"
@@ -319,12 +328,12 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo -e " XRAY Account Deleted Successfully"
-    echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo " Client Name : $user"
     echo " Expired On  : $exp"
-    echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     
@@ -363,6 +372,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
                 fi
         done
 user=$(cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+#tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
+#none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 domain=$(cat /etc/xray/domain)
 uuid=$(grep "},{" /etc/xray/config.json | cut -b 11-46 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
@@ -376,7 +387,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -391,7 +402,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -425,14 +436,17 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
-echo -e "Port none TLS : 80"
-echo -e "Port TLS      : 443"
+echo -e "Port none TLS : 80, 8080, 8880, 2082, 2052, 2095"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "Port gRPC     : 443"
 echo -e "id            : ${uuid}" 
 echo -e "alterId       : 0" 
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
-echo -e "Path          : /servlets/mms "
+echo -e "Path          : /vmess" 
+#echo -e "Path          : /worryfree" 
+#echo -e "Path          : http://bug/worryfree" 
+#echo -e "Path          : /kuota-habis" 
 echo -e "ServiceName   : vmess-grpc" 
 echo -e "\033[0;34m════════════════════════════════${NC}" 
 echo -e "Link TLS : "
