@@ -5,6 +5,10 @@ apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.con
 wget -O upray "raw.githubusercontent.com/kipas77pro/tunel/main/upray.sh" && chmod +x upray
 ````
 
+````
+wget -O menu-ssh "raw.githubusercontent.com/kipas77pro/tunel/main/menu-ssh.sh" && chmod +x menu-ssh
+````
+
 ## opok
 
 ````
