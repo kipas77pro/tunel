@@ -44,3 +44,7 @@ wget -O up-ins-xray "raw.githubusercontent.com/kipas77pro/tunel/main/up-ins-xray
 ````
 wget -O updatevray "raw.githubusercontent.com/kipas77pro/tunel/main/updatevray.sh" && chmod +x updatevray
 ````
+
+````
+wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/backup/menu-vmess.sh" && chmod +x menu-vmess
+````
