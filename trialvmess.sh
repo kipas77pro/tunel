@@ -8,6 +8,7 @@ BIWhite='\033[1;97m'
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 clear
+clear
 domain=$(cat /etc/xray/domain)
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -27,7 +28,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -42,7 +43,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -59,7 +60,7 @@ grpc=`cat<<EOF
       "net": "grpc",
       "path": "vmess-grpc",
       "type": "none",
-      "host": "bug.com",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF`
@@ -76,16 +77,18 @@ service cron restart > /dev/null 2>&1
 clear
 echo -e "\033[0;34m═════════════\033[0;33mXRAY/VMESS\033[0;34m═════════════\033[0m"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
-echo -e "Remarks        : ${user}"
-echo -e "Domain         : ${domain}"
-echo -e "Port none TLS : 80"
-echo -e "Port TLS      : 443"
+echo -e "Remarks       : ${user}"
+echo -e "Expired On    : $exp" 
+echo -e "Domain        : ${domain}" 
+echo -e "Port none TLS : 80, 8080, 8880, 2082, 2052, 2095"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "Port gRPC     : 443"
-echo -e "id             : ${uuid}"
-echo -e "alterId        : 0"
-echo -e "Security       : auto"
-echo -e "Network        : ws"
-echo -e "Path           : /servlets/mms" 
+echo -e "id            : ${uuid}" 
+echo -e "alterId       : 0" 
+echo -e "Security      : auto" 
+echo -e "Network       : ws" 
+echo -e "Path          : /vmess" 
+echo -e "Path          : /servlets/mms" 
 echo -e "ServiceName    : vmess-grpc"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Link TLS       : ${vmesslink1}"

@@ -9,7 +9,6 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 clear
 clear
-clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
@@ -17,6 +16,8 @@ else
 domain=$IP
 fi
 
+#tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
+#none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\033[0;34m│\E[42;1;37m           Create Xray/Vmess Account            \033[0;34m│"
@@ -55,7 +56,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -70,7 +71,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/servlets/mms",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -87,7 +88,7 @@ grpc=`cat<<EOF
       "net": "grpc",
       "path": "vmess-grpc",
       "type": "none",
-      "host": "bug.com",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF`
@@ -107,13 +108,14 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
-echo -e "Port none TLS : 80"
-echo -e "Port TLS      : 443"
+echo -e "Port none TLS : 80, 8080, 8880, 2082, 2052, 2095"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "Port gRPC     : 443"
 echo -e "id            : ${uuid}" 
 echo -e "alterId       : 0" 
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
+echo -e "Path          : /vmess" 
 echo -e "Path          : /servlets/mms" 
 echo -e "ServiceName   : vmess-grpc" 
 echo -e "\033[0;34m════════════════════════════════${NC}" 
