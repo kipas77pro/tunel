@@ -55,7 +55,7 @@ echo -e "\033[0;34m════════════\033[0;33mXRAY/TROJANWS\0
 echo -e "Remarks     : ${user}" 
 echo -e "Expired On  : $exp" 
 echo -e "Host/IP     : ${domain}" 
-echo -e "Port        : 443" 
+echo -e "Port        : 443, 8443, 2087, 2096, 2053, 2083" 
 echo -e "Key         : ${uuid}" 
 echo -e "Path        : /trojan-ws"
 #echo -e "Path WSS    : wss://yourbug/trojan-ws" 
