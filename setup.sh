@@ -281,29 +281,15 @@ wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/kipas77pro/tunel
 wget -q -O /usr/bin/running "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/running.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/speedtest_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/cek-bandwidth.sh"
+#menu
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-vless.sh"
 wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-vmess.sh"
-#adssh
-#wget -q -O /usr/bin/addssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/addssh.sh"
-#wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/autokill.sh"
-#wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/tendang.sh"
-#wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialssh.sh"
-#adtr
-#wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-tr.sh"
-#wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialtrojan.sh"
-#advles
-#wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-vless.sh"
-#wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvless.sh"
-#advm
-#wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-ws.sh"
-#wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvmess.sh"
-#wget -q -O /usr/bin/user-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/user-ws.sh"
-#yes
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-ssh.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-set.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu.sh"
+#cek
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/addhost.sh"
@@ -336,21 +322,6 @@ chmod +x /usr/bin/babi
 chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/jam
 chmod +x /usr/bin/update-xray
-#add
-chmod +x /usr/bin/addssh
-chmod +x /usr/bin/autokill
-chmod +x /usr/bin/tendang
-chmod +x /usr/bin/trialssh
-#adtr
-chmod +x /usr/bin/add-tr
-chmod +x /usr/bin/trialtrojan
-#advles
-chmod +x /usr/bin/add-vless
-chmod +x /usr/bin/trialvless
-#advmes
-chmod +x /usr/bin/add-ws
-chmod +x /usr/bin/trialvmess
-chmod +x /usr/bin/user-ws
 
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
