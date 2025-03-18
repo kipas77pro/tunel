@@ -50,18 +50,9 @@ rm -rf menu-set
 rm -rf babi
 rm -rf xp
 rm -rf info
-rm -rf addssh
-rm -rf autokill
 rm -rf tendang
-rm -rf trialssh
-rm -rf add-tr
-rm -rf trialtrojan
-rm -rf add-vless
-rm -rf trialvless
-rm -rf add-ws
 rm -rf menu
-rm -rf user-ws
-rm -rf trialvmess
+
 
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/restart.sh"
@@ -81,21 +72,6 @@ wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/kipas77pro/tunel
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/babi.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/info.sh"
-#adssh
-wget -q -O /usr/bin/addssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/addssh.sh"
-wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/autokill.sh"
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/tendang.sh"
-wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialssh.sh"
-#adtr
-wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-tr.sh"
-wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialtrojan.sh"
-#advles
-wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-vless.sh"
-wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvless.sh"
-#advm
-wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-ws.sh"
-wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvmess.sh"
-wget -q -O /usr/bin/user-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/user-ws.sh"
 
 chmod +x /usr/bin/autoreboot
 chmod +x /usr/bin/restart
@@ -115,21 +91,7 @@ chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/info
-#add
-chmod +x /usr/bin/addssh
-chmod +x /usr/bin/autokill
-chmod +x /usr/bin/tendang
-chmod +x /usr/bin/trialssh
-#adtr
-chmod +x /usr/bin/add-tr
-chmod +x /usr/bin/trialtrojan
-#advles
-chmod +x /usr/bin/add-vless
-chmod +x /usr/bin/trialvless
-#advmes
-chmod +x /usr/bin/add-ws
-chmod +x /usr/bin/trialvmess
-chmod +x /usr/bin/user-ws
+
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
