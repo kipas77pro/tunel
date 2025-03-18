@@ -180,28 +180,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
              listen [::]:80;
-             listen 8880;
-             listen [::]:8880;
-             listen 2082;
-             listen [::]:2082;
-             listen 8080;
-             listen [::]:8080;
-             listen 2052;
-             listen [::]:2052;
-             listen 2095;
-             listen [::]:2095;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
-             listen 8443 ssl http2 reuseport;
-             listen [::]:8443 http2 reuseport;	
-             listen 2096 ssl http2 reuseport;
-             listen [::]:2096 http2 reuseport;	
-             listen 2087 ssl http2 reuseport;
-             listen [::]:2087 http2 reuseport;	
-             listen 2053 ssl http2 reuseport;
-             listen [::]:2053 http2 reuseport;	
-             listen 2083 ssl http2 reuseport;
-             listen [::]:2083 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
@@ -341,18 +321,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### rrq 2025-04-17
-},{"id": "f29984fd-97a6-49c6-90fe-12cd66510f4b","alterId": 0,"email": "rrq"
-### ilmupeda 2025-04-12
-},{"id": "832956e6-7aa2-4f6c-aabb-9e88cd8273ac","alterId": 0,"email": "ilmupeda"
-### amel 2025-04-11
-},{"id": "98120c6b-dce3-42ae-a7c6-3b4a559ad368","alterId": 0,"email": "amel"
-### aditia 2025-04-11
-},{"id": "ab0ceec1-3ea9-403e-bc0b-43c55c782d44","alterId": 0,"email": "aditia"
-### indoja 2025-03-24
-},{"id": "a2db94dd-68c7-4cf6-a6b9-d2096836a753","alterId": 0,"email": "indoja"
-### danu 2025-04-06
-},{"id": "179601ad-333f-481a-9e39-46f5d00f4ed4","alterId": 0,"email": "danu"
              }
           ]
        },
@@ -414,18 +382,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### rrq 2025-04-17
-},{"id": "f29984fd-97a6-49c6-90fe-12cd66510f4b","alterId": 0,"email": "rrq"
-### ilmupeda 2025-04-12
-},{"id": "832956e6-7aa2-4f6c-aabb-9e88cd8273ac","alterId": 0,"email": "ilmupeda"
-### amel 2025-04-11
-},{"id": "98120c6b-dce3-42ae-a7c6-3b4a559ad368","alterId": 0,"email": "amel"
-### aditia 2025-04-11
-},{"id": "ab0ceec1-3ea9-403e-bc0b-43c55c782d44","alterId": 0,"email": "aditia"
-### indoja 2025-03-24
-},{"id": "a2db94dd-68c7-4cf6-a6b9-d2096836a753","alterId": 0,"email": "indoja"
-### danu 2025-04-06
-},{"id": "179601ad-333f-481a-9e39-46f5d00f4ed4","alterId": 0,"email": "danu"
              }
           ]
        },
