@@ -55,7 +55,7 @@ echo -e "Username   : $Login"
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
 echo -e "\033[0;34m══════════════════════════════════${NC}"
-echo -e "IP         : $IP" 
+#echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 #echo -e "Nameserver : $sldomain" | tee -a /etc/log-create-user.log
 #echo -e "PubKey     : $slkey" | tee -a /etc/log-create-user.log
@@ -84,7 +84,7 @@ echo -e "Username   : $Login"
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
 echo -e "\033[0;34m══════════════════════════════════${NC}"
-echo -e "IP         : $IP" 
+#echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 #echo -e "Nameserver : $sldomain" | tee -a /etc/log-create-user.log
 #echo -e "PubKey     : $slkey" | tee -a /etc/log-create-user.log
