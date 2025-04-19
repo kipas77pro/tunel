@@ -1,3 +1,16 @@
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=H+A+P+P+Y+++N+E+W+++Y+Y+E+A+R++2025" />
+</p>
+
+
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S+C+R+I+P+T++A+R+Y+A++B+L+I+T+A+R" />
+</p>
+
+
+![logo](https://raw.githubusercontent.com/kipas77pro/tunel/main/vps.png)
+
+
 ````
 apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/kipas77pro/tunel/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ````
