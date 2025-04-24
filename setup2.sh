@@ -103,18 +103,6 @@ gem install lolcat
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
-sudo apt install openssh-server
-sudo ufw status
-sudo ufw enable
-sudo ufw allow ssh
-sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sudo nano /etc/ssh/sshd_config
-Port 33556
-sudo ufw delete allow ssh
-sudo ufw allow 33556/tcp
-sudo systemctl restart ssh
-sudo systemctl status ssh
-
 clear
 clear && clear && clear
 clear;clear;clear
@@ -272,7 +260,7 @@ echo -e "┌──────────────────────�
 echo -e " \E[42;1;37m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
-wget -q https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget -q https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/ins-xray2.sh && chmod +x ins-xray2.sh && ./ins-xray2.sh
 #echo -e "┌─────────────────────────────────────────┐"
 #echo -e " \E[42;1;37m           >>> Install Openvpn <<<           \E[0m$NC"
 #echo -e "└─────────────────────────────────────────┘"
@@ -290,37 +278,24 @@ echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/restart.sh"
 wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/clearlog.sh"
-wget -q -O /usr/bin/running "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/running.sh"
+wget -q -O /usr/bin/running "https://raw.githubusercontent.com/kipas77pro/tunel/main/running.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/speedtest_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/cek-bandwidth.sh"
+#menu
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-vless.sh"
 wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-vmess.sh"
-#adssh
-wget -q -O /usr/bin/addssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/addssh.sh"
-wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/autokill.sh"
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/tendang.sh"
-wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialssh.sh"
-#adtr
-wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-tr.sh"
-wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialtrojan.sh"
-#advles
-wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-vless.sh"
-wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvless.sh"
-#advm
-wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/add-ws.sh"
-wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/trialvmess.sh"
-wget -q -O /usr/bin/user-ws "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/user-ws.sh"
-#yes
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-ssh.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-set.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-backup.sh"
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/main/add/menu.sh"
+wget -q -O /usr/bin/menu-trojango "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu-trojango.sh"
+#cek
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/cf.sh"
-wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/info.sh"
+wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/info.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/babi.sh"
 wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/cek-bw.sh"
 wget -q -O /usr/bin/jam "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/jam.sh"
@@ -348,21 +323,7 @@ chmod +x /usr/bin/babi
 chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/jam
 chmod +x /usr/bin/update-xray
-#add
-chmod +x /usr/bin/addssh
-chmod +x /usr/bin/autokill
-chmod +x /usr/bin/tendang
-chmod +x /usr/bin/trialssh
-#adtr
-chmod +x /usr/bin/add-tr
-chmod +x /usr/bin/trialtrojan
-#advles
-chmod +x /usr/bin/add-vless
-chmod +x /usr/bin/trialvless
-#advmes
-chmod +x /usr/bin/add-ws
-chmod +x /usr/bin/trialvmess
-chmod +x /usr/bin/user-ws
+chmod +x /usr/bin/menu-trojango
 
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
@@ -438,6 +399,7 @@ echo  "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
 echo  "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo  "   - Trojan GRPC             : 443" | tee -a log-install.txt
 echo  "   - Trojan WS               : 443" | tee -a log-install.txt
+echo  "   - Trojan GO               : 2087" | tee -a log-install.txt
 #echo  "   - Sodosok WS/GRPC         : 443, 8443, 2087, 2096" | tee -a log-install.txt
 echo  ""  | tee -a log-install.txt
 echo  "   >>> Server Information & Other Features"  | tee -a log-install.txt
@@ -462,7 +424,7 @@ echo  ""
 echo  "" | tee -a log-install.txt
 rm -fr /root/vnstat.sh
 rm -fr /root/ssh-vpn.sh
-rm -fr /root/ins-xray.sh
+rm -fr /root/ins-xray2.sh
 rm -fr /root/setup.sh
 rm -fr /root/set-br.sh
 rm -fr /root/domain
