@@ -61,3 +61,7 @@ wget -O updatevray "raw.githubusercontent.com/kipas77pro/tunel/main/updatevray.s
 ````
 wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/backup/menu-vmess.sh" && chmod +x menu-vmess
 ````
+
+````
+wget -O menu-trojango "raw.githubusercontent.com/kipas77pro/tunel/main/menu-trojango.sh" && chmod +x menu-trojango
+````
