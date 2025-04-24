@@ -65,3 +65,7 @@ wget -O menu-vmess "raw.githubusercontent.com/kipas77pro/tunel/main/backup/menu-
 ````
 wget -O menu-trojango "raw.githubusercontent.com/kipas77pro/tunel/main/menu-trojango.sh" && chmod +x menu-trojango
 ````
+
+````
+wget -O upray-trgo "raw.githubusercontent.com/kipas77pro/tunel/main/upray-trgo.sh" && chmod +x upray-trgo
+````
