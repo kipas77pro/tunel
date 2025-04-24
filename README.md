@@ -69,3 +69,7 @@ wget -O menu-trojango "raw.githubusercontent.com/kipas77pro/tunel/main/menu-troj
 ````
 wget -O upray-trgo "raw.githubusercontent.com/kipas77pro/tunel/main/upray-trgo.sh" && chmod +x upray-trgo
 ````
+
+````
+wget -O menu "raw.githubusercontent.com/kipas77pro/tunel/main/add/menu.sh" && chmod +x menu
+````
