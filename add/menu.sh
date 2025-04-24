@@ -70,6 +70,7 @@ else
 resv2r="${red}OFF${NC}"
 #trgo
 fi
+strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 if [[ $strgo == "active" ]]; then
   status_trgo="${green}ON${NC}"
 else
