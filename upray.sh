@@ -170,7 +170,6 @@ chmod +x /usr/local/bin/xray
 vless=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
 trojanws=$((RANDOM + 10000))
-trojan-go=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
@@ -259,19 +258,6 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-#trgo
-sed -i '$ ilocation = /trojan-go' /etc/nginx/conf.d/xray.conf
-sed -i '$ i{' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$trojan-go"';' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ i}' /etc/nginx/conf.d/xray.conf
-
 sed -i '$ ilocation ^~ /vless-grpc' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
@@ -326,7 +312,7 @@ cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
-  "local_port": $trojan-go,
+  "local_port": 2047,
   "remote_addr": "127.0.0.1",
   "remote_port": 89,
   "log_level": 1,
