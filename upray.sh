@@ -196,8 +196,6 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:8443 http2 reuseport;	
              listen 2096 ssl http2 reuseport;
              listen [::]:2096 http2 reuseport;	
-             listen 2087 ssl http2 reuseport;
-             listen [::]:2087 http2 reuseport;	
              listen 2053 ssl http2 reuseport;
              listen [::]:2053 http2 reuseport;	
              listen 2083 ssl http2 reuseport;
@@ -312,7 +310,7 @@ cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
-  "local_port": 2047,
+  "local_port": 2087,
   "remote_addr": "127.0.0.1",
   "remote_port": 89,
   "log_level": 1,
