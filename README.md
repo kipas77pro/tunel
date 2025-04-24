@@ -75,5 +75,6 @@ wget -O menu "raw.githubusercontent.com/kipas77pro/tunel/main/add/menu.sh" && ch
 ````
 
 `````
-wget -O running "raw.githubusercontent.com/kipas77pro/tunel/main/running.sh" && chmod +x running
+wget -O running "raw.githubusercontent.com/kipas77pro/tunel/main/running.sh" && chmod +x runningrunning
+````
 ````
