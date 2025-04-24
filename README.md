@@ -73,7 +73,6 @@ wget -O upray-trgo "raw.githubusercontent.com/kipas77pro/tunel/main/upray-trgo.s
 ````
 wget -O menu "raw.githubusercontent.com/kipas77pro/tunel/main/add/menu.sh" && chmod +x menu
 ````
-
 `````
 wget -O running "raw.githubusercontent.com/kipas77pro/tunel/main/running.sh" && chmod +x running
 ````
