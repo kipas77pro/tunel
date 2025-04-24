@@ -68,6 +68,13 @@ if [ "$v2r" = "active" ]; then
 resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
+#trgo
+fi
+strgo=$(service trgo status | grep active | cut -f2 -d=)
+if [ "$trgo" = "active" ]; then
+restrgo="${green}ON${NC}"
+else
+restrgo="${red}OFF${NC}"
 fi
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 # TOTAL RAM
@@ -113,7 +120,7 @@ echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${ORANGE}$vma    
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "    ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRAY ${RED}: $resv2r"" ${NC} TROJAN ${RED}: $resv2r"
-echo -e "  ${NC}     STUNNEL ${RED}: $resst" "${NC} DROPBEAR ${RED}: $resdbr" "${NC} SSH-WS ${RED}: $ressshws"
+echo -e " ${NC} TROJANGO ${RED}: $restrgo ${NC}STUNNEL ${RED}: $resst" "${NC}DROPBEAR ${RED}: $resdbr" "${NC}SSH-WS ${RED}: $ressshws"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$BICyan   │$NC\033[42m                    INFO MENU                    $BICyan│$NC"
