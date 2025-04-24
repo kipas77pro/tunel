@@ -284,6 +284,9 @@ echo -e "========================="
 echo -e "Link TrGo  : ${link}"
 echo -e "========================="
 echo -e "Script By Arya Blitar"
+
+    menu-trojan
+    fi
 }
 clear
 echo -e "$PURPLE┌─────────────────────────────────────────────────┐${NC}"
