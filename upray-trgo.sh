@@ -244,18 +244,6 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
-sed -i '$ i{' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess1"';' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ i}' /etc/nginx/conf.d/xray.conf
-
 sed -i '$ ilocation = /trojan-ws' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
@@ -491,36 +479,6 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "$vmess1",
-     "protocol": "vmess",
-      "settings": {
-            "clients": [
-               {
-                 "id": "${uuid}",
-                 "alterId": 0
-#vmess
-### fadly 2025-05-24
-},{"id": "73c61103-fe29-4cff-9e03-7de686fcaf87","alterId": 0,"email": "fadly"
-### op 2025-05-22
-},{"id": "33ac6a5f-0400-49d4-bf2e-700ba5bed410","alterId": 0,"email": "op"
-### pingans 2025-05-07
-},{"id": "cc8f5364-6eec-439f-b002-cf14dbbadd51","alterId": 0,"email": "pingans"
-### aku 2025-05-17
-},{"id": "5c52900d-da51-469b-bfb1-ce5ea7437874","alterId": 0,"email": "aku"
-### sgarya 2025-06-16
-},{"id": "735b0560-51b9-4365-86df-8382aebdef36","alterId": 0,"email": "sgarya"
-             }
-          ]
-       },
-       "streamSettings":{
-         "network": "ws",
-            "wsSettings": {
-                "path": "/servlets/mms"
-          }
-        }
-     },
-     {
-      "listen": "127.0.0.1",
       "port": "$trojanws",
       "protocol": "trojan",
       "settings": {
