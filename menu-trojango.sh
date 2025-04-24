@@ -1,39 +1,15 @@
 #!/bin/bash
 
-BIBlack='\033[1;90m'      # Black
-BIRed='\033[1;91m'        # Red
-BIGreen='\033[1;92m'      # Green
-BIYellow='\033[1;93m'     # Yellow
-BIBlue='\033[1;94m'       # Blue
-BIPurple='\033[1;95m'     # Purple
-BICyan='\033[1;96m'       # Cyan
-BIWhite='\033[1;97m'      # White
-UWhite='\033[4;37m'       # White
-On_IPurple='\033[0;105m'  #
-On_IRed='\033[0;101m'
-IBlack='\033[0;90m'       # Black
-IRed='\033[0;91m'         # Red
-IGreen='\033[0;92m'       # Green
-IYellow='\033[0;93m'      # Yellow
-IBlue='\033[0;94m'        # Blue
-IPurple='\033[0;95m'      # Purple
-ICyan='\033[0;96m'        # Cyan
-IWhite='\033[0;97m'       # White
-NC='\033[0;37m'
-PURPLE='\033[0;34m'
+NC='\033[0;37m' 
+PURPLE='\033[0;34m' 
+GREEN='\033[0;32m' 
 RED='\033[0;31m'
-GREEN='\033[0;32m'
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+BIWhite='\033[1;97m'  
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-# // Export Align
-export BOLD="\e[1m"
-export WARNING="${RED}\e[5m"
-export UNDERLINE="\e[4m"
 clear
 clear
-function add-tr(){
-clear
+function add-ws(){
 clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
@@ -75,16 +51,14 @@ echo -e "Expired    : $exp"
 echo -e "========================="
 echo -e "Link TrGo  : ${link}"
 echo -e "========================="
-echo -e "Script By Arya Blitar
+echo -e "Script By Arya Blitar"
 read -n 1 -s -r -p "Press any key to back on menu"
+    
     menu-trojango
 
 }
 
 function renewws(){
-clear
-MYIP=$(wget -qO- icanhazip.com);
-
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
@@ -126,58 +100,11 @@ echo "Username : $user"
 echo "Expired  : $exp4"
 echo "=========================="
 echo "Script By Arya Blitar"
-read -n 1 -s -r -p "Press any key to back on menu"
-    menu-trojan-go
-  fi
-}
-
-function delws() {
-clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
-	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\E[42;1;37m      Delete Trojan  Account      \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-		echo ""
-		echo "You have no existing clients!"
-		echo ""
-		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-		read -n 1 -s -r -p "Press any key to back on menu"
-        menu
-	fi
-
-	clear
-	echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[42;1;37m       Delete Trojan  Account      \E[0m"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo "  User       Expired  " 
-	echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-	grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
-    echo ""
-    red "tap enter to go back"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-	read -rp "Input Username : " user
-    if [ -z $user ]; then
-    menu
-    else
-    exp=$(grep -wE "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-    sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
-    systemctl restart xray > /dev/null 2>&1
-    clear
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\033[0;33mTrojan  Account Deleted Successfully"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo " Client Name : $user"
-    echo " Expired On  : $exp"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
-    
-    menu-trojan
-    fi
+    menu-trojango
 }
-clear
-function trgo(){
+function delws() {
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
@@ -215,30 +142,34 @@ echo "Username : $user"
 echo "Expired  : $exp"
 echo "============================"
 echo "Script By Arya Blitar"
-read -n 1 -s -r -p "Press any key to back on menu"
-menu-trojango
+    echo ""
+    read -n 1 -s -r -p "Press any key to back on menu"
+    
+    menu-trojango
+    #fi
 }
+
 clear
-echo -e "$PURPLE┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$PURPLE│\E[42;1;37m                  TROJANGO MENU                  $PURPLE│$NC"
-echo -e "$PURPLE└─────────────────────────────────────────────────┘${NC}"
-echo -e " $PURPLE┌───────────────────────────────────────────────┐${NC}"
-echo -e "     ${GREEN}[${BIWhite}1${GREEN}] ${NC}Create Trojan Account      "
-echo -e "     ${GREEN}[${BIWhite}2${GREEN}] ${NC}Delete Account Trojan      "
-echo -e "     ${GREEN}[${BIWhite}3${GREEN}] ${NC}Renew Account Trojan      "
-echo -e "     ${GREEN}[${BIWhite}4${GREEN}] ${NC}Cek Login Trgo      "
-echo -e " "
-echo -e "     ${GREEN}[${BIWhite}0${GREEN}] Back To Menu     "
-echo -e " ${PURPLE}└──────────────────────────────────────────────┘${NC}"
+echo -e "${PURPLE}┌─────────────────────────────────────────────────┐${NC}"
+echo -e "${PURPLE}│\E[42;1;37m                 TROJANGO MENU                   ${PURPLE}│$NC"
+echo -e "${PURPLE}└─────────────────────────────────────────────────┘${NC}"
+echo -e "${PURPLE}┌─────────────────────────────────────────────────┐${NC}"
+echo -e "     ${PURPLE}[${BIWhite}1${PURPLE}]${NC} Create TRGO Account     "
+echo -e "     ${PURPLE}[${BIWhite}2${PURPLE}]${NC} Delete Account TRGO     "
+echo -e "     ${PURPLE}[${BIWhite}3${PURPLE}]${NC} Renew Account TRGO     "
+echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC} User Account TRGO     "
+echo -e ""
+echo -e "     ${PURPLE}[${BIWhite}0${PURPLE}]${NC} Back To Menu     "
+echo -e "${PURPLE}└──────────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
-1) clear ; add-tr ;;
+1) clear ; add-ws ;;
 2) clear ; delws ;;
 3) clear ; renewws;;
-4) clear ; trgo;;
+4) clear ; delws;;
 0) clear ; menu ;;
 x) exit ;;
-*) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
+*) echo -e "" ; echo " Klik Enter Balik Menu" ; sleep 1 ; menu ;;
 esac
