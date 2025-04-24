@@ -498,7 +498,7 @@ cat <<EOF> /etc/xray/config.json
                {
                  "id": "${uuid}",
                  "alterId": 0
-#vmess-opok
+#vmess
 ### fadly 2025-05-24
 },{"id": "73c61103-fe29-4cff-9e03-7de686fcaf87","alterId": 0,"email": "fadly"
 ### op 2025-05-22
