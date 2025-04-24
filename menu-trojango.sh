@@ -148,8 +148,55 @@ echo "Script By Arya Blitar"
     menu-trojango
     #fi
 }
-
+function cektrgo() {
 clear
+clear
+echo -n > /tmp/other.txt
+data=( `cat /etc/trojan-go/akun.conf | grep '^###' | cut -d ' ' -f 2`);
+echo "------------------------------------";
+echo "-----=[ Trojan-Go User Login ]=-----";
+echo "------------------------------------";
+for akun in "${data[@]}"
+do
+if [[ -z "$akun" ]]; then
+akun="tidakada"
+fi
+echo -n > /tmp/iptrojango.txt
+data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep trojan-go | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
+for ip in "${data2[@]}"
+do
+jum=$(cat /var/log/trojan-go/trojan-go.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
+if [[ "$jum" = "$ip" ]]; then
+echo "$jum" >> /tmp/iptrojango.txt
+else
+echo "$ip" >> /tmp/other.txt
+fi
+jum2=$(cat /tmp/iptrojango.txt)
+sed -i "/$jum2/d" /tmp/other.txt > /dev/null 2>&1
+done
+jum=$(cat /tmp/iptrojango.txt)
+if [[ -z "$jum" ]]; then
+echo > /dev/null
+else
+jum2=$(cat /tmp/iptrojango.txt | nl)
+echo "user : $akun";
+echo "$jum2";
+echo "------------------------------------";
+fi
+rm -rf /tmp/iptrojango.txt
+done
+oth=$(cat /tmp/other.txt | sort | uniq | nl)
+echo "other";
+echo "$oth";
+echo "------------------------------------";
+echo "Script By Arya Blitar"
+rm -rf /tmp/other.txt
+    echo ""
+    read -n 1 -s -r -p "Press any key to back on menu"
+    
+    menu-trojango
+    #fi
+}
 echo -e "${PURPLE}┌─────────────────────────────────────────────────┐${NC}"
 echo -e "${PURPLE}│\E[42;1;37m                 TROJANGO MENU                   ${PURPLE}│$NC"
 echo -e "${PURPLE}└─────────────────────────────────────────────────┘${NC}"
@@ -157,7 +204,7 @@ echo -e "${PURPLE}┌───────────────────�
 echo -e "     ${PURPLE}[${BIWhite}1${PURPLE}]${NC} Create TRGO Account     "
 echo -e "     ${PURPLE}[${BIWhite}2${PURPLE}]${NC} Delete Account TRGO     "
 echo -e "     ${PURPLE}[${BIWhite}3${PURPLE}]${NC} Renew Account TRGO     "
-echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC} User Account TRGO     "
+echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC} Cek User Account TRGO     "
 echo -e ""
 echo -e "     ${PURPLE}[${BIWhite}0${PURPLE}]${NC} Back To Menu     "
 echo -e "${PURPLE}└──────────────────────────────────────────────────┘${NC}"
@@ -168,7 +215,7 @@ case $opt in
 1) clear ; add-ws ;;
 2) clear ; delws ;;
 3) clear ; renewws;;
-4) clear ; delws;;
+4) clear ; cektrgo;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo " Klik Enter Balik Menu" ; sleep 1 ; menu ;;
