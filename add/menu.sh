@@ -24,6 +24,8 @@ KN='\033[1;33m'
 ORANGE='\033[0;33m'
 PINK='\033[0;35m'
 
+trgo="$(systemctl show trojan-go.service --no-page)"                                      
+strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 clear
 clear && clear && clear
 clear;clear;clear
@@ -69,13 +71,11 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 #trgo
-fi
-strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
-trgo="$(systemctl show trojan-go.service --no-page)"
-if [[ $trgo == "active" ]]; then
-revtrgo="${green}ON${NC}"
+# Status Service Trojan GO
+if [[ $strgo == "active" ]]; then
+  status_trgo="${green}ON${NC}"
 else
-revtrgo="${red}OFF${NC}"
+  status_trgo="${red}OFF${NC}"
 fi
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 # TOTAL RAM
@@ -121,7 +121,7 @@ echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${ORANGE}$vma    
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "    ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRAY ${RED}: $resv2r"" ${NC} TROJAN ${RED}: $resv2r"
-echo -e " ${NC} TROJANGO ${RED}: $revtrgo ${NC}STUNNEL ${RED}: $resst" "${NC}DROPBEAR ${RED}: $resdbr" "${NC}SSH-WS ${RED}: $ressshws"
+echo -e " ${NC} TROJANGO ${RED}: $status_trgo ${NC}STUNNEL ${RED}: $resst" "${NC}DROPBEAR ${RED}: $resdbr" "${NC}SSH-WS ${RED}: $ressshws"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$BICyan   │$NC\033[42m                    INFO MENU                    $BICyan│$NC"
