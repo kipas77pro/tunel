@@ -149,97 +149,60 @@ systemctl start rc-local.service >/dev/null 2>&1
 systemctl restart rc-local.service >/dev/null 2>&1
 
 # /etc/ssh/sshd_config
-sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 2253' /etc/ssh/sshd_config
-echo "Port 22" >> /etc/ssh/sshd_config
-echo "Port 40000" >> /etc/ssh/sshd_config
-echo "X11Forwarding yes" >> /etc/ssh/sshd_config
-echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
+cd
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-systemctl daemon-reload >/dev/null 2>&1
-systemctl start ssh >/dev/null 2>&1
-systemctl restart ssh >/dev/null 2>&1
+sed -i '/Port 22/a Port 500' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 40000' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 51443' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 58080' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 22' /etc/ssh/sshd_config
+/etc/init.d/ssh restart
 
-# Install Stunnel5
-cd /root/
-wget -q "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/stunnel5.zip"
-unzip stunnel5.zip
-cd /root/stunnel
-chmod +x configure
-./configure
-make
-make install
-cd /root
-rm -r -f stunnel
-rm -f stunnel5.zip
-rm -fr /etc/stunnel5
-mkdir -p /etc/stunnel5
-chmod 644 /etc/stunnel5
+echo "=== Install Dropbear ==="
+# install dropbear
+apt -y install dropbear
+sudo dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key
+sudo chmod 600 /etc/dropbear/dropbear_dss_host_key
+wget -O /etc/default/dropbear "https://raw.githubusercontent.com/kipas77pro/f4/main/install/dropbear"
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+/etc/init.d/ssh restart
+/etc/init.d/dropbear restart
+wget -q ${REPO}install/setrsyslog.sh && chmod +x setrsyslog.sh && ./setrsyslog.sh
 
-# Download Config Stunnel5
-cat > /etc/stunnel5/stunnel5.conf <<-END
-cert = /etc/xray/xray.crt
-key = /etc/xray/xray.key
-client = no
-socket = a:SO_REUSEADDR=1
-socket = l:TCP_NODELAY=1
-socket = r:TCP_NODELAY=1
-[dropbear]
-accept = 447
-connect = 127.0.0.1:109
-[dropbear]
-accept = 445
-connect = 127.0.0.1:143
-[openssh]
-accept = 777
-connect = 127.0.0.1:22
-#[openvpn]
-#accept = 442
-#connect = 127.0.0.1:1194
-END
+if [[ "$OS_NAME" == "debian" && "$OS_VERSION" == "10" ]] || [[ "$OS_NAME" == "ubuntu" && "$OS_VERSION" == "20.04" ]]; then
+    echo "Menginstal squid3 untuk Debian 10 atau Ubuntu 20.04..."
+    apt -y install squid3
+else
+    echo "Menginstal squid untuk versi lain..."
+    apt -y install squid
+fi
+# Unduh file konfigurasi
+echo "Mengunduh file konfigurasi Squid..."
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/kipas77pro/f4/main/install/squid3.conf"
 
-# Service Stunnel5 systemctl restart stunnel5
-rm -fr /etc/systemd/system/stunnel5.service
-cat > /etc/systemd/system/stunnel5.service << END
-[Unit]
-Description=Stunnel5 Service
-Documentation=https://stunnel.org
-Documentation=https://nekopoi.care
-After=syslog.target network-online.target
-[Service]
-ExecStart=/usr/local/bin/stunnel5 /etc/stunnel5/stunnel5.conf
-Type=forking
-[Install]
-WantedBy=multi-user.target
-END
+# Ganti placeholder dengan alamat IP
+echo "Mengganti placeholder IP dengan alamat IP saat ini..."
+sed -i $MYIP2 /etc/squid/squid.conf
 
-# Service Stunnel5 /etc/init.d/stunnel5
-rm -fr /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/stunnel5.init"
-
-# Ubah Izin Akses
-#chmod 600 /etc/stunnel5/stunnel5.pem
-chmod +x /etc/init.d/stunnel5
-cp -r /usr/local/bin/stunnel /usr/local/bin/stunnel5
-#mv /usr/local/bin/stunnel /usr/local/bin/stunnel5
-
-# Remove File
-rm -r -f /usr/local/share/doc/stunnel/
-rm -r -f /usr/local/etc/stunnel/
-rm -f /usr/local/bin/stunnel
-rm -f /usr/local/bin/stunnel3
-rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel5
-
-# Restart Stunnel5
-systemctl daemon-reload >/dev/null 2>&1
-systemctl enable stunnel5 >/dev/null 2>&1
-systemctl start stunnel5 >/dev/null 2>&1
-systemctl restart stunnel5 >/dev/null 2>&1
+echo "Instalasi dan konfigurasi Squid selesai."
+# setting vnstat
+apt -y install vnstat
+/etc/init.d/vnstat restart
+apt -y install libsqlite3-dev
+wget https://humdi.net/vnstat/vnstat-2.6.tar.gz
+tar zxvf vnstat-2.6.tar.gz
+cd vnstat-2.6
+./configure --prefix=/usr --sysconfdir=/etc && make && make install
+cd
+vnstat -i $NET
+sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
+chown vnstat:vnstat /var/lib/vnstat -R
+systemctl enable vnstat
+/etc/init.d/vnstat restart
+rm -f /root/vnstat-2.6.tar.gz
+rm -rf /root/vnstat-2.6
 
 # Install bbr
 sleep 1
