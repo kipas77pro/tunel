@@ -5,10 +5,12 @@
 vmc=$(grep -c -E "^### " "/etc/xray/config.json")
 let vma=$vmc/2
 ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-trx=$(grep -c -E "^### " "/etc/xray/config.json")
-let tra=$trx/2
+#trx=$(grep -c -E "^### " "/etc/xray/config.json")
+#let tra=$trx/2
 #ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 #let ssa=$ssx/2
+trg=$(grep -c -E "^### " "/etc/trojan-go/config.json")
+let tra=$trg/2
 
 NC='\033[0;37m'
 BICyan='\033[0;34m'
