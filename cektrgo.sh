@@ -55,12 +55,8 @@ oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$akun";
 echo "$oth";
-echo "user : $akun";
-echo "$jum2";
 echo "------------------------------------";
-lastlogin=$(cat /var/log/trojan-go/trojan-go.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
-
+rm -rf /tmp/iptrojango.txt
 echo "Script By Arya Blitar"
 rm -rf /tmp/other.txt
-rm -rf /tmp/iptrojango.txt
 
