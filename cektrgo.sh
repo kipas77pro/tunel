@@ -48,6 +48,13 @@ jum2=$(cat /tmp/iptrojango.txt | nl)
 echo "user : $akun";
 echo "$jum2";
 echo "------------------------------------";
+fi
+rm -rf /tmp/iptrojango.txt
+done
+oth=$(cat /tmp/other.txt | sort | uniq | nl)
+echo "other";
+echo "$oth";
+echo "------------------------------------";
 lastlogin=$(cat /var/log/trojan-go/trojan-go.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
 echo -e "\033[1;91m┌──────────────────────────────────────┐\033[0m"
 printf "  %-13s %-7s %-8s %2s\n" "  UserName : ${akun}"
@@ -57,13 +64,6 @@ printf "  %-13s %-7s %-8s %2s\n" "  Online   : $lastlogin"
 #printf "  %-13s %-7s %-8s %2s\n" "  Limit IP : $iplimit"
 printf "  %-13s %-7s %-8s %2s\n" "  Login IP : $jum2"
 echo -e "\033[1;91m└──────────────────────────────────────┘\033[0m"
-fi
-rm -rf /tmp/iptrojango.txt
-done
-oth=$(cat /tmp/other.txt | sort | uniq | nl)
-echo "other";
-echo "$oth";
-echo "------------------------------------";
 echo "Script By Arya Blitar"
 rm -rf /tmp/other.txt
 
