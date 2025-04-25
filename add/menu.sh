@@ -119,7 +119,7 @@ echo -e "${BICyan} │                    ${NC}SSH     ${RED}: ${ORANGE}$ssh1   
 echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${ORANGE}$vma     ${NC} "
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "    ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"" ${NC} TROJAN ${RED}: ${RED}$resv2r"
+echo -e "    ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"" ${NC} TROJAN ${ORANGE}: ${RED}$resv2r"
 echo -e " ${NC} TROJANGO ${ORANGE}: ${RED}$resstrgo ${NC}STUNNEL ${ORANGE}: ${RED}$resst" "${NC}DROPBEAR ${ORANGE}: ${RED}$resdbr" "${NC}SSH-WS ${ORANGE}: ${RED}$ressshws"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
