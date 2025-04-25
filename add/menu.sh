@@ -5,8 +5,8 @@
 vmc=$(grep -c -E "^### " "/etc/xray/config.json")
 let vma=$vmc/2
 ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-#trx=$(grep -c -E "^#! " "/etc/xray/config.json")
-#let tra=$trx/2
+trx=$(grep -c -E "^### " "/etc/xray/config.json")
+let tra=$trx/2
 #ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 #let ssa=$ssx/2
 
@@ -115,8 +115,9 @@ echo -e " ${BICyan}│  ${ICyan} Date         : ${NC}$DATEVPS "
 echo -e " ${BICyan}│  ${ICyan} Time         : ${NC}$TIMEZONE "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}╭═════════════════════════════════════════════════════╮${NC}"
-echo -e "${BICyan} │                    ${NC}SSH     ${RED}: ${ORANGE}$ssh1      ${NC} "
-echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${ORANGE}$vma     ${NC} "
+echo -e "${BICyan} │                    ${NC}SSH      ${CYAN}: ${ORANGE}$ssh1      ${NC} "
+echo -e "${BICyan} │                    ${NC}ALLXRAY  ${CYAN}: ${ORANGE}$vma     ${NC} "
+echo -e "${BICyan} │                    ${NC}TROJANGO ${CYAN}: ${ORANGE}$tra     ${NC} "
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "    ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"" ${NC} TROJAN ${ORANGE}: ${RED}$resv2r"
