@@ -9,8 +9,8 @@ ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 #let tra=$trx/2
 #ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 #let ssa=$ssx/2
-trx=$(grep -c -E "^### " "/etc/trojan-go/config.json")
-let tra=$trx/3
+trgo=$(grep -c -E "^### " "/etc/trojan-go/config.json")
+let tra=$trgo
 
 NC='\033[0;37m'
 BICyan='\033[0;34m'
