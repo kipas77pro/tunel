@@ -147,7 +147,7 @@ case $opt in
 7) clear ; speedtest ;;
 8) clear ; info ;;
 9) clear ; gotop ;;
-10) clear ; running ;;
+10) clear ; running2 ;;
 11) clear ; update ;;
 12) clear ; babi ;;
 13) clear ; menu-set ;;
