@@ -58,11 +58,11 @@ echo "------------------------------------";
 lastlogin=$(cat /var/log/trojan-go/trojan-go.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
 echo -e "\033[1;91m┌──────────────────────────────────────┐\033[0m"
 printf "  %-13s %-7s %-8s %2s\n" "  UserName : ${akun}"
-printf "  %-13s %-7s %-8s %2s\n" "  Online   : $lastlogin"
+#printf "  %-13s %-7s %-8s %2s\n" "  Online   : $lastlogin"
 #printf "  %-13s %-7s %-8s %2s\n" "  Usage Quota : ${gb}"
 #printf "  %-13s %-7s %-8s %2s\n" "  Limit Quota : ${lim}"
 #printf "  %-13s %-7s %-8s %2s\n" "  Limit IP : $iplimit"
-printf "  %-13s %-7s %-8s %2s\n" "  Login IP : $jum2"
+printf "  %-13s %-7s %-8s %2s\n" "  Login IP : $jum"
 echo -e "\033[1;91m└──────────────────────────────────────┘\033[0m"
 echo "Script By Arya Blitar"
 rm -rf /tmp/other.txt
