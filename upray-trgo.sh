@@ -457,16 +457,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### fadly 2025-05-24
-},{"id": "73c61103-fe29-4cff-9e03-7de686fcaf87","alterId": 0,"email": "fadly"
-### op 2025-05-22
-},{"id": "33ac6a5f-0400-49d4-bf2e-700ba5bed410","alterId": 0,"email": "op"
-### pingans 2025-05-07
-},{"id": "cc8f5364-6eec-439f-b002-cf14dbbadd51","alterId": 0,"email": "pingans"
-### aku 2025-05-17
-},{"id": "5c52900d-da51-469b-bfb1-ce5ea7437874","alterId": 0,"email": "aku"
-### sgarya 2025-06-16
-},{"id": "735b0560-51b9-4365-86df-8382aebdef36","alterId": 0,"email": "sgarya"
              }
           ]
        },
@@ -487,10 +477,6 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### fadli30 2025-05-24
-},{"password": "40bed18a-9559-4b36-bb6d-814c233b2c4f","email": "fadli30"
-### bapa 2025-05-21
-},{"password": "0a673d7d-a8c0-47d9-b978-ef665462e414","email": "bapa"
               }
           ],
          "udp": true
@@ -532,16 +518,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### fadly 2025-05-24
-},{"id": "73c61103-fe29-4cff-9e03-7de686fcaf87","alterId": 0,"email": "fadly"
-### op 2025-05-22
-},{"id": "33ac6a5f-0400-49d4-bf2e-700ba5bed410","alterId": 0,"email": "op"
-### pingans 2025-05-07
-},{"id": "cc8f5364-6eec-439f-b002-cf14dbbadd51","alterId": 0,"email": "pingans"
-### aku 2025-05-17
-},{"id": "5c52900d-da51-469b-bfb1-ce5ea7437874","alterId": 0,"email": "aku"
-### sgarya 2025-06-16
-},{"id": "735b0560-51b9-4365-86df-8382aebdef36","alterId": 0,"email": "sgarya"
              }
           ]
        },
@@ -562,10 +538,6 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### fadli30 2025-05-24
-},{"password": "40bed18a-9559-4b36-bb6d-814c233b2c4f","email": "fadli30"
-### bapa 2025-05-21
-},{"password": "0a673d7d-a8c0-47d9-b978-ef665462e414","email": "bapa"
                }
            ]
         },
