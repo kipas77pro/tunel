@@ -154,7 +154,7 @@ case $opt in
 7) clear ; menu-backup ;;
 8) clear ; speedtest ;;
 9) clear ; info ;;
-10) clear ; running ;;
+10) clear ; running2 ;;
 11) clear ; update ;;
 12) clear ; babi ;;
 13) clear ; menu-set ;;
