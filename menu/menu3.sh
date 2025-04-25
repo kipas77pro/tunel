@@ -39,12 +39,12 @@ ressh="${green}ON${NC}"
 else
 ressh="${red}OFF${NC}"
 fi
-sshstunel=$(service stunnel5 status | grep active | cut -d ' ' $stat)
-if [ "$sshstunel" = "active" ]; then
-resst="${green}ON${NC}"
-else
-resst="${red}OFF${NC}"
-fi
+#sshstunel=$(service stunnel5 status | grep active | cut -d ' ' $stat)
+#if [ "$sshstunel" = "active" ]; then
+#resst="${green}ON${NC}"
+#else
+#resst="${red}OFF${NC}"
+#fi
 sshws=$(service ws-stunnel status | grep active | cut -d ' ' $stat)
 if [ "$sshws" = "active" ]; then
 ressshws="${green}ON${NC}"
@@ -119,8 +119,8 @@ echo -e "${BICyan} │                    ${NC}SSH      ${CYAN}: ${ORANGE}$ssh1 
 echo -e "${BICyan} │                    ${NC}ALLXRAY  ${CYAN}: ${ORANGE}$vma     ${NC} "
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "   ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"" ${NC} TROJAN ${ORANGE}: ${RED}$resv2r"
-echo -e "      ${NC} TROJANGO ${ORANGE}: ${RED}$resstrgo " "${NC}DROPBEAR ${ORANGE}: ${RED}$resdbr" "${NC}SSH-WS ${ORANGE}: ${RED}$ressshws"
+echo -e "     ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"" ${NC} TROJAN ${ORANGE}: ${RED}$resv2r"
+echo -e "        ${NC} TROJANGO ${ORANGE}: ${RED}$resstrgo " "${NC}DROPBEAR ${ORANGE}: ${RED}$resdbr" "${NC}SSH-WS ${ORANGE}: ${RED}$ressshws"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$BICyan   │$NC\033[42m                    INFO MENU                    $BICyan│$NC"
