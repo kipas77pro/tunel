@@ -68,13 +68,13 @@ if [ "$v2r" = "active" ]; then
 resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
+fi
 #trgo
-# Status Service Trojan GO
 strgo=$(service trojan-go status | grep active | cut -d ' ' $stat)
 if [[ $strgo == "active" ]]; then
-  resstrgo="${green}ON${NC}"
+resstrgo="${green}ON${NC}"
 else
-  resstrgo="${red}OFF${NC}"
+resstrgo="${red}OFF${NC}"
 fi
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 # TOTAL RAM
