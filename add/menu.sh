@@ -9,8 +9,6 @@ ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 #let tra=$trx/2
 #ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 #let ssa=$ssx/2
-trgo=$(grep -E "^### " "/etc/trojan-go/akun.conf")
-let tra=$trgo/2
 
 NC='\033[0;37m'
 BICyan='\033[0;34m'
@@ -119,7 +117,6 @@ echo -e " ${BICyan}└───────────────────�
 echo -e " ${BICyan}╭═════════════════════════════════════════════════════╮${NC}"
 echo -e "${BICyan} │                    ${NC}SSH      ${CYAN}: ${ORANGE}$ssh1      ${NC} "
 echo -e "${BICyan} │                    ${NC}ALLXRAY  ${CYAN}: ${ORANGE}$vma     ${NC} "
-echo -e "${BICyan} │                    ${NC}TROJANGO ${CYAN}: ${ORANGE}$tra     ${NC} "
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "    ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"" ${NC} TROJAN ${ORANGE}: ${RED}$resv2r"
