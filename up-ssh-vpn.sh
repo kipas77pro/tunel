@@ -169,7 +169,7 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
-wget -q ${REPO}install/setrsyslog.sh && chmod +x setrsyslog.sh && ./setrsyslog.sh
+wget -q https://raw.githubusercontent.com/kipas77pro/f4/main/install/setrsyslog.sh && chmod +x setrsyslog.sh && ./setrsyslog.sh
 
 if [[ "$OS_NAME" == "debian" && "$OS_VERSION" == "10" ]] || [[ "$OS_NAME" == "ubuntu" && "$OS_VERSION" == "20.04" ]]; then
     echo "Menginstal squid3 untuk Debian 10 atau Ubuntu 20.04..."
