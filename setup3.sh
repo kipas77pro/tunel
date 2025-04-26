@@ -278,7 +278,7 @@ echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/restart.sh"
 wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/clearlog.sh"
-wget -q -O /usr/bin/running2 "https://raw.githubusercontent.com/kipas77pro/tunel/main/running2.sh"
+wget -q -O /usr/bin/running "https://raw.githubusercontent.com/kipas77pro/tunel/main/running.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/speedtest_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/cek-bandwidth.sh"
 #menu
@@ -288,7 +288,7 @@ wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/kipas77pro/tu
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-ssh.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-set.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu-backup.sh"
-wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu2.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/menu.sh"
 #cek
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
@@ -303,7 +303,7 @@ wget -q -O /usr/bin/update-xray "https://raw.githubusercontent.com/kipas77pro/tu
 chmod +x /usr/bin/autoreboot
 chmod +x /usr/bin/restart
 chmod +x /usr/bin/clearlog
-chmod +x /usr/bin/running2
+chmod +x /usr/bin/running
 chmod +x /usr/bin/speedtest
 chmod +x /usr/bin/cek-bandwidth
 chmod +x /usr/bin/menu-vless
@@ -312,7 +312,7 @@ chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/menu-backup
-chmod +x /usr/bin/menu2
+chmod +x /usr/bin/menu
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/update
 chmod +x /usr/bin/addhost
