@@ -664,11 +664,13 @@ cat <<EOF> /etc/xray/config.json
     },
     "system": {
       "statsInboundUplink": true,
-      "statsInboundDownlink": true
+      "statsInboundDownlink": true,
+      "statsOutboundUplink" : true,
+      "statsOutboundDownlink" : true
     }
   }
 }
-END
+EOF
 # Installing Xray Service
 rm -fr /etc/systemd/system/xray.service.d
 rm -fr /etc/systemd/system/xray.service
