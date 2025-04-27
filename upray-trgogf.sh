@@ -546,8 +546,10 @@ cat <<EOF> /etc/xray/config.json
            "grpcSettings": {
                "serviceName": "trojan-grpc"
          }
-        },
-        "quicSettings": {}
+      }
+    }	
+  ],
+    "quicSettings": {}
       },
       "sniffing": {
         "enabled": true,
