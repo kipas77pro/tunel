@@ -561,7 +561,7 @@ cat <<EOF> /etc/xray/config.json
     },
     {
       "port": 2083,
-      "protocol": "trojangfw",
+      "protocol": "trojan",
       "settings": {
         "clients": [
           {
@@ -571,7 +571,7 @@ cat <<EOF> /etc/xray/config.json
         ],
         "fallbacks": [
           {
-            "dest": 80
+            "dest": 81
           }
         ]
       },
