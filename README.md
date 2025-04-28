@@ -94,5 +94,9 @@ wget -O running "raw.githubusercontent.com/kipas77pro/tunel/main/running.sh" && 
 ````
 
 ````
+wget -O info "raw.githubusercontent.com/kipas77pro/tunel/main/info.sh" && chmod +x info
+````
+
+````
 wget -O up-ssh-vpn "raw.githubusercontent.com/kipas77pro/tunel/main/up-ssh-vpn.sh" && chmod +x up-ssh-vpn
 ````
