@@ -82,6 +82,10 @@ wget -O upray-trgo "raw.githubusercontent.com/kipas77pro/tunel/main/upray-trgo.s
 ````
 
 ````
+wget -O up-ins-xray-opok-trgo "raw.githubusercontent.com/kipas77pro/tunel/main/up-ins-xray-opok-trgo.sh" && chmod +x up-ins-xray-opok-trgo
+````
+
+````
 wget -O menu "raw.githubusercontent.com/kipas77pro/tunel/main/add/menu.sh" && chmod +x menu
 ````
 
