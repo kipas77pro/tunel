@@ -20,7 +20,7 @@ sleep 1
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/tunel/main/options/update.sh"
+wget -O run-update "https://raw.githubusercontent.com/${GitUser}/tunel/main/options/update.sh" >/dev/null 2>&1
 chmod +x run-update
 # RUN UPDATE
 echo ""
