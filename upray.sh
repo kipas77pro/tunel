@@ -341,24 +341,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### lana 2025-05-22
-},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
-### roni14 2025-05-13
-},{"id": "059ffb59-db9c-48e6-b075-95fbca75d54e","alterId": 0,"email": "roni14"
-### ram30 2025-05-06
-},{"id": "f6bd74fa-eb03-4caa-a7bd-ef66e232f0ac","alterId": 0,"email": "ram30"
-### jay30 2025-05-06
-},{"id": "8ccc61e9-ad04-42a2-8dff-a974f0147c59","alterId": 0,"email": "jay30"
-### roniindo 2025-05-06
-},{"id": "fca51b0a-d806-4dee-8500-96e9e8a8ad66","alterId": 0,"email": "roniindo"
-### jay 2025-05-05
-},{"id": "def0cd3b-c37c-47ed-a439-54ec7105d3e3","alterId": 0,"email": "jay"
-### roni10 2025-05-01
-},{"id": "227dcd5a-24ab-45ff-8d3d-ec55fa2436eb","alterId": 0,"email": "roni10"
-### alihoby 2025-05-01
-},{"id": "7a74adcc-4b5c-48fd-a10c-94ee654fdee9","alterId": 0,"email": "alihoby"
-### iwak 2025-05-09
-},{"id": "e0d132c4-1a4a-416f-b7d2-1cdbdf048827","alterId": 0,"email": "iwak"
              }
           ]
        },
@@ -420,24 +402,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### lana 2025-05-22
-},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
-### roni14 2025-05-13
-},{"id": "059ffb59-db9c-48e6-b075-95fbca75d54e","alterId": 0,"email": "roni14"
-### ram30 2025-05-06
-},{"id": "f6bd74fa-eb03-4caa-a7bd-ef66e232f0ac","alterId": 0,"email": "ram30"
-### jay30 2025-05-06
-},{"id": "8ccc61e9-ad04-42a2-8dff-a974f0147c59","alterId": 0,"email": "jay30"
-### roniindo 2025-05-06
-},{"id": "fca51b0a-d806-4dee-8500-96e9e8a8ad66","alterId": 0,"email": "roniindo"
-### jay 2025-05-05
-},{"id": "def0cd3b-c37c-47ed-a439-54ec7105d3e3","alterId": 0,"email": "jay"
-### roni10 2025-05-01
-},{"id": "227dcd5a-24ab-45ff-8d3d-ec55fa2436eb","alterId": 0,"email": "roni10"
-### alihoby 2025-05-01
-},{"id": "7a74adcc-4b5c-48fd-a10c-94ee654fdee9","alterId": 0,"email": "alihoby"
-### iwak 2025-05-09
-},{"id": "e0d132c4-1a4a-416f-b7d2-1cdbdf048827","alterId": 0,"email": "iwak"
              }
           ]
        },
