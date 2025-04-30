@@ -341,6 +341,50 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### aisyah 2025-07-29
+},{"id": "8ecb6097-ed9b-4351-8093-7f37966605c2","alterId": 0,"email": "aisyah"
+### isol 2025-05-28
+},{"id": "41c14c13-0f0a-409c-9324-4abdbd78ffc0","alterId": 0,"email": "isol"
+### salam 2025-05-27
+},{"id": "9ce8a6e9-14e3-476a-bca9-d8ec68c333c1","alterId": 0,"email": "salam"
+### arsi 2025-05-26
+},{"id": "ad4dc91b-eab7-45a6-9569-1794059e5185","alterId": 0,"email": "arsi"
+### imam 2025-05-25
+},{"id": "e34fa347-7c8a-46e9-9f78-c0d8fe714937","alterId": 0,"email": "imam"
+### ilmi 2025-08-19
+},{"id": "447af9d7-ecec-461d-8629-c50c0acaf772","alterId": 0,"email": "ilmi"
+### naib 2025-05-19
+},{"id": "cbeb02eb-0a16-48af-95cc-c4df2ff6e708","alterId": 0,"email": "naib"
+### hasan 2025-05-18
+},{"id": "45021c1a-d64c-428d-bf3f-2bba71a764c0","alterId": 0,"email": "hasan"
+### mujianto 2025-05-17
+},{"id": "4fe900be-dd84-494c-b522-81afab35c04f","alterId": 0,"email": "mujianto"
+### junaidi 2025-05-16
+},{"id": "c4c31266-a5ed-49a1-9fa9-810c39cd7e17","alterId": 0,"email": "junaidi"
+### atem 2025-05-14
+},{"id": "058ec0d4-4942-4e30-be75-c4361b7cdb52","alterId": 0,"email": "atem"
+### rafli 2025-05-14
+},{"id": "0157516f-4a03-4de6-af63-2d631134b740","alterId": 0,"email": "rafli"
+### beja 2025-05-13
+},{"id": "8812cbc0-cf8d-43d5-9824-6f89b302310c","alterId": 0,"email": "beja"
+### azka 2025-05-13
+},{"id": "be5df1b9-53f6-48fb-9170-b52f9981fdc7","alterId": 0,"email": "azka"
+### gufron 2025-05-09
+},{"id": "a3ee8528-6073-4c7e-b2ef-7fdea6ea08c0","alterId": 0,"email": "gufron"
+### ali 2025-06-03
+},{"id": "c0520b2f-4775-4d97-ab47-69ec4ebff9dd","alterId": 0,"email": "ali"
+### indah 2025-05-04
+},{"id": "ce792bfc-9ea0-474c-879a-71eaf3d2f489","alterId": 0,"email": "indah"
+### rizal 2025-05-03
+},{"id": "cb607ca5-25ba-4ab5-8ade-8f08e4d64202","alterId": 0,"email": "rizal"
+### darul 2025-05-21
+},{"id": "c39bbcb9-b777-48fc-9b77-89b50c1d69a7","alterId": 0,"email": "darul"
+### jali 2025-05-16
+},{"id": "1a7bbcab-9bf7-4916-b4af-14c9e0676aaa","alterId": 0,"email": "jali"
+### syahid 2025-05-23
+},{"id": "6831d013-e513-4321-9fd1-a7e11385abf2","alterId": 0,"email": "syahid"
+### sudin 2025-05-05
+},{"id": "c6e305b8-7178-4428-9551-81ebee34e5c9","alterId": 0,"email": "sudin"
              }
           ]
        },
@@ -361,6 +405,12 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
+### fuad 2025-05-02
+},{"password": "0933549b-8779-4174-a820-0b55fd874f1d","email": "fuad"
+### andik 2025-05-19
+},{"password": "7fb19eee-f1a9-4690-9bc5-60aa1d8c1441","email": "andik"
+#! mika 2025-06-28
+},{"password": "43317993-b6a9-4378-9e3d-ffefd931c34e","email": "mika"
               }
           ],
          "udp": true
@@ -402,6 +452,50 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
+### aisyah 2025-07-29
+},{"id": "8ecb6097-ed9b-4351-8093-7f37966605c2","alterId": 0,"email": "aisyah"
+### isol 2025-05-28
+},{"id": "41c14c13-0f0a-409c-9324-4abdbd78ffc0","alterId": 0,"email": "isol"
+### salam 2025-05-27
+},{"id": "9ce8a6e9-14e3-476a-bca9-d8ec68c333c1","alterId": 0,"email": "salam"
+### arsi 2025-05-26
+},{"id": "ad4dc91b-eab7-45a6-9569-1794059e5185","alterId": 0,"email": "arsi"
+### imam 2025-05-25
+},{"id": "e34fa347-7c8a-46e9-9f78-c0d8fe714937","alterId": 0,"email": "imam"
+### ilmi 2025-08-19
+},{"id": "447af9d7-ecec-461d-8629-c50c0acaf772","alterId": 0,"email": "ilmi"
+### naib 2025-05-19
+},{"id": "cbeb02eb-0a16-48af-95cc-c4df2ff6e708","alterId": 0,"email": "naib"
+### hasan 2025-05-18
+},{"id": "45021c1a-d64c-428d-bf3f-2bba71a764c0","alterId": 0,"email": "hasan"
+### mujianto 2025-05-17
+},{"id": "4fe900be-dd84-494c-b522-81afab35c04f","alterId": 0,"email": "mujianto"
+### junaidi 2025-05-16
+},{"id": "c4c31266-a5ed-49a1-9fa9-810c39cd7e17","alterId": 0,"email": "junaidi"
+### atem 2025-05-14
+},{"id": "058ec0d4-4942-4e30-be75-c4361b7cdb52","alterId": 0,"email": "atem"
+### rafli 2025-05-14
+},{"id": "0157516f-4a03-4de6-af63-2d631134b740","alterId": 0,"email": "rafli"
+### beja 2025-05-13
+},{"id": "8812cbc0-cf8d-43d5-9824-6f89b302310c","alterId": 0,"email": "beja"
+### azka 2025-05-13
+},{"id": "be5df1b9-53f6-48fb-9170-b52f9981fdc7","alterId": 0,"email": "azka"
+### gufron 2025-05-09
+},{"id": "a3ee8528-6073-4c7e-b2ef-7fdea6ea08c0","alterId": 0,"email": "gufron"
+### ali 2025-06-03
+},{"id": "c0520b2f-4775-4d97-ab47-69ec4ebff9dd","alterId": 0,"email": "ali"
+### indah 2025-05-04
+},{"id": "ce792bfc-9ea0-474c-879a-71eaf3d2f489","alterId": 0,"email": "indah"
+### rizal 2025-05-03
+},{"id": "cb607ca5-25ba-4ab5-8ade-8f08e4d64202","alterId": 0,"email": "rizal"
+### darul 2025-05-21
+},{"id": "c39bbcb9-b777-48fc-9b77-89b50c1d69a7","alterId": 0,"email": "darul"
+### jali 2025-05-16
+},{"id": "1a7bbcab-9bf7-4916-b4af-14c9e0676aaa","alterId": 0,"email": "jali"
+### syahid 2025-05-23
+},{"id": "6831d013-e513-4321-9fd1-a7e11385abf2","alterId": 0,"email": "syahid"
+### sudin 2025-05-05
+},{"id": "c6e305b8-7178-4428-9551-81ebee34e5c9","alterId": 0,"email": "sudin"
              }
           ]
        },
@@ -422,6 +516,12 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
+### fuad 2025-05-02
+},{"password": "0933549b-8779-4174-a820-0b55fd874f1d","email": "fuad"
+### andik 2025-05-19
+},{"password": "7fb19eee-f1a9-4690-9bc5-60aa1d8c1441","email": "andik"
+#! mika 2025-06-28
+},{"password": "43317993-b6a9-4378-9e3d-ffefd931c34e","email": "mika"
                }
            ]
         },
