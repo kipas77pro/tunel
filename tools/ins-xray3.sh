@@ -476,7 +476,7 @@ cat <<EOF> /etc/xray/config.json
                {
                  "id": "${uuid}",
                  "alterId": 0
-#vmess
+#vmessopok
              }
           ]
        },
