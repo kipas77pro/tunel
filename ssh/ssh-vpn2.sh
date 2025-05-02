@@ -390,22 +390,22 @@ fi
 # apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
-echo -e "[ ${green}ok${NC} ] Restarting openvpn"
+echo -e "[ ${green}ok${NC} ] Restarting cron"
 /etc/init.d/cron restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting cron"
+echo -e "[ ${green}ok${NC} ] Restarting ssh"
 /etc/init.d/ssh restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting ssh"
+echo -e "[ ${green}ok${NC} ] Restarting dropbear"
 /etc/init.d/dropbear restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting dropbear"
+echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
 /etc/init.d/fail2ban restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
-/etc/init.d/stunnel5 restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting stunnel5"
+#echo -e "[ ${green}ok${NC} ] Restarting stunnel5"
+#/etc/init.d/stunnel5 restart >/dev/null 2>&1
+#sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting vnstat"
 /etc/init.d/vnstat restart >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting squid "
