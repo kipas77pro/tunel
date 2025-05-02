@@ -295,7 +295,7 @@ wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/cf.sh"
-wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/info.sh"
+wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/info.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/babi.sh"
 wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/cek-bw.sh"
 wget -q -O /usr/bin/jam "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/jam.sh"
