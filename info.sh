@@ -9,7 +9,7 @@ echo -e "$PURPLE│\E[42;1;37m          SERVER PORT INFORMATION         $PURPLE�
 echo -e "$PURPLE└──────────────────────────────────────────┘${NC}"
 echo -e "\033[0;37m  Port OpenSSH             : \033[0;32m22, 2253\e[0m"
 echo -e "\033[0;37m  Port SSH Dropbear        : \033[0;32m109, 143\e[0m"
-echo -e "\033[0;37m  Port SSH SSL             : \033[0;32m445, 447, 777\e[0m"
+#echo -e "\033[0;37m  Port SSH SSL             : \033[0;32m445, 447, 777\e[0m"
 echo -e "\033[0;37m  Port SSH Websocket       : \033[0;32m80, 8080, 8880, 2082, 2052, 2095\e[0m"
 echo -e "\033[0;37m  Port SSH Websocket SSL   : \033[0;32m443, 8443,2096, 2053, 2083\e[0m"
 echo -e "\033[0;37m  Port Xray None TLS       : \033[0;32m80, 8080, 8880, 2082, 2052, 2095\e[0m"
