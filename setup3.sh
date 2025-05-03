@@ -276,7 +276,7 @@ sleep 2
 
 echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/autoreboot.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/restart.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/restart.sh"
 wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/clearlog.sh"
 wget -q -O /usr/bin/running "https://raw.githubusercontent.com/kipas77pro/tunel/main/running.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/speedtest_cli.py"
@@ -293,7 +293,7 @@ wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/mai
 #cek
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
-wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/addhost.sh"
+wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/cf.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/info.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/babi.sh"
@@ -399,6 +399,7 @@ echo  "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
 echo  "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo  "   - Trojan GRPC             : 443" | tee -a log-install.txt
 echo  "   - Trojan WS               : 443" | tee -a log-install.txt
+echo  "   - Trojan GO               : 2087" | tee -a log-install.txt
 #echo  "   - Sodosok WS/GRPC         : 443, 8443, 2087, 2096" | tee -a log-install.txt
 echo  ""  | tee -a log-install.txt
 echo  "   >>> Server Information & Other Features"  | tee -a log-install.txt
@@ -423,7 +424,7 @@ echo  ""
 echo  "" | tee -a log-install.txt
 rm -fr /root/vnstat.sh
 rm -fr /root/ssh-vpn2.sh
-rm -fr /root/ins-xray.sh
+rm -fr /root/ins-xray3.sh
 rm -fr /root/setup.sh
 rm -fr /root/set-br.sh
 rm -fr /root/domain
