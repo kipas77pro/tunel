@@ -9,7 +9,6 @@ echo -e "${NC}"
 echo -e "    [1] Restart All Services"
 echo -e "    [2] Restart OpenSSH"
 echo -e "    [3] Restart Dropbear"
-#echo -e "    [4] Restart Stunnel5"
 echo -e "    [4] Restart Nginx"
 echo -e "    [5] Restart Badvpn"
 echo -e "    [x] Menu"
@@ -29,14 +28,9 @@ case $Restart in
                 systemctl restart xray.service >/dev/null 2>&1
                 /etc/init.d/ssh restart
                 /etc/init.d/dropbear restart
-                #/etc/init.d/stunnel5 restart
                 /etc/init.d/fail2ban restart
                 /etc/init.d/cron restart
                 /etc/init.d/nginx restart
-                #Restart service openvpn
-                #systemctl enable openvpn
-                #systemctl start openvpn
-                #/etc/init.d/openvpn restart
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 1000
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 1000
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000
