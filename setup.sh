@@ -334,7 +334,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 2 1 * * * root /usr/bin/clearlog
 END
 cat > /home/re_otm <<-END
-05
+5
 END
 service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
