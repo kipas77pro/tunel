@@ -115,6 +115,8 @@ wget -O info "raw.githubusercontent.com/kipas77pro/tunel/main/info.sh" && chmod 
 wget -O up-ssh-vpn "raw.githubusercontent.com/kipas77pro/tunel/main/up-ssh-vpn.sh" && chmod +x up-ssh-vpn
 ````
 
+### REINSTALL
+
 ````
 curl -O https://raw.githubusercontent.com/kipas77pro/tunel/refs/heads/main/reinstall.sh chmod +x reinstall.sh bash reinstall.sh debian 11 --password PASSWORD_KAMU
 ````
