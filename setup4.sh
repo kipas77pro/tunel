@@ -336,7 +336,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 2 1 * * * root /usr/bin/clearlog
 END
 cat > /home/re_otm <<-END
-7
+5
 END
 service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
@@ -361,16 +361,16 @@ fi
 if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
-history -c
-echo $serverV > /opt/.ver
-aureb=$(cat /home/re_otm)
-b=11
-if [ $aureb -gt $b ]
-then
-gg="PM"
-else
-gg="AM"
-fi
+#history -c
+#echo $serverV > /opt/.ver
+#aureb=$(cat /home/re_otm)
+#b=11
+#if [ $aureb -gt $b ]
+#then
+#gg="PM"
+#else
+#gg="AM"
+#fi
 curl -sS ifconfig.me > /etc/myipvps
 #install gotop
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
@@ -424,8 +424,8 @@ echo  ""
 echo  "" | tee -a log-install.txt
 rm -fr /root/vnstat.sh
 rm -fr /root/ssh-vpn2.sh
-rm -fr /root/ins-xray.sh
-rm -fr /root/setup4.sh
+rm -fr /root/ins-xray3.sh
+rm -fr /root/setup.sh
 rm -fr /root/set-br.sh
 rm -fr /root/domain
 history -c
