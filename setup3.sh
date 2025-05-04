@@ -425,7 +425,7 @@ echo  "" | tee -a log-install.txt
 rm -fr /root/vnstat.sh
 rm -fr /root/ssh-vpn2.sh
 rm -fr /root/ins-xray3.sh
-rm -fr /root/setup.sh
+rm -fr /root/setup3.sh
 rm -fr /root/set-br.sh
 rm -fr /root/domain
 history -c
