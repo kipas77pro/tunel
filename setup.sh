@@ -333,9 +333,14 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 2 1 * * * root /usr/bin/clearlog
 END
-cat > /home/re_otm <<-END
-05
+cat > /etc/cron.d/re_otm <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 5 * * * root /usr/bin/reboot
 END
+#cat > /home/re_otm <<-END
+#05
+#END
 service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
 clear
@@ -358,16 +363,16 @@ rm -fr /etc/afak.conf
 fi
 if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
-fi
-history -c
-echo $serverV > /opt/.ver
-aureb=$(cat /home/re_otm)
-b=11
-if [ $aureb -gt $b ]
-then
-gg="PM"
-else
-gg="AM"
+#fi
+#history -c
+#echo $serverV > /opt/.ver
+#aureb=$(cat /home/re_otm)
+#b=11
+#$if [ $aureb -gt $b ]
+#then
+#gg="PM"
+#else
+#gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 #install gotop
@@ -405,7 +410,7 @@ echo  "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
 echo  "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
-echo  "   - Autoreboot              : 00.00 GMT +7" | tee -a log-install.txt
+echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
