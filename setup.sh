@@ -333,14 +333,9 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 2 1 * * * root /usr/bin/clearlog
 END
-cat > /etc/cron.d/re_otm <<-END
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 5 * * * root /usr/bin/reboot
+cat > /home/re_otm <<-END
+05
 END
-#cat > /home/re_otm <<-END
-#05
-#END
 service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
 clear
@@ -363,8 +358,8 @@ rm -fr /etc/afak.conf
 fi
 if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
-#fi
-#history -c
+fi
+history -c
 #echo $serverV > /opt/.ver
 #aureb=$(cat /home/re_otm)
 #b=11
