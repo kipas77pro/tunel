@@ -471,6 +471,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### beli 2025-06-03
+},{"id": "1a484406-5eb1-4c35-b1c4-80dff0e1049e","alterId": 0,"email": "beli"
+### fd 2025-06-03
+},{"id": "8695a6ff-4924-4d26-aa04-923e8a19bf4e","alterId": 0,"email": "fd"
+### oke 2025-06-02
+},{"id": "2926b94d-65b8-4d0b-9e56-545f92782b50","alterId": 0,"email": "oke"
              }
           ]
        },
@@ -491,6 +497,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### beli 2025-06-03
+},{"id": "1a484406-5eb1-4c35-b1c4-80dff0e1049e","alterId": 0,"email": "beli"
+### fd 2025-06-03
+},{"id": "8695a6ff-4924-4d26-aa04-923e8a19bf4e","alterId": 0,"email": "fd"
+### oke 2025-06-02
+},{"id": "2926b94d-65b8-4d0b-9e56-545f92782b50","alterId": 0,"email": "oke"
              }
           ]
        },
@@ -552,6 +564,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
+### beli 2025-06-03
+},{"id": "1a484406-5eb1-4c35-b1c4-80dff0e1049e","alterId": 0,"email": "beli"
+### fd 2025-06-03
+},{"id": "8695a6ff-4924-4d26-aa04-923e8a19bf4e","alterId": 0,"email": "fd"
+### oke 2025-06-02
+},{"id": "2926b94d-65b8-4d0b-9e56-545f92782b50","alterId": 0,"email": "oke"
              }
           ]
        },
