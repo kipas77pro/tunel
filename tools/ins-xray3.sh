@@ -169,6 +169,7 @@ chmod +x /usr/local/bin/xray
 # Random Port Xray
 vless=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
+vmess1=$((RANDOM + 10000))
 trojanws=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
@@ -192,8 +193,6 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2095;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
-             listen 2087 ssl http2 reuseport;
-             listen [::]:2087 http2 reuseport;	
              listen 8443 ssl http2 reuseport;
              listen [::]:8443 http2 reuseport;	
              listen 2096 ssl http2 reuseport;
@@ -238,6 +237,18 @@ sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess1"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -292,6 +303,124 @@ pelerr=$(cat /etc/xray/passwd)
 
 # set uuid xray
 uuid=$(cat /proc/sys/kernel/random/uuid)
+
+# Install Trojan Go
+latest_version="$(curl -s "https://api.github.com/repos/p4gefau1t/trojan-go/releases" | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+trojango_link="https://github.com/p4gefau1t/trojan-go/releases/download/v${latest_version}/trojan-go-linux-amd64.zip"
+mkdir -p "/usr/bin/trojan-go"
+mkdir -p "/etc/trojan-go"
+cd `mktemp -d`
+curl -sL "${trojango_link}" -o trojan-go.zip
+unzip -q trojan-go.zip && rm -rf trojan-go.zip
+mv trojan-go /usr/local/bin/trojan-go
+chmod +x /usr/local/bin/trojan-go
+mkdir /var/log/trojan-go/
+touch /etc/trojan-go/akun.conf
+touch /var/log/trojan-go/trojan-go.log
+
+# Buat Config Trojan Go
+cat > /etc/trojan-go/config.json << END
+{
+  "run_type": "server",
+  "local_addr": "0.0.0.0",
+  "local_port": 2087,
+  "remote_addr": "127.0.0.1",
+  "remote_port": 89,
+  "log_level": 1,
+  "log_file": "/var/log/trojan-go/trojan-go.log",
+  "password": [
+      "$uuid"
+  ],
+  "disable_http_check": true,
+  "udp_timeout": 60,
+  "ssl": {
+    "verify": false,
+    "verify_hostname": false,
+    "cert": "/etc/xray/xray.crt",
+    "key": "/etc/xray/xray.key",
+    "key_password": "",
+    "cipher": "",
+    "curves": "",
+    "prefer_server_cipher": false,
+    "sni": "$domain",
+    "alpn": [
+      "http/1.1"
+    ],
+    "session_ticket": true,
+    "reuse_session": true,
+    "plain_http_response": "",
+    "fallback_addr": "127.0.0.1",
+    "fallback_port": 0,
+    "fingerprint": "firefox"
+  },
+  "tcp": {
+    "no_delay": true,
+    "keep_alive": true,
+    "prefer_ipv4": true
+  },
+  "mux": {
+    "enabled": false,
+    "concurrency": 8,
+    "idle_timeout": 60
+  },
+  "websocket": {
+    "enabled": true,
+    "path": "/trojango",
+    "host": "$domain"
+  },
+    "api": {
+    "enabled": false,
+    "api_addr": "",
+    "api_port": 0,
+    "ssl": {
+      "enabled": false,
+      "key": "",
+      "cert": "",
+      "verify_client": false,
+      "client_cert": []
+    }
+  }
+}
+END
+
+# Installing Trojan Go Service
+cat > /etc/systemd/system/trojan-go.service << END
+[Unit]
+Description=Trojan-Go Service By ETIL
+Documentation=https://wa.me/6287721815317
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/local/bin/trojan-go -config /etc/trojan-go/config.json
+Restart=on-failure
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target
+END
+
+# Trojan Go Uuid
+cat > /etc/trojan-go/uuid.txt << END
+$uuid
+END
+
+# restart
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
+netfilter-persistent save
+netfilter-persistent reload
+systemctl daemon-reload
+systemctl stop trojan-go
+systemctl start trojan-go
+systemctl enable trojan-go
+systemctl restart trojan-go
+
+cd
+cp /root/domain /etc/xray
 
 # xray config
 cat <<EOF> /etc/xray/config.json
@@ -354,7 +483,7 @@ cat <<EOF> /etc/xray/config.json
      {
      "listen": "127.0.0.1",
      "port": "$vmess1",
-     "protocol": "vmess",
+     "protocol": "vmess1",
       "settings": {
             "clients": [
                {
@@ -564,7 +693,7 @@ systemctl daemon-reload >/dev/null 2>&1
 systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
 sleep 2
-echo -e "[ ${GREEN}ok${NC} ] UPGRADE"
+echo -e "[ ${GREEN}ok${NC} ] UPGRADE CORE 1.8.23"
 clear
 clear
 source /var/lib/scrz-prem/ipvps.conf
@@ -574,7 +703,6 @@ else
 domain=$IP
 fi
 sleep 2
-echo -e "[ ${green}INFO${NC} ] INSTALL CORE 1.8.23... "
 #domain=$(cat /root/domain)
 sleep 1
 mkdir -p /etc/xray 

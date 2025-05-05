@@ -660,7 +660,7 @@ systemctl daemon-reload >/dev/null 2>&1
 systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
 sleep 2
-echo -e "[ ${GREEN}ok${NC} ] UPGRADE"
+echo -e "[ ${GREEN}ok${NC} ] UPGRADE CORE 1.8.23"
 clear
 clear
 source /var/lib/scrz-prem/ipvps.conf
@@ -669,7 +669,6 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-
 domain=$(cat /root/domain)
 sleep 1
 mkdir -p /etc/xray 
