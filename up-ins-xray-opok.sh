@@ -581,7 +581,7 @@ systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
 
 #UPDATE 1.8.23
-domain=$(cat /root/domain)
+echo -e "[ ${green}INFO${NC} ] UPDATE CORE 1.8.23... "
 sleep 1
 mkdir -p /etc/xray 
 echo -e "[ ${green}INFO${NC} ] Checking... "

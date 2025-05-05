@@ -330,8 +330,7 @@ cat > /etc/trojan-go/config.json << END
   "log_level": 1,
   "log_file": "/var/log/trojan-go/trojan-go.log",
   "password": [
-      "a789e819-2e57-45fd-903d-4ece922689ba"
-,"akuaaa"
+      "$uuid"
   ],
   "disable_http_check": true,
   "udp_timeout": 60,
@@ -472,8 +471,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### aku 2025-06-02
-},{"id": "32ac463b-2f3c-49e7-afd2-548f52e7e293","alterId": 0,"email": "aku"
              }
           ]
        },
@@ -494,8 +491,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### aku 2025-06-02
-},{"id": "32ac463b-2f3c-49e7-afd2-548f52e7e293","alterId": 0,"email": "aku"
              }
           ]
        },
@@ -516,8 +511,6 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### akua 2025-06-02
-},{"password": "7fd90347-5e1f-4e01-ac46-891aaeedd897","email": "akua"
               }
           ],
          "udp": true
@@ -559,8 +552,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### aku 2025-06-02
-},{"id": "32ac463b-2f3c-49e7-afd2-548f52e7e293","alterId": 0,"email": "aku"
              }
           ]
        },
@@ -581,8 +572,6 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### akua 2025-06-02
-},{"password": "7fd90347-5e1f-4e01-ac46-891aaeedd897","email": "akua"
                }
            ]
         },
@@ -708,7 +697,7 @@ systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
 
 ###update 18.23
-domain=$(cat /root/domain)
+echo -e "[ ${green}INFO${NC} ] UPDATE CORE 1.8.23... "
 sleep 1
 mkdir -p /etc/xray 
 echo -e "[ ${green}INFO${NC} ] Checking... "

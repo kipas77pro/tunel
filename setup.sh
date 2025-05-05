@@ -361,14 +361,14 @@ echo "Log All Account " > /etc/log-create-user.log
 fi
 #history -c
 #echo $serverV > /opt/.ver
-#aureb=$(cat /home/re_otm)
-#b=11
-#$if [ $aureb -gt $b ]
-#then
-#gg="PM"
-#else
-#gg="AM"
-#fi
+aureb=$(cat /home/re_otm)
+b=11
+$if [ $aureb -gt $b ]
+then
+gg="PM"
+else
+gg="AM"
+fi
 curl -sS ifconfig.me > /etc/myipvps
 #install gotop
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"

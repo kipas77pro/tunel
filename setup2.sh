@@ -363,14 +363,14 @@ echo "Log All Account " > /etc/log-create-user.log
 fi
 #history -c
 #echo $serverV > /opt/.ver
-#aureb=$(cat /home/re_otm)
-#b=11
-#if [ $aureb -gt $b ]
-#then
-#gg="PM"
-#else
-#gg="AM"
-#fi
+aureb=$(cat /home/re_otm)
+b=11
+if [ $aureb -gt $b ]
+then
+gg="PM"
+else
+gg="AM"
+fi
 curl -sS ifconfig.me > /etc/myipvps
 #install gotop
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
@@ -408,7 +408,7 @@ echo  "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
 echo  "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
-echo  "   - Autoreboot              : 00.00 GMT +7" | tee -a log-install.txt
+echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
@@ -425,7 +425,7 @@ echo  "" | tee -a log-install.txt
 rm -fr /root/vnstat.sh
 rm -fr /root/ssh-vpn.sh
 rm -fr /root/ins-xray2.sh
-rm -fr /root/setup.sh
+rm -fr /root/setup2.sh
 rm -fr /root/set-br.sh
 rm -fr /root/domain
 history -c
