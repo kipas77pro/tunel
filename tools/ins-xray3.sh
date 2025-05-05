@@ -175,6 +175,15 @@ vlessgrpc=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
+# Random Port Xray
+trojanws=$((RANDOM + 10000))
+vless=$((RANDOM + 10000))
+vlessgrpc=$((RANDOM + 10000))
+vmess=$((RANDOM + 10000))
+vmess1=$((RANDOM + 10000))
+vmessgrpc=$((RANDOM + 10000))
+trojangrpc=$((RANDOM + 10000))
+
 # nginx xray.conf
 rm -fr /etc/nginx/conf.d/xray.conf
 cat >/etc/nginx/conf.d/xray.conf <<EOF
@@ -483,7 +492,7 @@ cat <<EOF> /etc/xray/config.json
      {
      "listen": "127.0.0.1",
      "port": "$vmess1",
-     "protocol": "vmess1",
+     "protocol": "vmess",
       "settings": {
             "clients": [
                {
