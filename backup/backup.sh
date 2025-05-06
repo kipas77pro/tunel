@@ -9,6 +9,7 @@ IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
 clear
 email=$(cat /home/email)
+domain=$(cat /etc/xray/domain)
 if [[ "$email" = "" ]]; then
 echo "Masukkan Email Untuk Menerima Backup"
 read -rp "Email : " -e email
@@ -75,6 +76,7 @@ TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>   ⚠️BACKUP NOTIF⚠️</b>
 <b>     Detail Backup VPS</b>
+<b>     VPS PRIBADI </b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>IP VPS  :</b> <code>${IP} </code>
 <b>DOMAIN :</b> <code>${domain}</code>
