@@ -1,11 +1,6 @@
 #!/bin/bash
-# Quick Setup | Script Setup Manager
-# Edition : Stable Edition 1.0
-# Author  : givps
-# The MIT License (MIT)
-# (C) Copyright 2023
-# =========================================
-# pewarna hidup
+# ==========================================
+# Color
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -18,6 +13,13 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 echo "Checking VPS"
+IZIN=$( curl ipv4.icanhazip.com | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+exit 0
+fi
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2`);
@@ -27,7 +29,7 @@ echo "----------------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
-akun="not found"
+akun="tidakada"
 fi
 echo -n > /tmp/ipvmess.txt
 data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep xray | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
