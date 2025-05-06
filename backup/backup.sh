@@ -1,5 +1,9 @@
 #!/bin/bash
 
+CHATID="6430177985"
+KEY="7567594287:AAGVeDwRq9QrNg6jSce30eOm9WiVtAWKxjA"
+export TIME="10"
+export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
