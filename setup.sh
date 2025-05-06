@@ -326,7 +326,7 @@ chmod +x /usr/bin/update-xray
 cat > /etc/cron.d/ba_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 0 * * * root /sbin/backup
+0 0 * * * root /bin/backup
 END
 cat > /etc/cron.d/re_otm <<-END
 SHELL=/bin/sh
