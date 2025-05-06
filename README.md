@@ -96,6 +96,10 @@ wget -O up-ins-xray-opok-trgo "raw.githubusercontent.com/kipas77pro/tunel/main/u
 ````
 
 ````
+wget -O up-ins-xray-opok"raw.githubusercontent.com/kipas77pro/tunel/main/up-ins-xray-opok.sh" && chmod +x up-ins-xray-opok
+````
+
+````
 wget -O menu "raw.githubusercontent.com/kipas77pro/tunel/main/add/menu.sh" && chmod +x menu
 ````
 
