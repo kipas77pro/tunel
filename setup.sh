@@ -326,7 +326,7 @@ chmod +x /usr/bin/update-xray
 cat > /etc/cron.d/ba_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 0 * * * root /bin/backup
+0 1 * * * root /bin/backup
 END
 cat > /etc/cron.d/re_otm <<-END
 SHELL=/bin/sh
@@ -336,12 +336,12 @@ END
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 0 * * * root /usr/bin/xp
+0 2 * * * root /usr/bin/xp
 END
 cat > /etc/cron.d/cl_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 0 * * * root /usr/bin/clearlog
+0 3 * * * root /usr/bin/clearlog
 END
 cat > /home/re_otm <<-END
 7
@@ -417,8 +417,8 @@ echo  "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
-echo  "   - Auto Backup             : 00.00 GMT +7" | tee -a log-install.txt
-echo  "   - Auto Clearlog            : 00.00 GMT +7" | tee -a log-install.txt
+echo  "   - Auto Backup             : 01.00 GMT +7" | tee -a log-install.txt
+echo  "   - Auto Clearlog            : 03.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
