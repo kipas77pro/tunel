@@ -56,5 +56,47 @@ Tanggal       : $date
 ==================================
 "
 echo
+echo -e "
+Detail Backup 
+==================================
+IP VPS        : $IP
+Link Backup   : $link
+Tanggal       : $date
+==================================
+" | mail -s "Backup Data" $email
+rm -rf /root/backup
+rm -r /root/$IP-$date.zip
+clear
+CHATID="$CHATID"
+KEY="$KEY"
+TIME="$TIME"
+URL="$URL"
+TEXT="
+<code>◇━━━━━━━━━━━━━━◇</code>
+<b>   ⚠️BACKUP NOTIF⚠️</b>
+<b>     Detail Backup VPS</b>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<b>IP VPS  :</b> <code>${IP} </code>
+<b>DOMAIN :</b> <code>${domain}</code>
+<b>Tanggal : $date</b>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<b>Link Backup   :</b> $link
+<code>◇━━━━━━━━━━━━━━◇</code>
+<code>Silahkan copy Link dan restore di VPS baru</code>
+"
+curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+echo ""
+clear
+echo -e "
+Detail Backup 
+==================================
+IP VPS        : $IP
+Link Backup   : $link
+Tanggal       : $date
+==================================
+"
+echo "Silahkan copy Link dan restore di VPS baru"
+echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu
+
