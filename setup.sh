@@ -408,7 +408,7 @@ echo  "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
 echo  "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo  "   - Trojan GRPC             : 443" | tee -a log-install.txt
 echo  "   - Trojan WS               : 443" | tee -a log-install.txt
-#echo  "  # - Sodosok WS/GRPC         : 443, 8443, 2087, 2096" | tee -a log-install.txt
+#echo  "   - Sodosok WS/GRPC         : 443, 8443, 2087, 2096" | tee -a log-install.txt
 echo  ""  | tee -a log-install.txt
 echo  "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo  "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
