@@ -408,7 +408,7 @@ echo  "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
 echo  "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo  "   - Trojan GRPC             : 443" | tee -a log-install.txt
 echo  "   - Trojan WS               : 443" | tee -a log-install.txt
-#echo  "   - Sodosok WS/GRPC         : 443, 8443, 2087, 2096" | tee -a log-install.txt
+#echo  "  # - Sodosok WS/GRPC         : 443, 8443, 2087, 2096" | tee -a log-install.txt
 echo  ""  | tee -a log-install.txt
 echo  "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo  "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
@@ -418,7 +418,7 @@ echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
 echo  "   - Auto Backup             : 01.00 GMT +7" | tee -a log-install.txt
-echo  "   - Auto Clearlog            : 03.00 GMT +7" | tee -a log-install.txt
+echo  "   - Auto Clearlog           : 03.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
