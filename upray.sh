@@ -341,6 +341,22 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### alnya 2025-05-21
+},{"id": "5e6f1e47-1d66-46dd-a634-7868784c6e11","alterId": 0,"email": "alnya"
+### made 2025-05-30
+},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
+### love30 2025-05-28
+},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
+### didik30 2025-05-28
+},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
+### nizam 2025-05-23
+},{"id": "975612c8-ab2a-49bb-8702-94117fcfb526","alterId": 0,"email": "nizam"
+### jogjog 2025-05-14
+},{"id": "49775e24-4d87-4c34-8ae3-ff175e8f5596","alterId": 0,"email": "jogjog"
+### nanda 2025-05-20
+},{"id": "952d2f33-8300-4c26-acbd-2a80cdedb48d","alterId": 0,"email": "nanda"
+### mstore 2025-05-09
+},{"id": "7e6855ed-af60-4892-9ed4-213b62704d97","alterId": 0,"email": "mstore"
              }
           ]
        },
@@ -402,6 +418,22 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
+### alnya 2025-05-21
+},{"id": "5e6f1e47-1d66-46dd-a634-7868784c6e11","alterId": 0,"email": "alnya"
+### made 2025-05-30
+},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
+### love30 2025-05-28
+},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
+### didik30 2025-05-28
+},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
+### nizam 2025-05-23
+},{"id": "975612c8-ab2a-49bb-8702-94117fcfb526","alterId": 0,"email": "nizam"
+### jogjog 2025-05-14
+},{"id": "49775e24-4d87-4c34-8ae3-ff175e8f5596","alterId": 0,"email": "jogjog"
+### nanda 2025-05-20
+},{"id": "952d2f33-8300-4c26-acbd-2a80cdedb48d","alterId": 0,"email": "nanda"
+### mstore 2025-05-09
+},{"id": "7e6855ed-af60-4892-9ed4-213b62704d97","alterId": 0,"email": "mstore"
              }
           ]
        },
