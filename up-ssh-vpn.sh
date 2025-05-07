@@ -32,11 +32,11 @@ cd
 clear 
 
 # Getting websocket ssl stunnel
-wget -q -O /usr/local/bin/ws-stunnel1 "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/ws-stunnel1"
+wget -q -O /usr/local/bin/ws-stunnel1 "https://raw.githubusercontent.com/kipas77pro/tunel/main/ws-stunnel1"
 chmod +x /usr/local/bin/ws-stunnel1
 
 # Installing Service Ovpn Websocket
-cat > /etc/systemd/system/ws-stunnel.service << END
+cat > /etc/systemd/system/ws-stunnel1.service << END
 [Unit]
 Description=Ovpn Websocket AryaStore Blitar
 Documentation=https://aryavpnstore.biz.id
