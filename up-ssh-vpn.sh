@@ -5,11 +5,18 @@ green='\033[0;32m'
 clear
 clear
 export DEBIAN_FRONTEND=noninteractive
-MYIP=$(curl -sS ifconfig.me);
-MYIP2="s/xxxxxxxxx/$MYIP/g";
-NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-source /etc/os-release
-ver=$VERSION_ID
+MYIP2="s/xxxxxxxxx/$MYIP/g"
+NET=$(ip -o $ANU -4 route show to default | awk '{print $5}')
+if [[ -f /etc/os-release ]]; then
+    . /etc/os-release
+    OS_NAME=$ID
+    OS_VERSION=$VERSION_ID
+
+    echo "Menemukan sistem operasi: $OS_NAME $OS_VERSION"
+else
+    echo "Tidak dapat menentukan sistem operasi."
+    exit 1
+fi
 
 #detail nama perusahaan
 country=ID
@@ -32,11 +39,11 @@ cd
 clear 
 
 # Getting websocket ssl stunnel
-wget -q -O /usr/local/bin/ws-stunnel1 "https://raw.githubusercontent.com/kipas77pro/tunel/main/ws-stunnel1"
-chmod +x /usr/local/bin/ws-stunnel1
+wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/ws-stunnel"
+chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service Ovpn Websocket
-cat > /etc/systemd/system/ws-stunnel1.service << END
+cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
 Description=Ovpn Websocket AryaStore Blitar
 Documentation=https://aryavpnstore.biz.id
@@ -47,16 +54,16 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python3 -O /usr/local/bin/ws-stunnel1
+ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-stunnel
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 END
 
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable ws-stunnel1 >/dev/null 2>&1
-systemctl start ws-stunnel1 >/dev/null 2>&1
-systemctl restart ws-stunnel1 >/dev/null 2>&1
+systemctl enable ws-stunnel >/dev/null 2>&1
+systemctl start ws-stunnel >/dev/null 2>&1
+systemctl restart ws-stunnel >/dev/null 2>&1
 
 clear
 
@@ -142,6 +149,7 @@ systemctl start rc-local.service >/dev/null 2>&1
 systemctl restart rc-local.service >/dev/null 2>&1
 
 # /etc/ssh/sshd_config
+cd
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 2253' /etc/ssh/sshd_config
 echo "Port 22" >> /etc/ssh/sshd_config
@@ -157,82 +165,34 @@ systemctl daemon-reload >/dev/null 2>&1
 systemctl start ssh >/dev/null 2>&1
 systemctl restart ssh >/dev/null 2>&1
 
-# Install Stunnel5
-cd /root/
-wget -q "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/stunnel5.zip"
-unzip stunnel5.zip
-cd /root/stunnel
-chmod +x configure
-./configure
-make
-make install
-cd /root
-rm -r -f stunnel
-rm -f stunnel5.zip
-rm -fr /etc/stunnel5
-mkdir -p /etc/stunnel5
-chmod 644 /etc/stunnel5
+echo "=== Install Dropbear ==="
+# install dropbear
+apt -y install dropbear
+sudo dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key
+sudo chmod 600 /etc/dropbear/dropbear_dss_host_key
+wget -O /etc/default/dropbear "https://raw.githubusercontent.com/kipas77pro/f4/main/install/dropbear"
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+/etc/init.d/ssh restart
+/etc/init.d/dropbear restart
+#wget -q https://raw.githubusercontent.com/kipas77pro/f4/main/install/setrsyslog.sh && chmod +x setrsyslog.sh && ./setrsyslog.sh
 
-# Download Config Stunnel5
-cat > /etc/stunnel5/stunnel5.conf <<-END
-cert = /etc/xray/xray.crt
-key = /etc/xray/xray.key
-client = no
-socket = a:SO_REUSEADDR=1
-socket = l:TCP_NODELAY=1
-socket = r:TCP_NODELAY=1
-[dropbear]
-accept = 447
-connect = 127.0.0.1:109
-[dropbear]
-accept = 445
-connect = 127.0.0.1:143
-[openssh]
-accept = 777
-connect = 127.0.0.1:22
-[openvpn]
-accept = 442
-connect = 127.0.0.1:1194
-END
+if [[ "$OS_NAME" == "debian" && "$OS_VERSION" == "10" ]] || [[ "$OS_NAME" == "ubuntu" && "$OS_VERSION" == "20.04" ]]; then
+    echo "Menginstal squid3 untuk Debian 10 atau Ubuntu 20.04..."
+    apt -y install squid3
+else
+    echo "Menginstal squid untuk versi lain..."
+    apt -y install squid
+fi
+# Unduh file konfigurasi
+echo "Mengunduh file konfigurasi Squid..."
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/kipas77pro/f4/main/install/squid3.conf"
 
-# Service Stunnel5 systemctl restart stunnel5
-rm -fr /etc/systemd/system/stunnel5.service
-cat > /etc/systemd/system/stunnel5.service << END
-[Unit]
-Description=Stunnel5 Service
-Documentation=https://stunnel.org
-Documentation=https://nekopoi.care
-After=syslog.target network-online.target
-[Service]
-ExecStart=/usr/local/bin/stunnel5 /etc/stunnel5/stunnel5.conf
-Type=forking
-[Install]
-WantedBy=multi-user.target
-END
+# Ganti placeholder dengan alamat IP
+echo "Mengganti placeholder IP dengan alamat IP saat ini..."
+sed -i $MYIP2 /etc/squid/squid.conf
 
-# Service Stunnel5 /etc/init.d/stunnel5
-rm -fr /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/stunnel5.init"
-
-# Ubah Izin Akses
-#chmod 600 /etc/stunnel5/stunnel5.pem
-chmod +x /etc/init.d/stunnel5
-cp -r /usr/local/bin/stunnel /usr/local/bin/stunnel5
-#mv /usr/local/bin/stunnel /usr/local/bin/stunnel5
-
-# Remove File
-rm -r -f /usr/local/share/doc/stunnel/
-rm -r -f /usr/local/etc/stunnel/
-rm -f /usr/local/bin/stunnel
-rm -f /usr/local/bin/stunnel3
-rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel5
-
-# Restart Stunnel5
-systemctl daemon-reload >/dev/null 2>&1
-systemctl enable stunnel5 >/dev/null 2>&1
-systemctl start stunnel5 >/dev/null 2>&1
-systemctl restart stunnel5 >/dev/null 2>&1
+echo "Instalasi dan konfigurasi Squid selesai."
 
 # Install bbr
 sleep 1
@@ -357,22 +317,22 @@ fi
 
 # finishing
 cd
-echo -e "[ ${green}ok${NC} ] Restarting cron"
+echo -e "[ ${green}ok${NC} ] Restarting openvpn"
 /etc/init.d/cron restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting ssh"
+echo -e "[ ${green}ok${NC} ] Restarting cron"
 /etc/init.d/ssh restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting dropbear"
+echo -e "[ ${green}ok${NC} ] Restarting ssh"
 /etc/init.d/dropbear restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
+echo -e "[ ${green}ok${NC} ] Restarting dropbear"
 /etc/init.d/fail2ban restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting stunnel5"
+echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
 /etc/init.d/stunnel5 restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting vnstat"
+echo -e "[ ${green}ok${NC} ] Restarting stunnel5"
 /etc/init.d/vnstat restart >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting squid "
