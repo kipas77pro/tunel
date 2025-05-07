@@ -32,7 +32,7 @@ cd
 clear 
 
 # Getting websocket ssl stunnel
-wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/ws-stunnel"
+wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/ws-stunnel"
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service Ovpn Websocket
@@ -47,7 +47,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python3  -O /usr/local/bin/ws-stunnel
+ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-stunnel
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
