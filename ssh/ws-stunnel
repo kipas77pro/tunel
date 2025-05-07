@@ -118,9 +118,6 @@ class ConnectionHandler(threading.Thread):
 
             hostPort = self.findHeader(self.client_buffer, 'X-Real-Host')
 
-            if hostPort == '':
-                hostPort = DEFAULT_HOST
-
             split = self.findHeader(self.client_buffer, 'X-Split')
 
             if split != '':
