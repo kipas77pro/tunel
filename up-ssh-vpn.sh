@@ -5,18 +5,11 @@ green='\033[0;32m'
 clear
 clear
 export DEBIAN_FRONTEND=noninteractive
-MYIP2="s/xxxxxxxxx/$MYIP/g"
-NET=$(ip -o $ANU -4 route show to default | awk '{print $5}')
-if [[ -f /etc/os-release ]]; then
-    . /etc/os-release
-    OS_NAME=$ID
-    OS_VERSION=$VERSION_ID
-
-    echo "Menemukan sistem operasi: $OS_NAME $OS_VERSION"
-else
-    echo "Tidak dapat menentukan sistem operasi."
-    exit 1
-fi
+MYIP=$(curl -sS ifconfig.me);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+source /etc/os-release
+ver=$VERSION_ID
 
 #detail nama perusahaan
 country=ID
@@ -39,7 +32,7 @@ cd
 clear 
 
 # Getting websocket ssl stunnel
-wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/kipas77pro/tunel/main/tools/ws-stunnel"
+wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/ws-stunnel"
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service Ovpn Websocket
@@ -149,7 +142,6 @@ systemctl start rc-local.service >/dev/null 2>&1
 systemctl restart rc-local.service >/dev/null 2>&1
 
 # /etc/ssh/sshd_config
-cd
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 2253' /etc/ssh/sshd_config
 echo "Port 22" >> /etc/ssh/sshd_config
@@ -164,35 +156,6 @@ sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_
 systemctl daemon-reload >/dev/null 2>&1
 systemctl start ssh >/dev/null 2>&1
 systemctl restart ssh >/dev/null 2>&1
-
-echo "=== Install Dropbear ==="
-# install dropbear
-apt -y install dropbear
-sudo dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key
-sudo chmod 600 /etc/dropbear/dropbear_dss_host_key
-wget -O /etc/default/dropbear "https://raw.githubusercontent.com/kipas77pro/f4/main/install/dropbear"
-echo "/bin/false" >> /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
-/etc/init.d/ssh restart
-/etc/init.d/dropbear restart
-#wget -q https://raw.githubusercontent.com/kipas77pro/f4/main/install/setrsyslog.sh && chmod +x setrsyslog.sh && ./setrsyslog.sh
-
-if [[ "$OS_NAME" == "debian" && "$OS_VERSION" == "10" ]] || [[ "$OS_NAME" == "ubuntu" && "$OS_VERSION" == "20.04" ]]; then
-    echo "Menginstal squid3 untuk Debian 10 atau Ubuntu 20.04..."
-    apt -y install squid3
-else
-    echo "Menginstal squid untuk versi lain..."
-    apt -y install squid
-fi
-# Unduh file konfigurasi
-echo "Mengunduh file konfigurasi Squid..."
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/kipas77pro/f4/main/install/squid3.conf"
-
-# Ganti placeholder dengan alamat IP
-echo "Mengganti placeholder IP dengan alamat IP saat ini..."
-sed -i $MYIP2 /etc/squid/squid.conf
-
-echo "Instalasi dan konfigurasi Squid selesai."
 
 # Install bbr
 sleep 1
@@ -317,22 +280,22 @@ fi
 
 # finishing
 cd
-echo -e "[ ${green}ok${NC} ] Restarting openvpn"
+echo -e "[ ${green}ok${NC} ] Restarting cron"
 /etc/init.d/cron restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting cron"
+echo -e "[ ${green}ok${NC} ] Restarting ssh"
 /etc/init.d/ssh restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting ssh"
+echo -e "[ ${green}ok${NC} ] Restarting dropbear"
 /etc/init.d/dropbear restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting dropbear"
+echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
 /etc/init.d/fail2ban restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
+echo -e "[ ${green}ok${NC} ] Restarting stunnel5"
 /etc/init.d/stunnel5 restart >/dev/null 2>&1
 sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting stunnel5"
+echo -e "[ ${green}ok${NC} ] Restarting vnstat"
 /etc/init.d/vnstat restart >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting squid "
