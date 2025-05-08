@@ -338,12 +338,12 @@ END
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-2 0 * * * root /usr/bin/xp
+0 2 * * * root /usr/bin/xp
 END
 cat > /etc/cron.d/cl_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-2 1 * * * root /usr/bin/clearlog
+0 3 * * * root /usr/bin/clearlog
 END
 cat > /home/re_otm <<-END
 7
@@ -373,15 +373,16 @@ echo "Log All Account " > /etc/log-create-user.log
 fi
 #history -c
 #echo $serverV > /opt/.ver
-aureb=$(cat /home/re_otm)
-b=11
-if [ $aureb -gt $b ]
-then
-gg="PM"
-else
-gg="AM"
-fi
+#aureb=$(cat /home/re_otm)
+#b=11
+#$if [ $aureb -gt $b ]
+#then
+#gg="PM"
+#else
+#gg="AM"
+#fi
 curl -sS ifconfig.me > /etc/myipvps
+
 #install gotop
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
     gotop_link="https://github.com/xxxserxxx/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
