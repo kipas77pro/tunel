@@ -16,7 +16,7 @@ export CYAN='\033[0;36m'
 export LIGHT='\033[0;37m'
 export NC='\033[0m'
 BIRed='\033[1;91m'
-red='\e[1;31m'o0
+red='\e[1;31m'
 bo='\e[1m'
 red='\e[1;31m'
 green='\e[0;32m'
@@ -369,16 +369,16 @@ fi
 if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
-history -c
-echo $serverV > /opt/.ver
-aureb=$(cat /home/re_otm)
-b=11
-$if [ $aureb -gt $b ]
-then
-gg="PM"
-else
-gg="AM"
-fi
+#history -c
+#echo $serverV > /opt/.ver
+#aureb=$(cat /home/re_otm)
+#b=11
+#$if [ $aureb -gt $b ]
+#then
+#gg="PM"
+#else
+#gg="AM"
+#fi
 curl -sS ifconfig.me > /etc/myipvps
 
 #install gotop
