@@ -398,7 +398,7 @@ echo  "   >>> Service & Port"  | tee -a log-install.txt
 echo  "   - OpenSSH                 : 22"  | tee -a log-install.txt
 echo  "   - SSH Websocket           : 80" | tee -a log-install.txt
 echo  "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
-#echo  "   - Stunnel5                : 445, 447, 777" | tee -a log-install.txt
+echo  "   - Stunnel5                : 445, 447, 777" | tee -a log-install.txt
 echo  "   - Dropbear                : 109, 143" | tee -a log-install.txt
 echo  "   - Badvpn                  : 7100-7300" | tee -a log-install.txt
 echo  "   - Nginx                   : 81" | tee -a log-install.txt
@@ -417,6 +417,7 @@ echo  "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
+echo  "   - AutoBackup             : 01.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
