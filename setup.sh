@@ -16,7 +16,7 @@ export CYAN='\033[0;36m'
 export LIGHT='\033[0;37m'
 export NC='\033[0m'
 BIRed='\033[1;91m'
-red='\e[1;31m'
+red='\e[1;31m'o0
 bo='\e[1m'
 red='\e[1;31m'
 green='\e[0;32m'
@@ -135,10 +135,10 @@ mkdir -p /root/xray
 clear
 echo ""
 read -rp "Input Domain Name. Example ( babi ): " -e sub
-DOMAIN=group-nbc.my.id
-SUB_DOMAIN=${sub}.group-nbc.my.id
-CF_ID=lahseta19@gmail.com
-CF_KEY=641efc1ac85cd3f401f639df955ec5b696c8c
+DOMAIN=blitar-nbc-group.biz.id
+SUB_DOMAIN=${sub}.blitar-nbc-group.biz.id
+CF_ID=Afitamebel@gmail.com
+CF_KEY=c7892fc1afa8bb535a286b67deba8be60ecd8
 set -euo pipefail
 IP=$(curl -sS ifconfig.me);
 echo "Updating DNS for ${SUB_DOMAIN}..."
@@ -394,11 +394,10 @@ echo ""
 echo "===============-[ Script By Arya Blitar ]-==============="
 echo ""
 echo  "   >>> Service & Port"  | tee -a log-install.txt
-echo  "   >>> Multiport V Stabil"  | tee -a log-install.txt
 echo  "   - OpenSSH                 : 22"  | tee -a log-install.txt
 echo  "   - SSH Websocket           : 80" | tee -a log-install.txt
 echo  "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
-echo  "   - Stunnel5                : 445, 447, 777" | tee -a log-install.txt
+#echo  "   - Stunnel5                : 445, 447, 777" | tee -a log-install.txt
 echo  "   - Dropbear                : 109, 143" | tee -a log-install.txt
 echo  "   - Badvpn                  : 7100-7300" | tee -a log-install.txt
 echo  "   - Nginx                   : 81" | tee -a log-install.txt
@@ -417,8 +416,6 @@ echo  "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
-echo  "   - Auto Backup             : 01.00 GMT +7" | tee -a log-install.txt
-echo  "   - Auto Clearlog           : 03.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
