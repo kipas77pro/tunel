@@ -122,6 +122,7 @@ echo -e "          ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${
 echo -e " ${NC}      TROJAN ${ORANGE}: ${RED}$resv2r"" ${NC} DROPBEAR ${ORANGE}: ${RED}$resdbr" "${NC} SSH-WS ${ORANGE}: ${RED}$ressshws"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "      ${ICyan} Hari ini           Bulan ini  ${NC}"
 echo -e "    ${ORANGE}↓↓ Down:${NC} $dtoday${ORANGE}          ↓↓ Down:${NC} $dmon${NC}   "
 echo -e "    ${ORANGE}↑↑ Up  : ${NC}$utoday   ${ORANGE}       ↑↑ Up  : ${NC}$umon${NC}   "
 echo -e "    ${ORANGE}≈ Total:${NC} $ttoday  ${ORANGE}        ≈ Total: ${NC}$tmon${NC}   "
