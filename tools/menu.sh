@@ -86,6 +86,12 @@ MODEL=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | se
 CORE=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
 DATEVPS=$(date +'%d/%m/%Y')
 TIMEZONE=$(printf '%(%H:%M:%S)T')
+dtoday="$(vnstat | grep today | awk '{print $2" "substr ($3, 1, 3)}')"
+utoday="$(vnstat | grep today | awk '{print $5" "substr ($6, 1, 3)}')"
+ttoday="$(vnstat | grep today | awk '{print $8" "substr ($9, 1, 3)}')"
+dmon="$(vnstat -m | grep `date +%G-%m` | awk '{print $2" "substr ($3, 1 ,3)}')"
+umon="$(vnstat -m | grep `date +%G-%m` | awk '{print $5" "substr ($6, 1 ,3)}')"
+tmon="$(vnstat -m | grep `date +%G-%m` | awk '{print $8" "substr ($9, 1 ,3)}')"
 clear
 clear
 clear
@@ -114,6 +120,11 @@ echo -e " ${BICyan}╰═══════════════════�
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "          ${NC} SSH ${ORANGE}: ${RED}$ressh"" ${NC} NGINX ${ORANGE}: ${RED}$resngx"" ${NC}  XRAY ${ORANGE}: ${RED}$resv2r"
 echo -e " ${NC}      TROJAN ${ORANGE}: ${RED}$resv2r"" ${NC} DROPBEAR ${ORANGE}: ${RED}$resdbr" "${NC} SSH-WS ${ORANGE}: ${RED}$ressshws"
+echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
+echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "    ${RB}↓↓ Down: $dtoday          ↓↓ Down: $dmon${NC}   "
+echo -e "    ${RB}↑↑ Up  : $utoday          ↑↑ Up  : $umon${NC}   "
+echo -e "    ${RB}≈ Total: $ttoday          ≈ Total: $tmon${NC}   "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$BICyan   │$NC\033[42m                    INFO MENU                    $BICyan│$NC"
