@@ -124,3 +124,11 @@ wget -O up-ssh-vpn "raw.githubusercontent.com/kipas77pro/tunel/main/up-ssh-vpn.s
 ````
 curl -O https://raw.githubusercontent.com/kipas77pro/tunel/refs/heads/main/reinstall.sh chmod +x reinstall.sh bash reinstall.sh debian 11 --password PASSWORD_KAMU
 ````
+
+
+Cara rebuild vps tanpa login ke panel
+
+1= curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh
+
+2= bash reinstall.sh ubuntu 20.04   lalu reboot
+3= tail -fn+1 /reinstall.log
