@@ -296,57 +296,26 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 # menu
-wget -O menu "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu.sh"
-#wget -O menu-trial "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-trial.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-vmess.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-vless.sh"
-wget -O running "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/running.sh"
-wget -O clearcache "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/clearcache.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-trojan.sh"
+wget -O menu "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/menu.sh"
+wget -O m-vmess "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/m-vmess.sh"
+wget -O running "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/running.sh"
+wget -O clearcache "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/clearcache.sh"
 
 # menu ssh ovpn
-wget -O menu-ssh "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-ssh.sh"
-#wget -O trial "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/trial.sh"
-#wget -O delete "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/ceklim.sh"
-#wget -O tendang "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/tendang.sh"
+wget -O m-ssh "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/m-ssh.sh"
+wget -O tendang "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/tendang.sh"
 
 # menu system
-wget -O menu-set "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-set.sh"
-wget -O menu-domain "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-domain.sh"
-wget -O add-host "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/add-host.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/xray/certv2ray.sh"
-wget -O menu-webmin "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/menu-webmin.sh"
-wget -O speedtest "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/speedtest_cli.py"
-wget -O about "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/about.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/auto-reboot.sh"
-wget -O restart "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/restart.sh"
-wget -O bw "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/menu/bw.sh"
-
-# change port
-wget -O port-ssl "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/port-ssl.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/port-ovpn.sh"
-wget -O port-change "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/port-change.sh"
-wget -O port-tr "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/port-tr.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/xray/certv2ray.sh"
-
-# Trgo
-wget -O addtrgo "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/trgo/addtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/trgo/cektrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/trgo/deltrgo.sh"
-wget -O trojaan "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/trgo/trojaan.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/trgo/renewtrgo.sh"
-
-wget -O xp "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/xp.sh"
-wget -O acs-set "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/acs-set.sh"
-
-wget -O update "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/update.sh"
-wget -O komtol "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/ssh/komtol.sh"
-#bck
-wget -O menu-backup "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/backup/menu-backup.sh"
-wget -O backup "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/backup/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/Arya-Blitar22/anjing/main/backup/restore.sh"
+wget -O m-system "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/m-system.sh"
+wget -O add-host "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/add-host.sh"
+wget -O addhost "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/addhost.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/certv2ray.sh"
+wget -O speedtest "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/speedtest_cli.py"
+wget -O auto-reboot "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/auto-reboot.sh"
+wget -O restart "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/restart.sh"
+wget -O bw "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/bw.sh"
+wget -O xp "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/ssh/xp.sh"
+wget -O info "https://raw.githubusercontent.com/Arya-Blitar22/bokep/main/ssh/menu/info.sh"
 
 chmod +x menu
 #chmod +x menu-trial
