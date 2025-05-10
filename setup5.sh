@@ -171,7 +171,7 @@ echo -e "┌──────────────────────�
 echo -e " \E[42;1;37m           >>> Install Ssh Vpn <<<          \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
-wget https://raw.githubusercontent.com/Arya-Blitar22/auto/main/ssh/ssh-vpn2.sh && chmod +x ssh-vpn2.sh && ./ssh-vpn2.sh
+wget https://raw.githubusercontent.com/kipas77pro/tulel/main/bot/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[42;1;37m           >>> Install Vray <<<          \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
@@ -256,7 +256,7 @@ echo ""
 echo "" | tee -a log-install.txt
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
-rm /root/ssh-vpn2.sh >/dev/null 2>&1
+rm /root/ssh-vpn.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
