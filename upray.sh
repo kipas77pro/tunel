@@ -341,22 +341,28 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### alnya 2025-05-21
-},{"id": "5e6f1e47-1d66-46dd-a634-7868784c6e11","alterId": 0,"email": "alnya"
-### made 2025-05-30
-},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
-### love30 2025-05-28
-},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
-### didik30 2025-05-28
-},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
-### nizam 2025-05-23
-},{"id": "975612c8-ab2a-49bb-8702-94117fcfb526","alterId": 0,"email": "nizam"
-### jogjog 2025-05-14
-},{"id": "49775e24-4d87-4c34-8ae3-ff175e8f5596","alterId": 0,"email": "jogjog"
-### nanda 2025-05-20
-},{"id": "952d2f33-8300-4c26-acbd-2a80cdedb48d","alterId": 0,"email": "nanda"
-### mstore 2025-05-09
-},{"id": "7e6855ed-af60-4892-9ed4-213b62704d97","alterId": 0,"email": "mstore"
+### trialY27Z 2025-05-11
+},{"id": "15f499e6-48cf-403f-8ed4-0ff53006c5e5","alterId": 0,"email": "trialY27Z"
+### trial2266 2025-05-11
+},{"id": "69b2d769-ccbb-4691-963e-c639c87fb6ff","alterId": 0,"email": "trial2266"
+### ini30 2025-06-08
+},{"id": "5626fb86-c057-44a6-8d73-e65af153349e","alterId": 0,"email": "ini30"
+### rijal06 2025-05-24
+},{"id": "b8d2d55b-c53b-4579-b8fd-e0c85d76d561","alterId": 0,"email": "rijal06"
+### mc30 2025-06-08
+},{"id": "2fc3a3b4-c63f-4943-8429-95732293adbd","alterId": 0,"email": "mc30"
+### romy39 2025-06-07
+},{"id": "df9af1a5-2107-4147-9d63-2622ac7b0419","alterId": 0,"email": "romy39"
+### azz 2025-06-03
+},{"id": "cb714004-89d8-4b19-8064-c781363141a0","alterId": 0,"email": "azz"
+### zriel30 2025-06-03
+},{"id": "13c895a9-dae4-4f2c-92ab-31eafd05bd6f","alterId": 0,"email": "zriel30"
+### dimas30 2025-06-04
+},{"id": "557268e5-7b07-4906-9498-4d012697fbbe","alterId": 0,"email": "dimas30"
+### rizal30 2025-06-03
+},{"id": "87764073-a4d1-4350-983a-0dd13c8b520e","alterId": 0,"email": "rizal30"
+### roni1 2025-06-04
+},{"id": "a6e4e8f5-f2dc-41fb-999d-2d5ee47b502e","alterId": 0,"email": "roni1"
              }
           ]
        },
@@ -418,22 +424,28 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### alnya 2025-05-21
-},{"id": "5e6f1e47-1d66-46dd-a634-7868784c6e11","alterId": 0,"email": "alnya"
-### made 2025-05-30
-},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
-### love30 2025-05-28
-},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
-### didik30 2025-05-28
-},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
-### nizam 2025-05-23
-},{"id": "975612c8-ab2a-49bb-8702-94117fcfb526","alterId": 0,"email": "nizam"
-### jogjog 2025-05-14
-},{"id": "49775e24-4d87-4c34-8ae3-ff175e8f5596","alterId": 0,"email": "jogjog"
-### nanda 2025-05-20
-},{"id": "952d2f33-8300-4c26-acbd-2a80cdedb48d","alterId": 0,"email": "nanda"
-### mstore 2025-05-09
-},{"id": "7e6855ed-af60-4892-9ed4-213b62704d97","alterId": 0,"email": "mstore"
+### trialY27Z 2025-05-11
+},{"id": "15f499e6-48cf-403f-8ed4-0ff53006c5e5","alterId": 0,"email": "trialY27Z"
+### trial2266 2025-05-11
+},{"id": "69b2d769-ccbb-4691-963e-c639c87fb6ff","alterId": 0,"email": "trial2266"
+### ini30 2025-06-08
+},{"id": "5626fb86-c057-44a6-8d73-e65af153349e","alterId": 0,"email": "ini30"
+### rijal06 2025-05-24
+},{"id": "b8d2d55b-c53b-4579-b8fd-e0c85d76d561","alterId": 0,"email": "rijal06"
+### mc30 2025-06-08
+},{"id": "2fc3a3b4-c63f-4943-8429-95732293adbd","alterId": 0,"email": "mc30"
+### romy39 2025-06-07
+},{"id": "df9af1a5-2107-4147-9d63-2622ac7b0419","alterId": 0,"email": "romy39"
+### azz 2025-06-03
+},{"id": "cb714004-89d8-4b19-8064-c781363141a0","alterId": 0,"email": "azz"
+### zriel30 2025-06-03
+},{"id": "13c895a9-dae4-4f2c-92ab-31eafd05bd6f","alterId": 0,"email": "zriel30"
+### dimas30 2025-06-04
+},{"id": "557268e5-7b07-4906-9498-4d012697fbbe","alterId": 0,"email": "dimas30"
+### rizal30 2025-06-03
+},{"id": "87764073-a4d1-4350-983a-0dd13c8b520e","alterId": 0,"email": "rizal30"
+### roni1 2025-06-04
+},{"id": "a6e4e8f5-f2dc-41fb-999d-2d5ee47b502e","alterId": 0,"email": "roni1"
              }
           ]
        },
@@ -742,7 +754,7 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 #latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 #bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.16
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.19
 
 # Random Port Xray
 
