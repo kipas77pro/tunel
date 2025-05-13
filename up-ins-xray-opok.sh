@@ -172,6 +172,7 @@ trojanws=$((RANDOM + 10000))
 vless=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
+vmess1=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
@@ -235,10 +236,22 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess1"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -342,28 +355,26 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### indra97 2025-06-11
-},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
-### wil30 2025-06-10
-},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
-### dandy30 2025-05-31
-},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
-### roni23 2025-05-30
-},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
-### roni22 2025-05-29
-},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
-### abdul30 2025-05-25
-},{"id": "cae5a4c4-5cd6-4c10-b1a8-9e48c6728f92","alterId": 0,"email": "abdul30"
-### yaw30 2025-05-15
-},{"id": "b21713b4-b831-4625-8c82-c5e7b7bf0646","alterId": 0,"email": "yaw30"
-### roni18 2025-05-17
-},{"id": "e594f9c1-08d8-4d5d-9354-a4fe38bae0e7","alterId": 0,"email": "roni18"
-### roni15 2025-05-17
-},{"id": "458aa989-da58-4cf5-b40e-001fabefd22d","alterId": 0,"email": "roni15"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/vmess"
+          }
+        }
+     },
+     {
+     "listen": "127.0.0.1",
+     "port": "$vmess1",
+     "protocol": "vmess",
+      "settings": {
+            "clients": [
+               {
+                 "id": "${uuid}",
+                 "alterId": 0
+#vmess
              }
           ]
        },
@@ -425,28 +436,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### indra97 2025-06-11
-},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
-### wil30 2025-06-10
-},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
-### dandy30 2025-05-31
-},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
-### roni23 2025-05-30
-},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
-### roni22 2025-05-29
-},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
-### abdul30 2025-05-25
-},{"id": "cae5a4c4-5cd6-4c10-b1a8-9e48c6728f92","alterId": 0,"email": "abdul30"
-### yaw30 2025-05-15
-},{"id": "b21713b4-b831-4625-8c82-c5e7b7bf0646","alterId": 0,"email": "yaw30"
-### roni18 2025-05-17
-},{"id": "e594f9c1-08d8-4d5d-9354-a4fe38bae0e7","alterId": 0,"email": "roni18"
-### roni15 2025-05-17
-},{"id": "458aa989-da58-4cf5-b40e-001fabefd22d","alterId": 0,"email": "roni15"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
@@ -750,7 +739,7 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 #latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 #bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.16
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.19
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
 
 # Random Port Xray
 
