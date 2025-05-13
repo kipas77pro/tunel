@@ -292,7 +292,7 @@ wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/mai
 wget -q -O /usr/bin/menu-trojango "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu-trojango.sh"
 #cek
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
-wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/update.sh"
+#wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/update.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/cf.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/info.sh"
@@ -315,7 +315,7 @@ chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu
 chmod +x /usr/bin/xp
-chmod +x /usr/bin/update
+#chmod +x /usr/bin/update
 chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
 chmod +x /usr/bin/info
