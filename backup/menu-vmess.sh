@@ -58,7 +58,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/servlets/mms",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -73,7 +73,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/servlets/mms",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -117,7 +117,7 @@ echo -e "id            : ${uuid}"
 echo -e "alterId       : 0" 
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
-echo -e "Path          : /vmess" 
+#echo -e "Path          : /vmess" 
 echo -e "Path          : /servlets/mms" 
 #echo -e "Path          : http://bug/worryfree" 
 #echo -e "Path          : /kuota-habis" 
@@ -161,7 +161,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/servlets/mms",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -176,7 +176,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/servlets/mms",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -220,7 +220,7 @@ echo -e "id            : ${uuid}"
 echo -e "alterId       : 0" 
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
-echo -e "Path          : /vmess"
+#echo -e "Path          : /vmess"
 echo -e "Path          : /servlets/mms" 
 #echo -e "Path          : /kuota-habis" 
 echo -e "ServiceName    : vmess-grpc"
@@ -386,7 +386,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/servlets/mms",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -401,7 +401,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/servlets/mms",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -442,7 +442,7 @@ echo -e "id            : ${uuid}"
 echo -e "alterId       : 0" 
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
-echo -e "Path          : /vmess" 
+#echo -e "Path          : /vmess" 
 echo -e "Path          : /servlets/mms" 
 #echo -e "Path          : http://bug/worryfree" 
 #echo -e "Path          : /kuota-habis" 
