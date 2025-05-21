@@ -190,12 +190,16 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2052;
              listen 2095;
              listen [::]:2095;
+             listen 2086;
+             listen [::]:2086;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
              listen 8443 ssl http2 reuseport;
              listen [::]:8443 http2 reuseport;	
              listen 2096 ssl http2 reuseport;
              listen [::]:2096 http2 reuseport;	
+             listen 2087 ssl http2 reuseport;
+             listen [::]:2087 http2 reuseport;	
              listen 2053 ssl http2 reuseport;
              listen [::]:2053 http2 reuseport;	
              listen 2083 ssl http2 reuseport;
