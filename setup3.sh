@@ -325,6 +325,11 @@ chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/jam
 chmod +x /usr/bin/update-xray
 
+cat > /etc/cron.d/cl_otm <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 3 * * * root /bin/cleaner
+END
 cat > /etc/cron.d/ba_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin

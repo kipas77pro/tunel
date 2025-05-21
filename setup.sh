@@ -291,7 +291,7 @@ wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/kipas77pro/tu
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/menu.sh"
 #cek
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/xp.sh"
-#wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/update.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/kipas77pro/tunel/main/menu/cf.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/kipas77pro/tunel/main/options/info.sh"
@@ -314,7 +314,7 @@ chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu
 chmod +x /usr/bin/xp
-#chmod +x /usr/bin/update
+chmod +x /usr/bin/update
 chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
 chmod +x /usr/bin/info
@@ -323,6 +323,11 @@ chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/jam
 chmod +x /usr/bin/update-xray
 
+cat > /etc/cron.d/cl_otm <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 3 * * * root /bin/cleaner
+END
 cat > /etc/cron.d/ba_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
@@ -417,7 +422,7 @@ echo  "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo  "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo  "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo  "   - Autoreboot              : 05.00 GMT +7" | tee -a log-install.txt
-echo  "   - AutoBackup              : 01.00 GMT +7" | tee -a log-install.txt
+echo  "   - AutoBackup             : 01.00 GMT +7" | tee -a log-install.txt
 echo  "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo  "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo  "   - Fully automatic script" | tee -a log-install.txt
