@@ -204,8 +204,6 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2053 http2 reuseport;	
              listen 2083 ssl http2 reuseport;
              listen [::]:2083 http2 reuseport;	
-             listen 2093 ssl http2 reuseport;
-             listen [::]:2093 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
