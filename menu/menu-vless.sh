@@ -84,7 +84,7 @@ echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
-echo -e "port TLS      : 443, 8443, 2087, 2096, 2053, 2083, 2093"
+echo -e "port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "port GRPC     : 443 "
 echo -e "id            : ${uuid}"
 echo -e "Encryption    : none" 
@@ -110,7 +110,7 @@ menu-vless
 }
 
 function trialvless(){
-user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+user=trialvles`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 domain=$(cat /etc/xray/domain)
 masaaktif=1
@@ -129,7 +129,7 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "Port none TLS  : 80, 8080, 8880, 2082, 2086, 2052, 2095"
-echo -e "Port TLS       : 443, 8443, 2087, 2096, 2053, 2083, 2093"
+echo -e "Port TLS       : 443, 8443, 2087, 2096, 2053, 2083 "
 echo -e "Port gRPC      : 443"
 echo -e "ID             : ${uuid}"
 echo -e "Encryption     : none"

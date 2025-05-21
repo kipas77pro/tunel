@@ -111,7 +111,7 @@ echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "Port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
-echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083, 2093"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083 "
 echo -e "Port gRPC     : 443"
 echo -e "id            : ${uuid}" 
 echo -e "alterId       : 0" 
@@ -140,7 +140,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 }
 function trialvmess(){
 domain=$(cat /etc/xray/domain)
-user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+user=trialvmess`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -211,7 +211,7 @@ echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "Port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
-echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083, 2093"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083 "
 echo -e "Port gRPC     : 443"
 echo -e "id            : ${uuid}" 
 echo -e "alterId       : 0" 
@@ -431,7 +431,7 @@ echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "Port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
-echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083, 2093"
+echo -e "Port TLS      : 443, 8443, 2087, 2096, 2053, 2083"
 echo -e "Port gRPC     : 443"
 echo -e "id            : ${uuid}" 
 echo -e "alterId       : 0" 

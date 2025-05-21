@@ -81,7 +81,7 @@ echo -e "\033[0;34m════════════\033[0;33mXRAY/TROJANWS\0
 echo -e "Remarks     : ${user}" 
 echo -e "Expired On  : $exp" 
 echo -e "Host/IP     : ${domain}" 
-echo -e "Port        : 443, 8443, 2087, 2096, 2053, 2083, 2093"
+echo -e "Port        : 443, 8443, 2087, 2096, 2053, 2083 "
 echo -e "Key         : ${uuid}" 
 echo -e "Path        : /trojan-ws"
 echo -e "ServiceName : trojan-grpc" 
@@ -159,7 +159,7 @@ function trialtrojan(){
 clear
 domain=$(cat /etc/xray/domain)
 tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
-user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+user=trialtro`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -177,7 +177,7 @@ echo -e "\E[42;1;37m           Trial TROJAN            \E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Remarks      : ${user}"
 echo -e "Host/IP      : ${domain}"
-echo -e "port         : 443, 8443, 2087, 2096, 2053, 2083"
+echo -e "port         : 443, 8443, 2087, 2096, 2053 "
 echo -e "Key          : ${uuid}"
 echo -e "Path         : /trojan-ws"
 echo -e "ServiceName  : trojan-grpc"
