@@ -190,6 +190,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2052;
              listen 2095;
              listen [::]:2095;
+             listen 2086;
+             listen [::]:2086;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
              listen 8443 ssl http2 reuseport;
@@ -202,6 +204,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen [::]:2053 http2 reuseport;	
              listen 2083 ssl http2 reuseport;
              listen [::]:2083 http2 reuseport;	
+             listen 2093 ssl http2 reuseport;
+             listen [::]:2093 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
@@ -696,8 +700,8 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 # / / Installation Xray Core
 xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 # / / Ambil Xray Core Version Terbaru
-#bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.14
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.15
+#bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.16
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
 
 # / / Make Main Directory
 mkdir -p /usr/bin/xray
@@ -711,7 +715,7 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 #latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 #bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.16
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.19
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
 
 # Random Port Xray
 
