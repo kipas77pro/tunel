@@ -2,24 +2,7 @@
 # encoding: utf-8
 import socket, threading, thread, select, signal, sys, time
 from os import system
-from argparse import RawTextHelpFormatter
-from colorama import Fore, Style
-import concurrent.futures
-from os import path
-import colorama
-import argparse
-import socket
-import requests
-import random
-import bs4 
-import time
-import json
-import sys
-import re
-import os
-import select, datetime, threading
-from os import system, name
-os.system('clear')
+system("clear")
 
 # Listen
 LISTENING_ADDR = '127.0.0.1'
