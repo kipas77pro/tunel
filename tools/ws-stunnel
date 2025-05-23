@@ -1,6 +1,6 @@
-#!/usr/bin/python2
-import socket, threading, thread, select, signal, sys, time, getopt
-
+#!/usr/bin/env python3
+# encoding: utf-8
+import socket, threading, thread, select, signal, sys, time
 # Listen
 LISTENING_ADDR = '127.0.0.1'
 if sys.argv[1:]:
