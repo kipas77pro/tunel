@@ -47,7 +47,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python3 -O /usr/local/bin/ws-stunnel
+ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-stunnel
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
@@ -60,6 +60,7 @@ systemctl restart ws-stunnel >/dev/null 2>&1
 
 clear
 
+# Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -75,21 +76,17 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
+# nano /etc/rc.local
 cat > /etc/rc.local <<-END
-
+#!/bin/sh -e
+# rc.local
+# By default this script does nothing.
 exit 0
 END
 
 # Ubah izin akses
 chmod +x /etc/rc.local
-echo -e "
-"
-date
-echo ""
-# enable rc local
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Checking... "
-sleep 2
+
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable system rc local"
 systemctl enable rc-local >/dev/null 2>&1
@@ -390,4 +387,4 @@ sleep 5
 clear
 #rm -fr /root/key.pem >/dev/null 2>&1
 rm -fr /root/cert.pem >/dev/null 2>&1
-rm -fr /root/up-ssh-vpn.sh >/dev/null 2>&1
+rm -fr /root/ssh-vpn.sh >/dev/null 2>&1
