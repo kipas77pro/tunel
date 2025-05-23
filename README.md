@@ -132,3 +132,8 @@ Cara rebuild vps tanpa login ke panel
 
 2= bash reinstall.sh ubuntu 20.04   lalu reboot
 3= tail -fn+1 /reinstall.log
+
+
+````
+wget -O up-ssh-vpn "raw.githubusercontent.com/kipas77pro/tunel/main/ssh/up-ssh-vpn.sh" && chmod +x up-ssh-vpn
+````
