@@ -136,6 +136,7 @@ clear
 
 # go to root
 cd
+apt install python3 -y
 
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END

@@ -61,6 +61,7 @@ systemctl restart ws-stunnel >/dev/null 2>&1
 clear
 # go to root
 cd
+apt install python3
 
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
