@@ -343,20 +343,8 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### yf15 2025-06-09
-},{"id": "a2e16a83-0e00-4272-b03e-35d5c78558ab","alterId": 0,"email": "yf15"
-### vdiosg30 2025-06-21
-},{"id": "fa168f1e-461f-406b-b84a-b6899ac13955","alterId": 0,"email": "vdiosg30"
-### angga30 2025-06-21
-},{"id": "42a55914-d88c-4cc5-8794-cafb82dc77b8","alterId": 0,"email": "angga30"
-### 3hp 2025-06-21
-},{"id": "0c56adaa-6da3-49ef-80eb-639281f833f9","alterId": 0,"email": "3hp"
-### marr 2025-06-18
-},{"id": "e4ca633a-e3a9-45f1-ae91-24b06a11134d","alterId": 0,"email": "marr"
-### a30 2025-06-18
-},{"id": "9741a53d-adf3-4f17-85fa-823ef167cbe2","alterId": 0,"email": "a30"
-### nudsel 2025-06-01
-},{"id": "9174c706-50bb-4c4b-8597-f355432cd08f","alterId": 0,"email": "nudsel"
+### zidna 2025-05-28
+},{"id": "66998fe9-0a79-4c64-bc1a-092c87aa9716","alterId": 0,"email": "zidna"
              }
           ]
        },
@@ -418,20 +406,8 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### yf15 2025-06-09
-},{"id": "a2e16a83-0e00-4272-b03e-35d5c78558ab","alterId": 0,"email": "yf15"
-### vdiosg30 2025-06-21
-},{"id": "fa168f1e-461f-406b-b84a-b6899ac13955","alterId": 0,"email": "vdiosg30"
-### angga30 2025-06-21
-},{"id": "42a55914-d88c-4cc5-8794-cafb82dc77b8","alterId": 0,"email": "angga30"
-### 3hp 2025-06-21
-},{"id": "0c56adaa-6da3-49ef-80eb-639281f833f9","alterId": 0,"email": "3hp"
-### marr 2025-06-18
-},{"id": "e4ca633a-e3a9-45f1-ae91-24b06a11134d","alterId": 0,"email": "marr"
-### a30 2025-06-18
-},{"id": "9741a53d-adf3-4f17-85fa-823ef167cbe2","alterId": 0,"email": "a30"
-### nudsel 2025-06-01
-},{"id": "9174c706-50bb-4c4b-8597-f355432cd08f","alterId": 0,"email": "nudsel"
+### zidna 2025-05-28
+},{"id": "66998fe9-0a79-4c64-bc1a-092c87aa9716","alterId": 0,"email": "zidna"
              }
           ]
        },
