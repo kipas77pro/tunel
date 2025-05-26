@@ -343,14 +343,36 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### inilagi2 2025-06-25
-},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
-### oki30 2025-06-01
-},{"id": "8c9f25ee-8095-4e3d-a561-333ce328b714","alterId": 0,"email": "oki30"
-### lombok 2025-05-30
-},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
-### syla 2025-05-29
-},{"id": "b2e46063-af1c-4cd8-a432-68c9e0d053ba","alterId": 0,"email": "syla"
+### okta30 2025-06-23
+},{"id": "19244565-550a-4c32-88b4-c5a0c2f69fca","alterId": 0,"email": "okta30"
+### vmes30 2025-06-23
+},{"id": "53a5dd6e-a890-4b4c-b337-2c32b2e04665","alterId": 0,"email": "vmes30"
+### meme 2025-06-23
+},{"id": "24727f71-d06d-4580-8110-f161ccd7aeaf","alterId": 0,"email": "meme"
+### sep30 2025-06-22
+},{"id": "b05a32a8-210d-44a1-bbe6-eb31b20b5657","alterId": 0,"email": "sep30"
+### yan30 2025-06-21
+},{"id": "05b6641f-663c-4055-901e-cda755589e43","alterId": 0,"email": "yan30"
+### febrian 2025-06-20
+},{"id": "fb4e25b5-dd91-4996-80f7-7290d5c2ef16","alterId": 0,"email": "febrian"
+### abdul 2025-06-17
+},{"id": "d1471d7c-162b-4c10-bc57-163e98873039","alterId": 0,"email": "abdul"
+### rg30 2025-07-16
+},{"id": "35399abc-df3d-438e-b156-b30568ad4215","alterId": 0,"email": "rg30"
+### kasno 2025-06-14
+},{"id": "5c4e1335-518a-4e61-b8aa-ab2ed4b62802","alterId": 0,"email": "kasno"
+### an30 2025-06-11
+},{"id": "9f895a48-0389-45bb-98d6-c8b85b8cf792","alterId": 0,"email": "an30"
+### ibhas 2025-06-09
+},{"id": "120bbcf8-1a03-4893-afee-c074e18a2840","alterId": 0,"email": "ibhas"
+### ilmu30 2025-06-09
+},{"id": "aa626738-4a44-453b-9251-0b08cf375fbc","alterId": 0,"email": "ilmu30"
+### opok 2025-05-31
+},{"id": "04639c49-2301-4c4c-8a18-f98bd2770c9e","alterId": 0,"email": "opok"
+### stdio 2025-05-30
+},{"id": "a81b7266-170d-492a-8e8e-b7f2a7eec8b5","alterId": 0,"email": "stdio"
+### jkm30 2025-05-29
+},{"id": "a70cdc22-0bcd-44a2-b07c-e61562e320cf","alterId": 0,"email": "jkm30"
              }
           ]
        },
@@ -412,14 +434,36 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### inilagi2 2025-06-25
-},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
-### oki30 2025-06-01
-},{"id": "8c9f25ee-8095-4e3d-a561-333ce328b714","alterId": 0,"email": "oki30"
-### lombok 2025-05-30
-},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
-### syla 2025-05-29
-},{"id": "b2e46063-af1c-4cd8-a432-68c9e0d053ba","alterId": 0,"email": "syla"
+### okta30 2025-06-23
+},{"id": "19244565-550a-4c32-88b4-c5a0c2f69fca","alterId": 0,"email": "okta30"
+### vmes30 2025-06-23
+},{"id": "53a5dd6e-a890-4b4c-b337-2c32b2e04665","alterId": 0,"email": "vmes30"
+### meme 2025-06-23
+},{"id": "24727f71-d06d-4580-8110-f161ccd7aeaf","alterId": 0,"email": "meme"
+### sep30 2025-06-22
+},{"id": "b05a32a8-210d-44a1-bbe6-eb31b20b5657","alterId": 0,"email": "sep30"
+### yan30 2025-06-21
+},{"id": "05b6641f-663c-4055-901e-cda755589e43","alterId": 0,"email": "yan30"
+### febrian 2025-06-20
+},{"id": "fb4e25b5-dd91-4996-80f7-7290d5c2ef16","alterId": 0,"email": "febrian"
+### abdul 2025-06-17
+},{"id": "d1471d7c-162b-4c10-bc57-163e98873039","alterId": 0,"email": "abdul"
+### rg30 2025-07-16
+},{"id": "35399abc-df3d-438e-b156-b30568ad4215","alterId": 0,"email": "rg30"
+### kasno 2025-06-14
+},{"id": "5c4e1335-518a-4e61-b8aa-ab2ed4b62802","alterId": 0,"email": "kasno"
+### an30 2025-06-11
+},{"id": "9f895a48-0389-45bb-98d6-c8b85b8cf792","alterId": 0,"email": "an30"
+### ibhas 2025-06-09
+},{"id": "120bbcf8-1a03-4893-afee-c074e18a2840","alterId": 0,"email": "ibhas"
+### ilmu30 2025-06-09
+},{"id": "aa626738-4a44-453b-9251-0b08cf375fbc","alterId": 0,"email": "ilmu30"
+### opok 2025-05-31
+},{"id": "04639c49-2301-4c4c-8a18-f98bd2770c9e","alterId": 0,"email": "opok"
+### stdio 2025-05-30
+},{"id": "a81b7266-170d-492a-8e8e-b7f2a7eec8b5","alterId": 0,"email": "stdio"
+### jkm30 2025-05-29
+},{"id": "a70cdc22-0bcd-44a2-b07c-e61562e320cf","alterId": 0,"email": "jkm30"
              }
           ]
        },
