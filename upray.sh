@@ -343,8 +343,14 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### cok 2025-05-29
-},{"id": "d901fe69-61f3-4ad9-b7bd-ec150225c3a1","alterId": 0,"email": "cok"
+### inilagi2 2025-06-25
+},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
+### oki30 2025-06-01
+},{"id": "8c9f25ee-8095-4e3d-a561-333ce328b714","alterId": 0,"email": "oki30"
+### lombok 2025-05-30
+},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### syla 2025-05-29
+},{"id": "b2e46063-af1c-4cd8-a432-68c9e0d053ba","alterId": 0,"email": "syla"
              }
           ]
        },
@@ -365,8 +371,6 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### trojannn 2025-05-29
-},{"password": "a9a7a318-193a-4788-906f-e991dffe57bb","email": "trojannn"
               }
           ],
          "udp": true
@@ -408,8 +412,14 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### cok 2025-05-29
-},{"id": "d901fe69-61f3-4ad9-b7bd-ec150225c3a1","alterId": 0,"email": "cok"
+### inilagi2 2025-06-25
+},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
+### oki30 2025-06-01
+},{"id": "8c9f25ee-8095-4e3d-a561-333ce328b714","alterId": 0,"email": "oki30"
+### lombok 2025-05-30
+},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### syla 2025-05-29
+},{"id": "b2e46063-af1c-4cd8-a432-68c9e0d053ba","alterId": 0,"email": "syla"
              }
           ]
        },
@@ -430,8 +440,6 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### trojannn 2025-05-29
-},{"password": "a9a7a318-193a-4788-906f-e991dffe57bb","email": "trojannn"
                }
            ]
         },
@@ -553,7 +561,7 @@ echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
 systemctl daemon-reload >/dev/null 2>&1
 systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
-sleep 3
+sleep 2
 echo -e "[ ${green}INFO${NC} ] UPDATE CORE 1.8.19... "
 clear
 source /var/lib/scrz-prem/ipvps.conf
