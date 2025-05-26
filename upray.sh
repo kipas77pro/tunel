@@ -343,6 +343,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### oki30 2025-06-01
+},{"id": "8c9f25ee-8095-4e3d-a561-333ce328b714","alterId": 0,"email": "oki30"
+### lombok 2025-05-30
+},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### syla 2025-05-29
+},{"id": "b2e46063-af1c-4cd8-a432-68c9e0d053ba","alterId": 0,"email": "syla"
              }
           ]
        },
@@ -404,6 +410,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
+### oki30 2025-06-01
+},{"id": "8c9f25ee-8095-4e3d-a561-333ce328b714","alterId": 0,"email": "oki30"
+### lombok 2025-05-30
+},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### syla 2025-05-29
+},{"id": "b2e46063-af1c-4cd8-a432-68c9e0d053ba","alterId": 0,"email": "syla"
              }
           ]
        },
@@ -545,7 +557,7 @@ echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
 systemctl daemon-reload >/dev/null 2>&1
 systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
-sleep 2
+sleep 3
 echo -e "[ ${green}INFO${NC} ] UPDATE CORE 1.8.19... "
 clear
 source /var/lib/scrz-prem/ipvps.conf
