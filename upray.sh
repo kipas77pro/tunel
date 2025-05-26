@@ -236,7 +236,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -343,35 +343,45 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### genta5 2025-06-20
-},{"id": "c7787942-f0bf-4436-a341-08af85906c98","alterId": 0,"email": "genta5"
-### jbar100 2025-06-19
-},{"id": "73477d81-9aba-43bc-8e8a-ea38e685933a","alterId": 0,"email": "jbar100"
-### yons30 2025-06-18
-},{"id": "28081fed-ec3d-43dd-8f88-ccf60a6eb927","alterId": 0,"email": "yons30"
-### afri30 2025-06-14
-},{"id": "fc77aa5c-558d-44ac-92d1-93770688273c","alterId": 0,"email": "afri30"
-### indra97 2025-06-11
-},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
-### wil30 2025-06-10
-},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
-### dandy30 2025-05-31
-},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
-### roni23 2025-05-30
-},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
-### roni22 2025-05-29
-},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
+### novia24 2025-06-25
+},{"id": "3761b181-fd74-448e-92d8-a69442e0d2e0","alterId": 0,"email": "novia24"
+### vani30 2025-06-25
+},{"id": "e0017586-fdb8-41f9-8abc-d0e7e55b756d","alterId": 0,"email": "vani30"
+### genta7 2025-06-23
+},{"id": "54b31a6f-61b5-41c3-b74c-6fef5596f17d","alterId": 0,"email": "genta7"
+### amy30 2025-06-21
+},{"id": "dbfec1a3-bf39-4f5f-a98b-b62ae21c7da9","alterId": 0,"email": "amy30"
+### manaja30 2025-06-19
+},{"id": "6b03339a-048d-4d3b-badc-74d8067c14d5","alterId": 0,"email": "manaja30"
+### isat30 2025-06-18
+},{"id": "36fd968f-b23a-496c-a527-b8e3b1f1acb2","alterId": 0,"email": "isat30"
+### purba30 2025-06-17
+},{"id": "885b51f4-62c1-482d-ac23-c342d1880f59","alterId": 0,"email": "purba30"
+### gani 2025-06-14
+},{"id": "a49c22ce-2f3c-4f0c-8d48-3e445d5e1a59","alterId": 0,"email": "gani"
+### genta1 2025-06-13
+},{"id": "f8175bbc-11cf-4885-8452-9a66a077d7ba","alterId": 0,"email": "genta1"
+### Bangray1999 2025-06-13
+},{"id": "c313ca5c-1fb1-460c-95ee-b985f3fc1aa5","alterId": 0,"email": "Bangray1999"
+### jay30 2025-06-12
+},{"id": "03078164-27cd-4e87-ba08-925d8cdef6d1","alterId": 0,"email": "jay30"
+### iflix30 2025-06-12
+},{"id": "303ebf88-6b08-4386-b3b9-f20d9d7ecd7c","alterId": 0,"email": "iflix30"
+### genta 2025-06-07
+},{"id": "0726565f-1af0-4488-916e-b694778a16b0","alterId": 0,"email": "genta"
+### roni1 2025-06-04
+},{"id": "8856f8a4-e757-4549-9d71-883090fffcab","alterId": 0,"email": "roni1"
+### ali30 2025-06-11
+},{"id": "b2b91e77-b76d-4a14-bf24-42374e817e56","alterId": 0,"email": "ali30"
+### cie30 2025-06-10
+},{"id": "0e8a998e-ce93-4f74-8b37-1aa6046dcffa","alterId": 0,"email": "cie30"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets/mms"
+                "path": "/vmess"
           }
         }
      },
@@ -426,28 +436,38 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### genta5 2025-06-20
-},{"id": "c7787942-f0bf-4436-a341-08af85906c98","alterId": 0,"email": "genta5"
-### jbar100 2025-06-19
-},{"id": "73477d81-9aba-43bc-8e8a-ea38e685933a","alterId": 0,"email": "jbar100"
-### yons30 2025-06-18
-},{"id": "28081fed-ec3d-43dd-8f88-ccf60a6eb927","alterId": 0,"email": "yons30"
-### afri30 2025-06-14
-},{"id": "fc77aa5c-558d-44ac-92d1-93770688273c","alterId": 0,"email": "afri30"
-### indra97 2025-06-11
-},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
-### wil30 2025-06-10
-},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
-### dandy30 2025-05-31
-},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
-### roni23 2025-05-30
-},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
-### roni22 2025-05-29
-},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
+### novia24 2025-06-25
+},{"id": "3761b181-fd74-448e-92d8-a69442e0d2e0","alterId": 0,"email": "novia24"
+### vani30 2025-06-25
+},{"id": "e0017586-fdb8-41f9-8abc-d0e7e55b756d","alterId": 0,"email": "vani30"
+### genta7 2025-06-23
+},{"id": "54b31a6f-61b5-41c3-b74c-6fef5596f17d","alterId": 0,"email": "genta7"
+### amy30 2025-06-21
+},{"id": "dbfec1a3-bf39-4f5f-a98b-b62ae21c7da9","alterId": 0,"email": "amy30"
+### manaja30 2025-06-19
+},{"id": "6b03339a-048d-4d3b-badc-74d8067c14d5","alterId": 0,"email": "manaja30"
+### isat30 2025-06-18
+},{"id": "36fd968f-b23a-496c-a527-b8e3b1f1acb2","alterId": 0,"email": "isat30"
+### purba30 2025-06-17
+},{"id": "885b51f4-62c1-482d-ac23-c342d1880f59","alterId": 0,"email": "purba30"
+### gani 2025-06-14
+},{"id": "a49c22ce-2f3c-4f0c-8d48-3e445d5e1a59","alterId": 0,"email": "gani"
+### genta1 2025-06-13
+},{"id": "f8175bbc-11cf-4885-8452-9a66a077d7ba","alterId": 0,"email": "genta1"
+### Bangray1999 2025-06-13
+},{"id": "c313ca5c-1fb1-460c-95ee-b985f3fc1aa5","alterId": 0,"email": "Bangray1999"
+### jay30 2025-06-12
+},{"id": "03078164-27cd-4e87-ba08-925d8cdef6d1","alterId": 0,"email": "jay30"
+### iflix30 2025-06-12
+},{"id": "303ebf88-6b08-4386-b3b9-f20d9d7ecd7c","alterId": 0,"email": "iflix30"
+### genta 2025-06-07
+},{"id": "0726565f-1af0-4488-916e-b694778a16b0","alterId": 0,"email": "genta"
+### roni1 2025-06-04
+},{"id": "8856f8a4-e757-4549-9d71-883090fffcab","alterId": 0,"email": "roni1"
+### ali30 2025-06-11
+},{"id": "b2b91e77-b76d-4a14-bf24-42374e817e56","alterId": 0,"email": "ali30"
+### cie30 2025-06-10
+},{"id": "0e8a998e-ce93-4f74-8b37-1aa6046dcffa","alterId": 0,"email": "cie30"
              }
           ]
        },
