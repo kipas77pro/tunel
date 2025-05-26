@@ -343,24 +343,26 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### sis30 2025-06-24
-},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
-### nizam30 2025-06-22
-},{"id": "7c7fc5ef-a8e5-4519-a104-b8523a6cccc0","alterId": 0,"email": "nizam30"
-### alnya 2025-06-20
-},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
-### koma30 2025-06-12
-},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
-### hisyam30 2025-06-11
-},{"id": "4f78d945-b68c-4b60-858e-c050f6537ffd","alterId": 0,"email": "hisyam30"
-### agus30 2025-06-09
-},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
-### made 2025-05-30
-},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
-### love30 2025-05-28
-},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
-### didik30 2025-05-28
-},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
+### zhaf30 2025-06-23
+},{"id": "2148cf4f-7995-45fa-b4d2-abb9ca7a49fc","alterId": 0,"email": "zhaf30"
+### ryu30 2025-06-22
+},{"id": "0380e948-200a-467e-aa3c-9dadae74b914","alterId": 0,"email": "ryu30"
+### abah 2025-06-20
+},{"id": "f7c76ad1-bca0-42bf-8d02-2898fa1bbeb7","alterId": 0,"email": "abah"
+### kimal 2025-06-14
+},{"id": "0c578633-e69b-4942-bcc1-24f42c10a826","alterId": 0,"email": "kimal"
+### nama30 2025-06-10
+},{"id": "8e94c8be-e289-4748-97bf-83ee0c1a4df1","alterId": 0,"email": "nama30"
+### bintangaren 2025-06-07
+},{"id": "7c8a2bd5-9cba-4e82-ad11-c52472548bfa","alterId": 0,"email": "bintangaren"
+### roni24 2025-05-31
+},{"id": "d2cc4573-7f7d-48c8-b9f1-74de1025ed56","alterId": 0,"email": "roni24"
+### tuup30 2025-05-28
+},{"id": "9f5ff4e0-ea51-4a0e-9eab-8259771bb1ed","alterId": 0,"email": "tuup30"
+### roni21 2025-05-28
+},{"id": "cdc28754-e196-4391-93dd-581f17fac88d","alterId": 0,"email": "roni21"
+### roni20 2025-05-28
+},{"id": "d108d81a-c364-437e-a20d-2f8d7bea722a","alterId": 0,"email": "roni20"
              }
           ]
        },
@@ -422,24 +424,26 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### sis30 2025-06-24
-},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
-### nizam30 2025-06-22
-},{"id": "7c7fc5ef-a8e5-4519-a104-b8523a6cccc0","alterId": 0,"email": "nizam30"
-### alnya 2025-06-20
-},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
-### koma30 2025-06-12
-},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
-### hisyam30 2025-06-11
-},{"id": "4f78d945-b68c-4b60-858e-c050f6537ffd","alterId": 0,"email": "hisyam30"
-### agus30 2025-06-09
-},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
-### made 2025-05-30
-},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
-### love30 2025-05-28
-},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
-### didik30 2025-05-28
-},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
+### zhaf30 2025-06-23
+},{"id": "2148cf4f-7995-45fa-b4d2-abb9ca7a49fc","alterId": 0,"email": "zhaf30"
+### ryu30 2025-06-22
+},{"id": "0380e948-200a-467e-aa3c-9dadae74b914","alterId": 0,"email": "ryu30"
+### abah 2025-06-20
+},{"id": "f7c76ad1-bca0-42bf-8d02-2898fa1bbeb7","alterId": 0,"email": "abah"
+### kimal 2025-06-14
+},{"id": "0c578633-e69b-4942-bcc1-24f42c10a826","alterId": 0,"email": "kimal"
+### nama30 2025-06-10
+},{"id": "8e94c8be-e289-4748-97bf-83ee0c1a4df1","alterId": 0,"email": "nama30"
+### bintangaren 2025-06-07
+},{"id": "7c8a2bd5-9cba-4e82-ad11-c52472548bfa","alterId": 0,"email": "bintangaren"
+### roni24 2025-05-31
+},{"id": "d2cc4573-7f7d-48c8-b9f1-74de1025ed56","alterId": 0,"email": "roni24"
+### tuup30 2025-05-28
+},{"id": "9f5ff4e0-ea51-4a0e-9eab-8259771bb1ed","alterId": 0,"email": "tuup30"
+### roni21 2025-05-28
+},{"id": "cdc28754-e196-4391-93dd-581f17fac88d","alterId": 0,"email": "roni21"
+### roni20 2025-05-28
+},{"id": "d108d81a-c364-437e-a20d-2f8d7bea722a","alterId": 0,"email": "roni20"
              }
           ]
        },
