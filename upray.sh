@@ -236,7 +236,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -343,33 +343,35 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### lima15 2025-06-09
-},{"id": "4f73def1-1a22-4af2-9ac7-4b7be40e2f7f","alterId": 0,"email": "lima15"
-### jtg200 2025-06-21
-},{"id": "9202905a-c013-4fd3-a9e9-097fbd642c30","alterId": 0,"email": "jtg200"
-### jtg100 2025-06-20
-},{"id": "8d04dc43-f5e2-4b93-8b7d-4e13ff60c715","alterId": 0,"email": "jtg100"
-### genta6 2025-06-18
-},{"id": "b6becb1a-f7d4-4b6d-a165-c9a3f3982378","alterId": 0,"email": "genta6"
-### genta3 2025-06-16
-},{"id": "6181a063-43a8-4cef-aada-0cba7f570f0d","alterId": 0,"email": "genta3"
-### genta2 2025-06-15
-},{"id": "892012ff-96f8-4046-bafc-48515ee6c1e9","alterId": 0,"email": "genta2"
-### juanda30 2025-06-11
-},{"id": "f862bd31-bf8c-40a2-9a21-a4c1d4a05813","alterId": 0,"email": "juanda30"
-### iwak 2025-06-07
-},{"id": "6a96757b-a8d9-4456-859e-98bf0cc4cf93","alterId": 0,"email": "iwak"
-### alihoby 2025-05-31
-},{"id": "ac52983c-9313-41c4-8271-0663d178e1a0","alterId": 0,"email": "alihoby"
-### lana 2025-06-21
-},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
+### genta5 2025-06-20
+},{"id": "c7787942-f0bf-4436-a341-08af85906c98","alterId": 0,"email": "genta5"
+### jbar100 2025-06-19
+},{"id": "73477d81-9aba-43bc-8e8a-ea38e685933a","alterId": 0,"email": "jbar100"
+### yons30 2025-06-18
+},{"id": "28081fed-ec3d-43dd-8f88-ccf60a6eb927","alterId": 0,"email": "yons30"
+### afri30 2025-06-14
+},{"id": "fc77aa5c-558d-44ac-92d1-93770688273c","alterId": 0,"email": "afri30"
+### indra97 2025-06-11
+},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
+### wil30 2025-06-10
+},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
+### dandy30 2025-05-31
+},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
+### roni23 2025-05-30
+},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
+### roni22 2025-05-29
+},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
+### aki 2025-08-23
+},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
+### opok 2025-08-18
+},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/vmess"
+                "path": "/servlets/mms"
           }
         }
      },
@@ -424,26 +426,28 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### lima15 2025-06-09
-},{"id": "4f73def1-1a22-4af2-9ac7-4b7be40e2f7f","alterId": 0,"email": "lima15"
-### jtg200 2025-06-21
-},{"id": "9202905a-c013-4fd3-a9e9-097fbd642c30","alterId": 0,"email": "jtg200"
-### jtg100 2025-06-20
-},{"id": "8d04dc43-f5e2-4b93-8b7d-4e13ff60c715","alterId": 0,"email": "jtg100"
-### genta6 2025-06-18
-},{"id": "b6becb1a-f7d4-4b6d-a165-c9a3f3982378","alterId": 0,"email": "genta6"
-### genta3 2025-06-16
-},{"id": "6181a063-43a8-4cef-aada-0cba7f570f0d","alterId": 0,"email": "genta3"
-### genta2 2025-06-15
-},{"id": "892012ff-96f8-4046-bafc-48515ee6c1e9","alterId": 0,"email": "genta2"
-### juanda30 2025-06-11
-},{"id": "f862bd31-bf8c-40a2-9a21-a4c1d4a05813","alterId": 0,"email": "juanda30"
-### iwak 2025-06-07
-},{"id": "6a96757b-a8d9-4456-859e-98bf0cc4cf93","alterId": 0,"email": "iwak"
-### alihoby 2025-05-31
-},{"id": "ac52983c-9313-41c4-8271-0663d178e1a0","alterId": 0,"email": "alihoby"
-### lana 2025-06-21
-},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
+### genta5 2025-06-20
+},{"id": "c7787942-f0bf-4436-a341-08af85906c98","alterId": 0,"email": "genta5"
+### jbar100 2025-06-19
+},{"id": "73477d81-9aba-43bc-8e8a-ea38e685933a","alterId": 0,"email": "jbar100"
+### yons30 2025-06-18
+},{"id": "28081fed-ec3d-43dd-8f88-ccf60a6eb927","alterId": 0,"email": "yons30"
+### afri30 2025-06-14
+},{"id": "fc77aa5c-558d-44ac-92d1-93770688273c","alterId": 0,"email": "afri30"
+### indra97 2025-06-11
+},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
+### wil30 2025-06-10
+},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
+### dandy30 2025-05-31
+},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
+### roni23 2025-05-30
+},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
+### roni22 2025-05-29
+},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
+### aki 2025-08-23
+},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
+### opok 2025-08-18
+},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
