@@ -343,28 +343,24 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### ini30 2025-06-08
-},{"id": "6d7d0956-3d83-4d52-a1c5-164981c2d4ac","alterId": 0,"email": "ini30"
-### kakim30 2025-06-14
-},{"id": "12a8c8c1-a971-457a-bf9e-0e57717f8951","alterId": 0,"email": "kakim30"
-### mbarock 2025-06-10
-},{"id": "a64019e1-6093-41b4-bae8-252063305d7f","alterId": 0,"email": "mbarock"
-### inia 2025-05-30
-},{"id": "4144a71e-f3aa-4111-b121-44ef764d3f40","alterId": 0,"email": "inia"
-### mc30 2025-06-08
-},{"id": "2fc3a3b4-c63f-4943-8429-95732293adbd","alterId": 0,"email": "mc30"
-### romy39 2025-06-07
-},{"id": "df9af1a5-2107-4147-9d63-2622ac7b0419","alterId": 0,"email": "romy39"
-### azz 2025-06-03
-},{"id": "cb714004-89d8-4b19-8064-c781363141a0","alterId": 0,"email": "azz"
-### zriel30 2025-06-03
-},{"id": "13c895a9-dae4-4f2c-92ab-31eafd05bd6f","alterId": 0,"email": "zriel30"
-### dimas30 2025-06-04
-},{"id": "557268e5-7b07-4906-9498-4d012697fbbe","alterId": 0,"email": "dimas30"
-### rizal30 2025-06-03
-},{"id": "87764073-a4d1-4350-983a-0dd13c8b520e","alterId": 0,"email": "rizal30"
-### roni1 2025-06-04
-},{"id": "a6e4e8f5-f2dc-41fb-999d-2d5ee47b502e","alterId": 0,"email": "roni1"
+### sis30 2025-06-24
+},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
+### nizam30 2025-06-22
+},{"id": "7c7fc5ef-a8e5-4519-a104-b8523a6cccc0","alterId": 0,"email": "nizam30"
+### alnya 2025-06-20
+},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
+### koma30 2025-06-12
+},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
+### hisyam30 2025-06-11
+},{"id": "4f78d945-b68c-4b60-858e-c050f6537ffd","alterId": 0,"email": "hisyam30"
+### agus30 2025-06-09
+},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
+### made 2025-05-30
+},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
+### love30 2025-05-28
+},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
+### didik30 2025-05-28
+},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
              }
           ]
        },
@@ -385,8 +381,6 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### trojan1 2025-06-18
-},{"password": "f418e02b-b070-469c-b93e-65c5cbc4e06c","email": "trojan1"
               }
           ],
          "udp": true
@@ -428,28 +422,24 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### ini30 2025-06-08
-},{"id": "6d7d0956-3d83-4d52-a1c5-164981c2d4ac","alterId": 0,"email": "ini30"
-### kakim30 2025-06-14
-},{"id": "12a8c8c1-a971-457a-bf9e-0e57717f8951","alterId": 0,"email": "kakim30"
-### mbarock 2025-06-10
-},{"id": "a64019e1-6093-41b4-bae8-252063305d7f","alterId": 0,"email": "mbarock"
-### inia 2025-05-30
-},{"id": "4144a71e-f3aa-4111-b121-44ef764d3f40","alterId": 0,"email": "inia"
-### mc30 2025-06-08
-},{"id": "2fc3a3b4-c63f-4943-8429-95732293adbd","alterId": 0,"email": "mc30"
-### romy39 2025-06-07
-},{"id": "df9af1a5-2107-4147-9d63-2622ac7b0419","alterId": 0,"email": "romy39"
-### azz 2025-06-03
-},{"id": "cb714004-89d8-4b19-8064-c781363141a0","alterId": 0,"email": "azz"
-### zriel30 2025-06-03
-},{"id": "13c895a9-dae4-4f2c-92ab-31eafd05bd6f","alterId": 0,"email": "zriel30"
-### dimas30 2025-06-04
-},{"id": "557268e5-7b07-4906-9498-4d012697fbbe","alterId": 0,"email": "dimas30"
-### rizal30 2025-06-03
-},{"id": "87764073-a4d1-4350-983a-0dd13c8b520e","alterId": 0,"email": "rizal30"
-### roni1 2025-06-04
-},{"id": "a6e4e8f5-f2dc-41fb-999d-2d5ee47b502e","alterId": 0,"email": "roni1"
+### sis30 2025-06-24
+},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
+### nizam30 2025-06-22
+},{"id": "7c7fc5ef-a8e5-4519-a104-b8523a6cccc0","alterId": 0,"email": "nizam30"
+### alnya 2025-06-20
+},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
+### koma30 2025-06-12
+},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
+### hisyam30 2025-06-11
+},{"id": "4f78d945-b68c-4b60-858e-c050f6537ffd","alterId": 0,"email": "hisyam30"
+### agus30 2025-06-09
+},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
+### made 2025-05-30
+},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
+### love30 2025-05-28
+},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
+### didik30 2025-05-28
+},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
              }
           ]
        },
@@ -470,8 +460,6 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### trojan1 2025-06-18
-},{"password": "f418e02b-b070-469c-b93e-65c5cbc4e06c","email": "trojan1"
                }
            ]
         },
