@@ -4,7 +4,7 @@ NC='\033[0;37m'
 green='\033[0;32m' 
 
 clear
-source /var/lib/scrz-prem/ipvps.conf
+source /var/lib/aryapro/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
@@ -214,7 +214,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /NbcGroup' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -327,7 +327,7 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/vmess"
+                "path": "/NbcGroup"
           }
         }
      },
@@ -526,7 +526,7 @@ systemctl restart nginx >/dev/null 2>&1
 sleep 2
 echo -e "[ ${green}INFO${NC} ] UPDATE CORE 1.8.19... "
 clear
-source /var/lib/scrz-prem/ipvps.conf
+source /var/lib/aryapro/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
