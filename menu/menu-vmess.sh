@@ -18,8 +18,6 @@ else
 domain=$IP
 fi
 
-#tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
-#none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\033[0;34m│\E[42;1;37m           Create Xray/Vmess Account            \033[0;34m│"
@@ -43,6 +41,7 @@ menu
 	done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
@@ -108,6 +107,7 @@ clear
 echo -e "\033[0;34m═══════════\033[0;33mXRAY/VMESS\033[0;34m═══════════${NC}"
 echo -e "\033[0;34m════════════════════════════════${NC}"
 echo -e "Remarks       : ${user}"
+echo -e "Created       : $hariini"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "Port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
@@ -366,8 +366,6 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
                 fi
         done
 user=$(cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
-#tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
-#none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 domain=$(cat /etc/xray/domain)
 uuid=$(grep "},{" /etc/xray/config.json | cut -b 11-46 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
