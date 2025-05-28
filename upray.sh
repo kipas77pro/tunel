@@ -180,30 +180,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
              listen [::]:80;
-             listen 8880;
-             listen [::]:8880;
-             listen 2082;
-             listen [::]:2082;
-             listen 8080;
-             listen [::]:8080;
-             listen 2052;
-             listen [::]:2052;
-             listen 2095;
-             listen [::]:2095;
-             listen 2086;
-             listen [::]:2086;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
-             listen 8443 ssl http2 reuseport;
-             listen [::]:8443 http2 reuseport;	
-             listen 2096 ssl http2 reuseport;
-             listen [::]:2096 http2 reuseport;	
-             listen 2087 ssl http2 reuseport;
-             listen [::]:2087 http2 reuseport;	
-             listen 2053 ssl http2 reuseport;
-             listen [::]:2053 http2 reuseport;	
-             listen 2083 ssl http2 reuseport;
-             listen [::]:2083 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
@@ -236,7 +214,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -343,43 +321,13 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### trial03X1 2025-05-28
-},{"id": "52d48571-cf3a-4eea-b54e-ddeaf3e47135","alterId": 0,"email": "trial03X1"
-### trial535Y 2025-05-28
-},{"id": "d61d1540-9304-4b6e-9304-12dbf6e3cbb0","alterId": 0,"email": "trial535Y"
-### kupling 2025-06-26
-},{"id": "b82fea75-bd6e-4220-8594-a3c3d67801a1","alterId": 0,"email": "kupling"
-### dinar30 2025-06-26
-},{"id": "d8a6ab91-6b2e-44c1-a765-344ca104559e","alterId": 0,"email": "dinar30"
-### genta5 2025-06-20
-},{"id": "c7787942-f0bf-4436-a341-08af85906c98","alterId": 0,"email": "genta5"
-### jbar100 2025-06-19
-},{"id": "73477d81-9aba-43bc-8e8a-ea38e685933a","alterId": 0,"email": "jbar100"
-### yons30 2025-06-18
-},{"id": "28081fed-ec3d-43dd-8f88-ccf60a6eb927","alterId": 0,"email": "yons30"
-### afri30 2025-06-14
-},{"id": "fc77aa5c-558d-44ac-92d1-93770688273c","alterId": 0,"email": "afri30"
-### indra97 2025-06-11
-},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
-### wil30 2025-06-10
-},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
-### dandy30 2025-05-31
-},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
-### roni23 2025-05-30
-},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
-### roni22 2025-05-29
-},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets/mms"
+                "path": "/vmess"
           }
         }
      },
@@ -434,36 +382,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### trial03X1 2025-05-28
-},{"id": "52d48571-cf3a-4eea-b54e-ddeaf3e47135","alterId": 0,"email": "trial03X1"
-### trial535Y 2025-05-28
-},{"id": "d61d1540-9304-4b6e-9304-12dbf6e3cbb0","alterId": 0,"email": "trial535Y"
-### kupling 2025-06-26
-},{"id": "b82fea75-bd6e-4220-8594-a3c3d67801a1","alterId": 0,"email": "kupling"
-### dinar30 2025-06-26
-},{"id": "d8a6ab91-6b2e-44c1-a765-344ca104559e","alterId": 0,"email": "dinar30"
-### genta5 2025-06-20
-},{"id": "c7787942-f0bf-4436-a341-08af85906c98","alterId": 0,"email": "genta5"
-### jbar100 2025-06-19
-},{"id": "73477d81-9aba-43bc-8e8a-ea38e685933a","alterId": 0,"email": "jbar100"
-### yons30 2025-06-18
-},{"id": "28081fed-ec3d-43dd-8f88-ccf60a6eb927","alterId": 0,"email": "yons30"
-### afri30 2025-06-14
-},{"id": "fc77aa5c-558d-44ac-92d1-93770688273c","alterId": 0,"email": "afri30"
-### indra97 2025-06-11
-},{"id": "2e6118bf-96ee-4411-981c-39df8696f78a","alterId": 0,"email": "indra97"
-### wil30 2025-06-10
-},{"id": "3209b6e3-a7b6-490b-9861-e9fc8ec2bbfd","alterId": 0,"email": "wil30"
-### dandy30 2025-05-31
-},{"id": "3b11d133-f5eb-4df1-851a-b41280505d2a","alterId": 0,"email": "dandy30"
-### roni23 2025-05-30
-},{"id": "e29d837a-9c03-4b82-9bab-a61c3fc4b392","alterId": 0,"email": "roni23"
-### roni22 2025-05-29
-},{"id": "a3be43e5-fddf-4597-bbb4-7c3aa64d3b97","alterId": 0,"email": "roni22"
-### aki 2025-08-23
-},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
-### opok 2025-08-18
-},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
