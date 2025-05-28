@@ -369,7 +369,6 @@ user=$(cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sed -n "${CLI
 domain=$(cat /etc/xray/domain)
 uuid=$(grep "},{" /etc/xray/config.json | cut -b 11-46 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
-hariini=`date -d "0 days" +"%Y-%m-%d"`
 asu=`cat<<EOF
       {
       "v": "2",
@@ -426,7 +425,6 @@ echo -e ""
 echo -e "\033[0;34m═══════════\033[0;33mXRAY/VMESS\033[0;34m═══════════${NC}"
 echo -e "\033[0;34m════════════════════════════════${NC}"
 echo -e "Remarks       : ${user}"
-echo -e "Created       : $hariini"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "Port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
