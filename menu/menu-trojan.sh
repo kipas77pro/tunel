@@ -42,7 +42,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
+#tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
 echo -e " \E[42;1;37m              CREATE TROJAN ACCOUNT              \E[0m"
@@ -67,6 +67,7 @@ clear
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
@@ -79,6 +80,7 @@ trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serv
 clear
 echo -e "\033[0;34m════════════\033[0;33mXRAY/TROJANWS\033[0;34m════════════${NC}"
 echo -e "Remarks     : ${user}" 
+echo -e "Created     : $hariini"
 echo -e "Expired On  : $exp" 
 echo -e "Host/IP     : ${domain}" 
 echo -e "Port        : 443, 8443, 2087, 2096, 2053, 2083 "
@@ -158,7 +160,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
 function trialtrojan(){
 clear
 domain=$(cat /etc/xray/domain)
-tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
+#tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
 user=trialtro`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
