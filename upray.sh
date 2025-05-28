@@ -180,30 +180,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
              listen [::]:80;
-             listen 8880;
-             listen [::]:8880;
-             listen 2082;
-             listen [::]:2082;
-             listen 8080;
-             listen [::]:8080;
-             listen 2052;
-             listen [::]:2052;
-             listen 2095;
-             listen [::]:2095;
-             listen 2086;
-             listen [::]:2086;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
-             listen 8443 ssl http2 reuseport;
-             listen [::]:8443 http2 reuseport;	
-             listen 2096 ssl http2 reuseport;
-             listen [::]:2096 http2 reuseport;	
-             listen 2087 ssl http2 reuseport;
-             listen [::]:2087 http2 reuseport;	
-             listen 2053 ssl http2 reuseport;
-             listen [::]:2053 http2 reuseport;	
-             listen 2083 ssl http2 reuseport;
-             listen [::]:2083 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
@@ -343,24 +321,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### sis30 2025-06-24
-},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
-### nizam30 2025-06-22
-},{"id": "7c7fc5ef-a8e5-4519-a104-b8523a6cccc0","alterId": 0,"email": "nizam30"
-### alnya 2025-06-20
-},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
-### koma30 2025-06-12
-},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
-### hisyam30 2025-06-11
-},{"id": "4f78d945-b68c-4b60-858e-c050f6537ffd","alterId": 0,"email": "hisyam30"
-### agus30 2025-06-09
-},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
-### made 2025-05-30
-},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
-### love30 2025-05-28
-},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
-### didik30 2025-05-28
-},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
              }
           ]
        },
@@ -422,24 +382,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### sis30 2025-06-24
-},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
-### nizam30 2025-06-22
-},{"id": "7c7fc5ef-a8e5-4519-a104-b8523a6cccc0","alterId": 0,"email": "nizam30"
-### alnya 2025-06-20
-},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
-### koma30 2025-06-12
-},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
-### hisyam30 2025-06-11
-},{"id": "4f78d945-b68c-4b60-858e-c050f6537ffd","alterId": 0,"email": "hisyam30"
-### agus30 2025-06-09
-},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
-### made 2025-05-30
-},{"id": "5f4059ac-667a-4bc0-9973-76b3cba27a15","alterId": 0,"email": "made"
-### love30 2025-05-28
-},{"id": "4c0a93a7-c627-4286-9bf9-e00854fc7070","alterId": 0,"email": "love30"
-### didik30 2025-05-28
-},{"id": "8a491222-c8f8-4edd-a2f8-920658332cd6","alterId": 0,"email": "didik30"
              }
           ]
        },
