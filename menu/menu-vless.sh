@@ -68,6 +68,7 @@ clear
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vless$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
@@ -81,6 +82,7 @@ clear
 echo -e "\033[0;34m═══════════\033[0;33mXRAY/VLESS\033[0;34m═══════════${NC}"
 echo -e "\033[0;34m════════════════════════════════${NC}"
 echo -e "Remarks       : ${user}" 
+echo -e "Created       : $hariini"
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
 echo -e "port none TLS : 80, 8080, 8880, 2082, 2086, 2052, 2095"
