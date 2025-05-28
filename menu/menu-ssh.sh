@@ -29,21 +29,14 @@ read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
 
 IP=$(curl -sS ifconfig.me);
-#ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
 ssl="$(cat /root/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
-#sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
-#ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-#ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-
-#OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
-#OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
-#OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
 sleep 1
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
@@ -53,7 +46,7 @@ echo -e "\033[0;34m════════════\033[0;33mSSH ACCOUNTS\03
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
-echo -e "Created       : $hariini"
+echo -e "Created    : $hariini"
 echo -e "Expired On : $exp" 
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 #echo -e "IP         : $IP" 
@@ -78,7 +71,7 @@ echo -e "\033[0;34m════════════\033[0;33mSSH ACCOUNTS\03
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
-echo -e "Created       : $hariini"
+echo -e "Created    : $hariini"
 echo -e "Expired On : $exp" 
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "Host       : $domen" 
