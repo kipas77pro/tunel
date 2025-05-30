@@ -8,8 +8,6 @@ NC='\e[0m'
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
 clear
-# REPO    
-REPO="https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/"
 
 clear
 print_install "Core Xray Latest Version"
@@ -21,8 +19,8 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
  
     # // Ambil Config Server
-wget -O /etc/xray/config.json "${REPO}media/config.json" >/dev/null 2>&1
-wget -O /etc/systemd/system/runn.service "${REPO}media/runn.service" >/dev/null 2>&1
+wget -O /etc/xray/config.json "https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/media/config.json" >/dev/null 2>&1
+wget -O /etc/systemd/system/runn.service "https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/media/runn.service" >/dev/null 2>&1
     #chmod +x /usr/local/bin/xray
 domain=$(cat /etc/xray/domain)
 IPVS=$(cat /etc/xray/ipvps)
