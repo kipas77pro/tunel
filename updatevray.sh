@@ -79,36 +79,7 @@ clear
 # REPO    
     REPO="https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/"
 
-####
-start=$(date +%s)
-secs_to_human() {
-    echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
-}
-### Status
-function print_ok() {
-    echo -e "${OK} ${BLUE} $1 ${FONT}"
-}
-function print_install() {
-	echo -e "${green} =============================== ${FONT}"
-    echo -e "${YELLOW} # $1 ${FONT}"
-	echo -e "${green} =============================== ${FONT}"
-    sleep 1
-}
 
-function print_error() {
-    echo -e "${ERROR} ${REDBG} $1 ${FONT}"
-}
-
-function print_success() {
-    if [[ 0 -eq $? ]]; then
-		echo -e "${green} =============================== ${FONT}"
-        echo -e "${Green} # $1 berhasil dipasang"
-		echo -e "${green} =============================== ${FONT}"
-        sleep 2
-    fi
-}
-
-#Instal Xray
 function install_xray() {
 clear
     print_install "Core Xray Latest Version"
@@ -168,5 +139,4 @@ EOF
 print_success "Konfigurasi Packet"
 }
 
-function ssh(){
-clear
+cd
