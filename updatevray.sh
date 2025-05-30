@@ -9,7 +9,7 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/"
+REPO="https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/"
 
 clear
     print_install "Core Xray Latest Version"
