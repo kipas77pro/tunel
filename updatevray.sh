@@ -222,11 +222,6 @@ function base_package() {
     print_success "Packet Yang Dibutuhkan"
     
 }
-clear
-
-clear
-    fi
-}
 
 clear
 #GANTI PASSWORD DEFAULT
