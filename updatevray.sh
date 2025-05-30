@@ -108,16 +108,6 @@ function print_success() {
     fi
 }
 
-### Cek root
-function is_root() {
-    if [[ 0 == "$UID" ]]; then
-        print_ok "Root user Start installation process"
-    else
-        print_error "The current user is not the root user, please switch to the root user and run the script again"
-    fi
-
-}
-
 # Buat direktori xray
 print_install "Membuat direktori xray"
     mkdir -p /etc/xray
