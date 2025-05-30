@@ -120,7 +120,7 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 
 EOF
-
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.19
 /etc/init.d/nginx restart
 /etc/init.d/openvpn restart
 /etc/init.d/ssh restart
