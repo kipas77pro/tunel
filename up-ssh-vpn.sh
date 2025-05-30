@@ -60,12 +60,6 @@ systemctl restart ws-stunnel >/dev/null 2>&1
 
 clear
 
-clear
-# go to root
-cd
-apt install python3
-
-# Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -91,7 +85,14 @@ END
 
 # Ubah izin akses
 chmod +x /etc/rc.local
-
+echo -e "
+"
+date
+echo ""
+# enable rc local
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Checking... "
+sleep 2
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable system rc local"
 systemctl enable rc-local >/dev/null 2>&1
@@ -139,15 +140,6 @@ chmod +x /usr/bin/badvpn-udpgw  >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 systemctl daemon-reload >/dev/null 2>&1
 systemctl start rc-local.service >/dev/null 2>&1
 systemctl restart rc-local.service >/dev/null 2>&1
