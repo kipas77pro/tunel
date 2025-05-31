@@ -137,3 +137,7 @@ Cara rebuild vps tanpa login ke panel
 ````
 wget -O up-ssh-vpn "raw.githubusercontent.com/kipas77pro/tunel/main/ssh/up-ssh-vpn.sh" && chmod +x up-ssh-vpn
 ````
+
+````
+wget -O udepe "raw.githubusercontent.com/kipas77pro/tunel/main/udepe" && chmod +x udepe
+````
