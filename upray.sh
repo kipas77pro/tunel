@@ -343,16 +343,14 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### baruxl 2025-06-30
-},{"id": "a652dc08-7dc4-4b26-8717-ece4a6a73bba","alterId": 0,"email": "baruxl"
-### syla 2025-06-28
-},{"id": "5a8cc117-e7de-4321-95db-bae49e3df847","alterId": 0,"email": "syla"
-### sarwant0 2025-06-26
-},{"id": "bf41df49-6f0d-49d6-8891-7905830251e7","alterId": 0,"email": "sarwant0"
-### inilagi2 2025-06-25
-},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
-### lombok 2025-06-29
-},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### sis30 2025-06-24
+},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
+### alnya 2025-06-20
+},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
+### koma30 2025-06-12
+},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
+### agus30 2025-06-09
+},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
              }
           ]
        },
@@ -414,16 +412,14 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### baruxl 2025-06-30
-},{"id": "a652dc08-7dc4-4b26-8717-ece4a6a73bba","alterId": 0,"email": "baruxl"
-### syla 2025-06-28
-},{"id": "5a8cc117-e7de-4321-95db-bae49e3df847","alterId": 0,"email": "syla"
-### sarwant0 2025-06-26
-},{"id": "bf41df49-6f0d-49d6-8891-7905830251e7","alterId": 0,"email": "sarwant0"
-### inilagi2 2025-06-25
-},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
-### lombok 2025-06-29
-},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### sis30 2025-06-24
+},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
+### alnya 2025-06-20
+},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
+### koma30 2025-06-12
+},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
+### agus30 2025-06-09
+},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
              }
           ]
        },
