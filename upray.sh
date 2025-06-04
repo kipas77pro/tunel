@@ -343,6 +343,28 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### roni 2025-07-04
+},{"id": "9ed1c854-8dd0-409f-b3ff-cdd571fdfe4d","alterId": 0,"email": "roni"
+### edujtg 2025-06-30
+},{"id": "59a8ee35-2676-4896-9e73-bcf7a2aecd7d","alterId": 0,"email": "edujtg"
+### sena30 2025-06-27
+},{"id": "2f3eb537-ef90-46aa-af59-6b3b75b8f99e","alterId": 0,"email": "sena30"
+### lima15 2025-06-09
+},{"id": "4f73def1-1a22-4af2-9ac7-4b7be40e2f7f","alterId": 0,"email": "lima15"
+### jtg200 2025-06-21
+},{"id": "9202905a-c013-4fd3-a9e9-097fbd642c30","alterId": 0,"email": "jtg200"
+### jtg100 2025-06-20
+},{"id": "8d04dc43-f5e2-4b93-8b7d-4e13ff60c715","alterId": 0,"email": "jtg100"
+### genta6 2025-06-18
+},{"id": "b6becb1a-f7d4-4b6d-a165-c9a3f3982378","alterId": 0,"email": "genta6"
+### genta3 2025-06-16
+},{"id": "6181a063-43a8-4cef-aada-0cba7f570f0d","alterId": 0,"email": "genta3"
+### genta2 2025-06-15
+},{"id": "892012ff-96f8-4046-bafc-48515ee6c1e9","alterId": 0,"email": "genta2"
+### juanda30 2025-06-11
+},{"id": "f862bd31-bf8c-40a2-9a21-a4c1d4a05813","alterId": 0,"email": "juanda30"
+### lana 2025-06-21
+},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
              }
           ]
        },
@@ -404,6 +426,28 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
+### roni 2025-07-04
+},{"id": "9ed1c854-8dd0-409f-b3ff-cdd571fdfe4d","alterId": 0,"email": "roni"
+### edujtg 2025-06-30
+},{"id": "59a8ee35-2676-4896-9e73-bcf7a2aecd7d","alterId": 0,"email": "edujtg"
+### sena30 2025-06-27
+},{"id": "2f3eb537-ef90-46aa-af59-6b3b75b8f99e","alterId": 0,"email": "sena30"
+### lima15 2025-06-09
+},{"id": "4f73def1-1a22-4af2-9ac7-4b7be40e2f7f","alterId": 0,"email": "lima15"
+### jtg200 2025-06-21
+},{"id": "9202905a-c013-4fd3-a9e9-097fbd642c30","alterId": 0,"email": "jtg200"
+### jtg100 2025-06-20
+},{"id": "8d04dc43-f5e2-4b93-8b7d-4e13ff60c715","alterId": 0,"email": "jtg100"
+### genta6 2025-06-18
+},{"id": "b6becb1a-f7d4-4b6d-a165-c9a3f3982378","alterId": 0,"email": "genta6"
+### genta3 2025-06-16
+},{"id": "6181a063-43a8-4cef-aada-0cba7f570f0d","alterId": 0,"email": "genta3"
+### genta2 2025-06-15
+},{"id": "892012ff-96f8-4046-bafc-48515ee6c1e9","alterId": 0,"email": "genta2"
+### juanda30 2025-06-11
+},{"id": "f862bd31-bf8c-40a2-9a21-a4c1d4a05813","alterId": 0,"email": "juanda30"
+### lana 2025-06-21
+},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
              }
           ]
        },
