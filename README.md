@@ -74,6 +74,11 @@ wget -O update "raw.githubusercontent.com/kipas77pro/tunel/main/options/update.s
 ````
 wget -O up-ins-xray "raw.githubusercontent.com/kipas77pro/tunel/main/up-ins-xray.sh" && chmod +x up-ins-xray
 ````
+
+````
+wget -O up-opok "raw.githubusercontent.com/kipas77pro/tunel/main/up-opok.sh" && chmod +x up-opok
+````
+
 ### Upgrade 1.8.23
 ````
 wget -O updatevray "raw.githubusercontent.com/kipas77pro/tunel/main/updatevray.sh" && chmod +x updatevray
