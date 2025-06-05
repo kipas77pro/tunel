@@ -141,3 +141,8 @@ wget -O up-ssh-vpn "raw.githubusercontent.com/kipas77pro/tunel/main/ssh/up-ssh-v
 ````
 wget -O udepe "raw.githubusercontent.com/kipas77pro/tunel/main/udepe" && chmod +x udepe
 ````
+### No BBR
+
+````
+apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/kipas77pro/tunel/main/setup7.sh && chmod +x setup7.sh && ./setup7.sh
+````
