@@ -255,7 +255,7 @@ echo -e "┌──────────────────────�
 echo -e " \E[42;1;37m          >>> Install SSH / WS <<<        \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
-wget -q https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget -q https://raw.githubusercontent.com/kipas77pro/tunel/main/ssh/ssh-vpn7.sh && chmod +x ssh-vpn7.sh && ./ssh-vpn7.sh
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[42;1;37m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
@@ -437,7 +437,7 @@ echo -e "Wa Me +6281931615811"
 echo  ""
 echo  "" | tee -a log-install.txt
 rm -fr /root/vnstat.sh
-rm -fr /root/ssh-vpn.sh
+rm -fr /root/ssh-vpn7.sh
 rm -fr /root/ins-xray.sh
 rm -fr /root/setup.sh
 rm -fr /root/set-br.sh
