@@ -134,6 +134,11 @@ systemctl restart ws-stunnel >/dev/null 2>&1
 
 clear
 
+# go to root
+cd
+apt install python3 -y
+
+# Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -159,18 +164,10 @@ END
 
 # Ubah izin akses
 chmod +x /etc/rc.local
-echo -e "
-"
-date
-echo ""
+
 # enable rc local
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Checking... "
-sleep 2
-sleep 1
-echo -e "[ ${green}INFO$NC ] Enable system rc local"
-systemctl enable rc-local >/dev/null 2>&1
-systemctl start rc-local.service >/dev/null 2>&1
+systemctl enable rc-local
+systemctl start rc-local.service
 
 # disable ipv6
 sleep 1
@@ -284,9 +281,6 @@ connect = 127.0.0.1:143
 [openssh]
 accept = 777
 connect = 127.0.0.1:22
-[openvpn]
-accept = 442
-connect = 127.0.0.1:1194
 END
 
 # make a certificate
