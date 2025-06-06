@@ -343,30 +343,38 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### edujtg 2025-06-30
-},{"id": "e32544bb-2086-4fb7-8798-3ed6ff15d799","alterId": 0,"email": "edujtg"
-### jtg200 2025-06-21
-},{"id": "b48e243b-0c6f-47bd-bc32-6d8f8d5530a6","alterId": 0,"email": "jtg200"
-### fahrol30 2025-07-04
-},{"id": "530759f7-fcdb-4fd1-82e2-e9beee6ee8f3","alterId": 0,"email": "fahrol30"
-### roni 2025-07-04
-},{"id": "9ed1c854-8dd0-409f-b3ff-cdd571fdfe4d","alterId": 0,"email": "roni"
-### sena30 2025-06-27
-},{"id": "2f3eb537-ef90-46aa-af59-6b3b75b8f99e","alterId": 0,"email": "sena30"
-### lima15 2025-06-09
-},{"id": "4f73def1-1a22-4af2-9ac7-4b7be40e2f7f","alterId": 0,"email": "lima15"
-### jtg100 2025-06-20
-},{"id": "8d04dc43-f5e2-4b93-8b7d-4e13ff60c715","alterId": 0,"email": "jtg100"
-### genta6 2025-06-18
-},{"id": "b6becb1a-f7d4-4b6d-a165-c9a3f3982378","alterId": 0,"email": "genta6"
-### genta3 2025-06-16
-},{"id": "6181a063-43a8-4cef-aada-0cba7f570f0d","alterId": 0,"email": "genta3"
-### genta2 2025-06-15
-},{"id": "892012ff-96f8-4046-bafc-48515ee6c1e9","alterId": 0,"email": "genta2"
-### juanda30 2025-06-11
-},{"id": "f862bd31-bf8c-40a2-9a21-a4c1d4a05813","alterId": 0,"email": "juanda30"
-### lana 2025-06-21
-},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
+### dhoni 2025-07-01
+},{"id": "99e1ba53-6168-4686-9381-150c40f0e0f6","alterId": 0,"email": "dhoni"
+### novia24 2025-06-25
+},{"id": "3761b181-fd74-448e-92d8-a69442e0d2e0","alterId": 0,"email": "novia24"
+### vani30 2025-06-25
+},{"id": "e0017586-fdb8-41f9-8abc-d0e7e55b756d","alterId": 0,"email": "vani30"
+### genta7 2025-06-23
+},{"id": "54b31a6f-61b5-41c3-b74c-6fef5596f17d","alterId": 0,"email": "genta7"
+### amy30 2025-06-21
+},{"id": "dbfec1a3-bf39-4f5f-a98b-b62ae21c7da9","alterId": 0,"email": "amy30"
+### manaja30 2025-06-19
+},{"id": "6b03339a-048d-4d3b-badc-74d8067c14d5","alterId": 0,"email": "manaja30"
+### isat30 2025-06-18
+},{"id": "36fd968f-b23a-496c-a527-b8e3b1f1acb2","alterId": 0,"email": "isat30"
+### purba30 2025-06-17
+},{"id": "885b51f4-62c1-482d-ac23-c342d1880f59","alterId": 0,"email": "purba30"
+### gani 2025-06-14
+},{"id": "a49c22ce-2f3c-4f0c-8d48-3e445d5e1a59","alterId": 0,"email": "gani"
+### genta1 2025-06-13
+},{"id": "f8175bbc-11cf-4885-8452-9a66a077d7ba","alterId": 0,"email": "genta1"
+### Bangray1999 2025-06-13
+},{"id": "c313ca5c-1fb1-460c-95ee-b985f3fc1aa5","alterId": 0,"email": "Bangray1999"
+### jay30 2025-06-12
+},{"id": "03078164-27cd-4e87-ba08-925d8cdef6d1","alterId": 0,"email": "jay30"
+### iflix30 2025-06-12
+},{"id": "303ebf88-6b08-4386-b3b9-f20d9d7ecd7c","alterId": 0,"email": "iflix30"
+### genta 2025-06-07
+},{"id": "0726565f-1af0-4488-916e-b694778a16b0","alterId": 0,"email": "genta"
+### ali30 2025-06-11
+},{"id": "b2b91e77-b76d-4a14-bf24-42374e817e56","alterId": 0,"email": "ali30"
+### cie30 2025-06-10
+},{"id": "0e8a998e-ce93-4f74-8b37-1aa6046dcffa","alterId": 0,"email": "cie30"
              }
           ]
        },
@@ -428,30 +436,38 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### edujtg 2025-06-30
-},{"id": "e32544bb-2086-4fb7-8798-3ed6ff15d799","alterId": 0,"email": "edujtg"
-### jtg200 2025-06-21
-},{"id": "b48e243b-0c6f-47bd-bc32-6d8f8d5530a6","alterId": 0,"email": "jtg200"
-### fahrol30 2025-07-04
-},{"id": "530759f7-fcdb-4fd1-82e2-e9beee6ee8f3","alterId": 0,"email": "fahrol30"
-### roni 2025-07-04
-},{"id": "9ed1c854-8dd0-409f-b3ff-cdd571fdfe4d","alterId": 0,"email": "roni"
-### sena30 2025-06-27
-},{"id": "2f3eb537-ef90-46aa-af59-6b3b75b8f99e","alterId": 0,"email": "sena30"
-### lima15 2025-06-09
-},{"id": "4f73def1-1a22-4af2-9ac7-4b7be40e2f7f","alterId": 0,"email": "lima15"
-### jtg100 2025-06-20
-},{"id": "8d04dc43-f5e2-4b93-8b7d-4e13ff60c715","alterId": 0,"email": "jtg100"
-### genta6 2025-06-18
-},{"id": "b6becb1a-f7d4-4b6d-a165-c9a3f3982378","alterId": 0,"email": "genta6"
-### genta3 2025-06-16
-},{"id": "6181a063-43a8-4cef-aada-0cba7f570f0d","alterId": 0,"email": "genta3"
-### genta2 2025-06-15
-},{"id": "892012ff-96f8-4046-bafc-48515ee6c1e9","alterId": 0,"email": "genta2"
-### juanda30 2025-06-11
-},{"id": "f862bd31-bf8c-40a2-9a21-a4c1d4a05813","alterId": 0,"email": "juanda30"
-### lana 2025-06-21
-},{"id": "a7bdd4bb-b4cd-45dd-93ca-4b2def49faef","alterId": 0,"email": "lana"
+### dhoni 2025-07-01
+},{"id": "99e1ba53-6168-4686-9381-150c40f0e0f6","alterId": 0,"email": "dhoni"
+### novia24 2025-06-25
+},{"id": "3761b181-fd74-448e-92d8-a69442e0d2e0","alterId": 0,"email": "novia24"
+### vani30 2025-06-25
+},{"id": "e0017586-fdb8-41f9-8abc-d0e7e55b756d","alterId": 0,"email": "vani30"
+### genta7 2025-06-23
+},{"id": "54b31a6f-61b5-41c3-b74c-6fef5596f17d","alterId": 0,"email": "genta7"
+### amy30 2025-06-21
+},{"id": "dbfec1a3-bf39-4f5f-a98b-b62ae21c7da9","alterId": 0,"email": "amy30"
+### manaja30 2025-06-19
+},{"id": "6b03339a-048d-4d3b-badc-74d8067c14d5","alterId": 0,"email": "manaja30"
+### isat30 2025-06-18
+},{"id": "36fd968f-b23a-496c-a527-b8e3b1f1acb2","alterId": 0,"email": "isat30"
+### purba30 2025-06-17
+},{"id": "885b51f4-62c1-482d-ac23-c342d1880f59","alterId": 0,"email": "purba30"
+### gani 2025-06-14
+},{"id": "a49c22ce-2f3c-4f0c-8d48-3e445d5e1a59","alterId": 0,"email": "gani"
+### genta1 2025-06-13
+},{"id": "f8175bbc-11cf-4885-8452-9a66a077d7ba","alterId": 0,"email": "genta1"
+### Bangray1999 2025-06-13
+},{"id": "c313ca5c-1fb1-460c-95ee-b985f3fc1aa5","alterId": 0,"email": "Bangray1999"
+### jay30 2025-06-12
+},{"id": "03078164-27cd-4e87-ba08-925d8cdef6d1","alterId": 0,"email": "jay30"
+### iflix30 2025-06-12
+},{"id": "303ebf88-6b08-4386-b3b9-f20d9d7ecd7c","alterId": 0,"email": "iflix30"
+### genta 2025-06-07
+},{"id": "0726565f-1af0-4488-916e-b694778a16b0","alterId": 0,"email": "genta"
+### ali30 2025-06-11
+},{"id": "b2b91e77-b76d-4a14-bf24-42374e817e56","alterId": 0,"email": "ali30"
+### cie30 2025-06-10
+},{"id": "0e8a998e-ce93-4f74-8b37-1aa6046dcffa","alterId": 0,"email": "cie30"
              }
           ]
        },
