@@ -343,12 +343,16 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### kanjeng30 2025-07-02
-},{"id": "b5d7368d-2a20-4b0f-a811-971d1f98c149","alterId": 0,"email": "kanjeng30"
-### najib30 2025-06-30
-},{"id": "d3ccd91d-6344-4c00-8daf-c4e5e8771885","alterId": 0,"email": "najib30"
-### stev 2025-06-15
-},{"id": "1b57af31-af24-4156-99b8-0a43810f8e53","alterId": 0,"email": "stev"
+### baruxl 2025-06-30
+},{"id": "a652dc08-7dc4-4b26-8717-ece4a6a73bba","alterId": 0,"email": "baruxl"
+### syla 2025-06-28
+},{"id": "5a8cc117-e7de-4321-95db-bae49e3df847","alterId": 0,"email": "syla"
+### sarwant0 2025-06-26
+},{"id": "bf41df49-6f0d-49d6-8891-7905830251e7","alterId": 0,"email": "sarwant0"
+### inilagi2 2025-06-25
+},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
+### lombok 2025-06-29
+},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
              }
           ]
        },
@@ -412,12 +416,16 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### kanjeng30 2025-07-02
-},{"id": "b5d7368d-2a20-4b0f-a811-971d1f98c149","alterId": 0,"email": "kanjeng30"
-### najib30 2025-06-30
-},{"id": "d3ccd91d-6344-4c00-8daf-c4e5e8771885","alterId": 0,"email": "najib30"
-### stev 2025-06-15
-},{"id": "1b57af31-af24-4156-99b8-0a43810f8e53","alterId": 0,"email": "stev"
+### baruxl 2025-06-30
+},{"id": "a652dc08-7dc4-4b26-8717-ece4a6a73bba","alterId": 0,"email": "baruxl"
+### syla 2025-06-28
+},{"id": "5a8cc117-e7de-4321-95db-bae49e3df847","alterId": 0,"email": "syla"
+### sarwant0 2025-06-26
+},{"id": "bf41df49-6f0d-49d6-8891-7905830251e7","alterId": 0,"email": "sarwant0"
+### inilagi2 2025-06-25
+},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
+### lombok 2025-06-29
+},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
              }
           ]
        },
