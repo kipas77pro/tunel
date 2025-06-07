@@ -343,16 +343,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### baruxl 2025-06-30
-},{"id": "a652dc08-7dc4-4b26-8717-ece4a6a73bba","alterId": 0,"email": "baruxl"
-### syla 2025-06-28
-},{"id": "5a8cc117-e7de-4321-95db-bae49e3df847","alterId": 0,"email": "syla"
-### sarwant0 2025-06-26
-},{"id": "bf41df49-6f0d-49d6-8891-7905830251e7","alterId": 0,"email": "sarwant0"
-### inilagi2 2025-06-25
-},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
-### lombok 2025-06-29
-},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### iflix30 2025-07-05
+},{"id": "9cc0a7bf-db5f-4fb3-9bfa-180c9f56ecd0","alterId": 0,"email": "iflix30"
+### nudxl 2025-07-03
+},{"id": "3084b169-8f2d-4b9b-a214-f5f8aaf52885","alterId": 0,"email": "nudxl"
+### Qwerty 2025-07-03
+},{"id": "cd65b996-70b9-4ab9-a5d8-abfa9f135ed0","alterId": 0,"email": "Qwerty"
              }
           ]
        },
@@ -416,16 +412,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### baruxl 2025-06-30
-},{"id": "a652dc08-7dc4-4b26-8717-ece4a6a73bba","alterId": 0,"email": "baruxl"
-### syla 2025-06-28
-},{"id": "5a8cc117-e7de-4321-95db-bae49e3df847","alterId": 0,"email": "syla"
-### sarwant0 2025-06-26
-},{"id": "bf41df49-6f0d-49d6-8891-7905830251e7","alterId": 0,"email": "sarwant0"
-### inilagi2 2025-06-25
-},{"id": "d8ee2d40-ace8-4df5-9f49-a1ddb14685eb","alterId": 0,"email": "inilagi2"
-### lombok 2025-06-29
-},{"id": "38681bfc-884d-4910-b0bd-7cc507eaeec8","alterId": 0,"email": "lombok"
+### iflix30 2025-07-05
+},{"id": "9cc0a7bf-db5f-4fb3-9bfa-180c9f56ecd0","alterId": 0,"email": "iflix30"
+### nudxl 2025-07-03
+},{"id": "3084b169-8f2d-4b9b-a214-f5f8aaf52885","alterId": 0,"email": "nudxl"
+### Qwerty 2025-07-03
+},{"id": "cd65b996-70b9-4ab9-a5d8-abfa9f135ed0","alterId": 0,"email": "Qwerty"
              }
           ]
        },
