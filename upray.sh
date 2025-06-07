@@ -343,14 +343,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### sis30 2025-06-24
-},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
-### alnya 2025-06-20
-},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
-### koma30 2025-06-12
-},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
-### agus30 2025-06-09
-},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
+### kanjeng30 2025-07-02
+},{"id": "b5d7368d-2a20-4b0f-a811-971d1f98c149","alterId": 0,"email": "kanjeng30"
+### najib30 2025-06-30
+},{"id": "d3ccd91d-6344-4c00-8daf-c4e5e8771885","alterId": 0,"email": "najib30"
+### stev 2025-06-15
+},{"id": "1b57af31-af24-4156-99b8-0a43810f8e53","alterId": 0,"email": "stev"
              }
           ]
        },
@@ -371,6 +369,8 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
+### trobiz 2025-06-29
+},{"password": "b0110bf7-5c80-4aa2-b688-c8f8e39ed3a0","email": "trobiz"
               }
           ],
          "udp": true
@@ -412,14 +412,12 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### sis30 2025-06-24
-},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
-### alnya 2025-06-20
-},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
-### koma30 2025-06-12
-},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
-### agus30 2025-06-09
-},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
+### kanjeng30 2025-07-02
+},{"id": "b5d7368d-2a20-4b0f-a811-971d1f98c149","alterId": 0,"email": "kanjeng30"
+### najib30 2025-06-30
+},{"id": "d3ccd91d-6344-4c00-8daf-c4e5e8771885","alterId": 0,"email": "najib30"
+### stev 2025-06-15
+},{"id": "1b57af31-af24-4156-99b8-0a43810f8e53","alterId": 0,"email": "stev"
              }
           ]
        },
@@ -440,6 +438,8 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
+### trobiz 2025-06-29
+},{"password": "b0110bf7-5c80-4aa2-b688-c8f8e39ed3a0","email": "trobiz"
                }
            ]
         },
