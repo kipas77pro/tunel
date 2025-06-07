@@ -343,16 +343,14 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### musang 2025-07-04
-},{"id": "09b5f3d0-7ce9-42d9-9679-794d8c19ffc9","alterId": 0,"email": "musang"
-### tuup 2025-06-30
-},{"id": "a74db8c2-3354-4b08-8dff-c58c6ecf3a17","alterId": 0,"email": "tuup"
-### made30 2025-06-29
-},{"id": "711ac29f-0c05-4778-9f9d-695bf16daec2","alterId": 0,"email": "made30"
-### abah 2025-06-20
-},{"id": "f7c76ad1-bca0-42bf-8d02-2898fa1bbeb7","alterId": 0,"email": "abah"
-### kimal 2025-06-14
-},{"id": "0c578633-e69b-4942-bcc1-24f42c10a826","alterId": 0,"email": "kimal"
+### sis30 2025-06-24
+},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
+### alnya 2025-06-20
+},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
+### koma30 2025-06-12
+},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
+### agus30 2025-06-09
+},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
              }
           ]
        },
@@ -414,16 +412,14 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### musang 2025-07-04
-},{"id": "09b5f3d0-7ce9-42d9-9679-794d8c19ffc9","alterId": 0,"email": "musang"
-### tuup 2025-06-30
-},{"id": "a74db8c2-3354-4b08-8dff-c58c6ecf3a17","alterId": 0,"email": "tuup"
-### made30 2025-06-29
-},{"id": "711ac29f-0c05-4778-9f9d-695bf16daec2","alterId": 0,"email": "made30"
-### abah 2025-06-20
-},{"id": "f7c76ad1-bca0-42bf-8d02-2898fa1bbeb7","alterId": 0,"email": "abah"
-### kimal 2025-06-14
-},{"id": "0c578633-e69b-4942-bcc1-24f42c10a826","alterId": 0,"email": "kimal"
+### sis30 2025-06-24
+},{"id": "f861b186-1448-4810-8ebe-663bc0e2cd68","alterId": 0,"email": "sis30"
+### alnya 2025-06-20
+},{"id": "d53615c8-56d6-4bd7-8716-4f816211e6e7","alterId": 0,"email": "alnya"
+### koma30 2025-06-12
+},{"id": "75823a6c-8aaa-4bd9-a7de-08066a7070af","alterId": 0,"email": "koma30"
+### agus30 2025-06-09
+},{"id": "4fbb852e-661b-43b2-bd5b-339373033df6","alterId": 0,"email": "agus30"
              }
           ]
        },
