@@ -104,6 +104,12 @@ echo -e "[ ${green}INFO$NC ] Disable ipv6"
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6 >/dev/null 2>&1
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local >/dev/null 2>&1
 
+# disable ipv6
+sleep 1
+echo -e "[ ${green}INFO$NC ] Disable ipv6"
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6 >/dev/null 2>&1
+sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local >/dev/null 2>&1
+
 # set time GMT +7
 sleep 1
 echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Jakarta GMT+7"
@@ -193,9 +199,6 @@ connect = 127.0.0.1:143
 [openssh]
 accept = 777
 connect = 127.0.0.1:22
-[openvpn]
-accept = 442
-connect = 127.0.0.1:1194
 END
 
 # Service Stunnel5 systemctl restart stunnel5
@@ -393,4 +396,4 @@ sleep 5
 clear
 #rm -fr /root/key.pem >/dev/null 2>&1
 rm -fr /root/cert.pem >/dev/null 2>&1
-rm -fr /root/ssh-vpn.sh >/dev/null 2>&1
+rm -fr /root/up-ssh-vpn.sh >/dev/null 2>&1
