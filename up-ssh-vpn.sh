@@ -394,6 +394,7 @@ sleep 1
 yellow "SSH & OVPN install successfully"
 sleep 5
 clear
+cd /usr/bin
 #rm -fr /root/key.pem >/dev/null 2>&1
-rm -fr /root/cert.pem >/dev/null 2>&1
-rm -fr /root/up-ssh-vpn >/dev/null 2>&1
+rm -fr cert.pem >/dev/null 2>&1
+rm -fr up-ssh-vpn >/dev/null 2>&1
