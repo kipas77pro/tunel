@@ -59,11 +59,7 @@ systemctl start ws-stunnel >/dev/null 2>&1
 systemctl restart ws-stunnel >/dev/null 2>&1
 
 clear
-# go to root
-cd
-apt install python3
 
-# Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -89,11 +85,24 @@ END
 
 # Ubah izin akses
 chmod +x /etc/rc.local
-
+echo -e "
+"
+date
+echo ""
+# enable rc local
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Checking... "
+sleep 2
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable system rc local"
 systemctl enable rc-local >/dev/null 2>&1
 systemctl start rc-local.service >/dev/null 2>&1
+
+# disable ipv6
+sleep 1
+echo -e "[ ${green}INFO$NC ] Disable ipv6"
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6 >/dev/null 2>&1
+sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local >/dev/null 2>&1
 
 # disable ipv6
 sleep 1
@@ -190,9 +199,9 @@ connect = 127.0.0.1:143
 [openssh]
 accept = 777
 connect = 127.0.0.1:22
-[openvpn]
-accept = 442
-connect = 127.0.0.1:1194
+[openssh]
+accept = 444
+connect = 127.0.0.1:2253
 END
 
 # Service Stunnel5 systemctl restart stunnel5
@@ -388,6 +397,7 @@ sleep 1
 yellow "SSH & OVPN install successfully"
 sleep 5
 clear
+cd /usr/bin
 #rm -fr /root/key.pem >/dev/null 2>&1
-rm -fr /root/cert.pem >/dev/null 2>&1
-rm -fr /root/ssh-vpn.sh >/dev/null 2>&1
+rm -fr cert.pem >/dev/null 2>&1
+rm -fr up-ssh-vpn >/dev/null 2>&1
