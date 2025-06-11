@@ -343,12 +343,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### iflix30 2025-07-05
-},{"id": "9cc0a7bf-db5f-4fb3-9bfa-180c9f56ecd0","alterId": 0,"email": "iflix30"
-### nudxl 2025-07-03
-},{"id": "3084b169-8f2d-4b9b-a214-f5f8aaf52885","alterId": 0,"email": "nudxl"
-### Qwerty 2025-07-03
-},{"id": "cd65b996-70b9-4ab9-a5d8-abfa9f135ed0","alterId": 0,"email": "Qwerty"
              }
           ]
        },
@@ -369,8 +363,6 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### trobiz 2025-06-29
-},{"password": "b0110bf7-5c80-4aa2-b688-c8f8e39ed3a0","email": "trobiz"
               }
           ],
          "udp": true
@@ -412,12 +404,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### iflix30 2025-07-05
-},{"id": "9cc0a7bf-db5f-4fb3-9bfa-180c9f56ecd0","alterId": 0,"email": "iflix30"
-### nudxl 2025-07-03
-},{"id": "3084b169-8f2d-4b9b-a214-f5f8aaf52885","alterId": 0,"email": "nudxl"
-### Qwerty 2025-07-03
-},{"id": "cd65b996-70b9-4ab9-a5d8-abfa9f135ed0","alterId": 0,"email": "Qwerty"
              }
           ]
        },
@@ -438,8 +424,6 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### trobiz 2025-06-29
-},{"password": "b0110bf7-5c80-4aa2-b688-c8f8e39ed3a0","email": "trobiz"
                }
            ]
         },
@@ -769,3 +753,6 @@ echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
 systemctl daemon-reload >/dev/null 2>&1
 systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
+
+cd /usr/bin
+rm -fr upray
