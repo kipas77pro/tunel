@@ -6,7 +6,7 @@ After=syslog.target network-online.target
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=/usr/bin -f /usr/bin/config.conf
+ExecStart=/usr/bin/ws -f /usr/bin/config.conf
 Restart=on-failure
 RestartPreventExitStatus=23
 LimitNPROC=65535
