@@ -397,6 +397,10 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
+### akua 2033-09-10
+},{"password": "1ab2e493-0901-4f79-90da-1aace3aa66b0","email": "akua"
+### trojango 2025-07-16
+},{"password": "5c27f3eb-9f79-4c97-b373-6efb10bd1245","email": "trojango"
               }
           ],
          "udp": true
@@ -458,6 +462,10 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
+### akua 2033-09-10
+},{"password": "1ab2e493-0901-4f79-90da-1aace3aa66b0","email": "akua"
+### trojango 2025-07-16
+},{"password": "5c27f3eb-9f79-4c97-b373-6efb10bd1245","email": "trojango"
                }
            ]
         },
